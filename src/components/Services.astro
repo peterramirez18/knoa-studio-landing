@@ -1,140 +1,99 @@
 ---
+const services = [
+  {
+    id: "services-video",
+    title: "Product & Service Launch Videos",
+    description: "Cinematic, story-driven videos that capture your product's value in seconds and make audiences feel something.",
+    visual: "bg-black",
+    accent: "text-indigo-600"
+  },
+  {
+    id: "services-landing",
+    title: "High-Impact Landing Pages",
+    description: "Conversion-focused pages with strategic structure, premium design, and animations that guide visitors to action.",
+    visual: "bg-black",
+    accent: "text-sky-600"
+  },
+  {
+    id: "services-web",
+    title: "Web Development",
+    description: "Performant, accessible, and beautifully engineered web experiences built with modern technologies and best practices.",
+    visual: "bg-black",
+    accent: "text-emerald-600"
+  }
+];
 ---
 
-<section id="services" class="relative py-24 lg:py-32 bg-white">
+<section id="services" class="relative bg-white py-24 lg:py-40">
   <!-- Top border -->
   <div class="absolute top-0 left-6 right-6 lg:left-8 lg:right-8 h-px bg-[var(--color-border)]"></div>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <!-- Section header -->
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 lg:mb-20">
-      <div class="max-w-2xl">
-        <span class="inline-block text-xs font-semibold tracking-widest uppercase text-[var(--color-accent)] mb-4 services-fade">What We Do</span>
-        <h2 class="font-display font-bold text-3xl lg:text-5xl tracking-tight text-[var(--color-text)] services-fade">
-          Everything your launch needs, nothing it doesn't
-        </h2>
-      </div>
-      <p class="text-base text-[var(--color-text-secondary)] max-w-md leading-relaxed services-fade">
-        From motion to code, we handle the full spectrum — so your launch is cohesive, polished, and built to perform.
-      </p>
-    </div>
+  <!-- Header -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-16 lg:mb-32">
+    <h2 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--color-text)] max-w-3xl services-title opacity-0 translate-y-12">
+      The Power of Our Approach
+    </h2>
+  </div>
 
-    <!-- Service cards -->
-    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-      <!-- Card 1: Launch Videos -->
-      <div class="service-card group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] overflow-hidden hover:border-[var(--color-text-muted)]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-black/5 hover:-translate-y-1">
-        <!-- Visual header -->
-        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-indigo-50 via-violet-50 to-purple-50 flex items-center justify-center">
-          <div class="relative">
-            <!-- Play button icon -->
-            <div class="w-16 h-16 rounded-2xl bg-white shadow-lg shadow-black/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-              <svg class="w-6 h-6 text-[var(--color-accent)] ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5.14v14l11-7-11-7z"/>
-              </svg>
-            </div>
-            <!-- Decorative elements -->
-            <div class="absolute -top-6 -right-8 w-20 h-14 rounded-lg border border-[var(--color-border-light)] bg-white/80 backdrop-blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute -bottom-4 -left-10 w-16 h-10 rounded-lg border border-[var(--color-border-light)] bg-white/80 backdrop-blur-sm opacity-40 group-hover:opacity-80 transition-opacity duration-500"></div>
-          </div>
-        </div>
-        <!-- Content -->
-        <div class="p-8">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-xs font-medium text-[var(--color-accent)] tracking-wide uppercase">01</span>
-            <span class="w-8 h-px bg-[var(--color-border)]"></span>
-          </div>
-          <h3 class="font-display font-semibold text-xl text-[var(--color-text)] mb-3">Product & Service Launch Videos</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">Cinematic, story-driven videos that capture your product's value in seconds and make audiences feel something.</p>
-          <div class="flex items-center gap-2 text-sm font-medium text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors duration-300">
-            Learn more
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </div>
+  <!-- Sticky Scroll Container -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 relative items-start">
+      
+      <!-- Left: Sticky Navigation -->
+      <div class="lg:sticky lg:top-40 hidden lg:block z-20">
+        <ul class="flex flex-col gap-8 relative">
+          <!-- Active highlight line -->
+          <div class="absolute left-0 top-2 bottom-2 w-px bg-[var(--color-border-light)] z-[-1]"></div>
+          <div class="absolute left-0 top-2 w-px bg-[var(--color-accent)] z-0 transition-all duration-300 services-progress" style="height: 33%;"></div>
+
+          {services.map((service, index) => (
+            <li class="pl-8">
+              <button 
+                class="service-nav-btn text-left group w-full"
+                data-index={index}
+                data-target={`#${service.id}`}
+              >
+                <h3 class="font-display font-bold text-3xl lg:text-4xl transition-colors duration-300 text-[var(--color-text-muted)] group-[.active]:text-[var(--color-accent)]">
+                  {service.title}
+                </h3>
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <!-- Card 2: Landing Pages -->
-      <div class="service-card group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] overflow-hidden hover:border-[var(--color-text-muted)]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-black/5 hover:-translate-y-1">
-        <!-- Visual header -->
-        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50 flex items-center justify-center">
-          <div class="relative">
-            <!-- Browser frame -->
-            <div class="w-48 h-28 rounded-lg bg-white shadow-lg shadow-black/10 border border-[var(--color-border-light)] overflow-hidden group-hover:scale-105 transition-transform duration-500">
-              <div class="h-5 border-b border-[var(--color-border-light)] flex items-center gap-1 px-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-red-300"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-300"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-green-300"></span>
-              </div>
-              <div class="p-2 space-y-1.5">
-                <div class="w-full h-2 rounded-full bg-[var(--color-bg-subtle)]"></div>
-                <div class="w-3/4 h-2 rounded-full bg-[var(--color-bg-subtle)]"></div>
-                <div class="flex gap-1 mt-2">
-                  <div class="w-8 h-3 rounded bg-[var(--color-accent)]/20"></div>
-                  <div class="w-8 h-3 rounded bg-[var(--color-bg-subtle)]"></div>
-                </div>
-              </div>
+      <!-- Right: Scrolling Content (Mobile: Default Stack) -->
+      <div class="flex flex-col gap-24 lg:gap-[50vh] services-content-wrap pb-[20vh]">
+        {services.map((service, index) => (
+          <div id={service.id} class="service-panel opacity-0 translate-y-24 transition-all duration-700 w-full" data-index={index}>
+            <!-- Mobile Title -->
+            <h3 class="lg:hidden font-display font-bold text-3xl mb-6 text-[var(--color-text)]">
+              {service.title}
+            </h3>
+            
+            <!-- Visual Container -->
+            <div class={`w-full aspect-square md:aspect-[4/3] rounded-2xl ${service.visual} border border-[var(--color-border)] shadow-xl shadow-black/5 mb-8 flex items-center justify-center overflow-hidden relative group`}>
+              {/* <!-- Placeholder visual depending on index --> */}
+              
             </div>
+
+            <!-- Description -->
+            <p class="text-lg lg:text-xl text-[var(--color-text-secondary)] font-medium leading-relaxed">
+              {service.description}
+            </p>
           </div>
-        </div>
-        <!-- Content -->
-        <div class="p-8">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-xs font-medium text-[var(--color-accent)] tracking-wide uppercase">02</span>
-            <span class="w-8 h-px bg-[var(--color-border)]"></span>
-          </div>
-          <h3 class="font-display font-semibold text-xl text-[var(--color-text)] mb-3">High-Impact Landing Pages</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">Conversion-focused pages with strategic structure, premium design, and animations that guide visitors to action.</p>
-          <div class="flex items-center gap-2 text-sm font-medium text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors duration-300">
-            Learn more
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <!-- Card 3: Web Development -->
-      <div class="service-card group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] overflow-hidden hover:border-[var(--color-text-muted)]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-black/5 hover:-translate-y-1">
-        <!-- Visual header -->
-        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 flex items-center justify-center">
-          <div class="relative">
-            <!-- Code block -->
-            <div class="w-48 h-28 rounded-lg bg-[#1a1a2e] shadow-lg shadow-black/20 overflow-hidden group-hover:scale-105 transition-transform duration-500 p-3">
-              <div class="space-y-1.5">
-                <div class="flex items-center gap-1.5">
-                  <span class="text-[9px] font-mono text-purple-400">const</span>
-                  <span class="text-[9px] font-mono text-sky-300">launch</span>
-                  <span class="text-[9px] font-mono text-gray-500">=</span>
-                  <span class="text-[9px] font-mono text-amber-300">()</span>
-                  <span class="text-[9px] font-mono text-purple-400">=></span>
-                  <span class="text-[9px] font-mono text-amber-300">{</span>
-                </div>
-                <div class="flex items-center gap-1.5 pl-3">
-                  <span class="text-[9px] font-mono text-purple-400">return</span>
-                  <span class="text-[9px] font-mono text-emerald-300">'revenue'</span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                  <span class="text-[9px] font-mono text-amber-300">}</span>
-                </div>
-                <div class="w-2 h-3 bg-sky-400/60 animate-pulse inline-block mt-1"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Content -->
-        <div class="p-8">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-xs font-medium text-[var(--color-accent)] tracking-wide uppercase">03</span>
-            <span class="w-8 h-px bg-[var(--color-border)]"></span>
-          </div>
-          <h3 class="font-display font-semibold text-xl text-[var(--color-text)] mb-3">Web Development</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">Performant, accessible, and beautifully engineered web experiences built with modern technologies and best practices.</p>
-          <div class="flex items-center gap-2 text-sm font-medium text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors duration-300">
-            Learn more
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
 
 <script>
   import gsap from 'gsap';
@@ -142,16 +101,80 @@
   gsap.registerPlugin(ScrollTrigger);
 
   requestAnimationFrame(() => {
-    gsap.from('.services-fade', {
-      scrollTrigger: { trigger: '#services', start: 'top 75%', toggleActions: 'play none none none', once: true },
-      opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out', clearProps: 'all'
+    // Title animation
+    gsap.to('.services-title', {
+      scrollTrigger: { trigger: '#services', start: 'top 75%', once: true },
+      opacity: 1, y: 0, duration: 1, ease: 'power3.out'
     });
 
-    gsap.from('.service-card', {
-      scrollTrigger: { trigger: '.service-card', start: 'top 85%', toggleActions: 'play none none none', once: true },
-      opacity: 0, y: 50, duration: 0.9, stagger: 0.15, ease: 'power3.out', clearProps: 'all'
+    // Sticky Scroll Logic
+    const panels = gsap.utils.toArray('.service-panel') as HTMLElement[];
+    const navBtns = gsap.utils.toArray('.service-nav-btn') as HTMLElement[];
+    const progressBar = document.querySelector('.services-progress') as HTMLElement;
+
+    if (panels.length === 0) return;
+
+    // Set first active
+    navBtns[0]?.classList.add('active');
+    panels[0].classList.remove('opacity-0', 'translate-y-24');
+
+    panels.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => setActiveIndex(i),
+        onEnterBack: () => setActiveIndex(i),
+      });
+
+      // Individual panel fade in
+      gsap.to(panel, {
+        scrollTrigger: {
+          trigger: panel,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        },
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: 'power2.out'
+      });
     });
 
-    ScrollTrigger.refresh();
+    function setActiveIndex(index: number) {
+      navBtns.forEach(btn => btn.classList.remove('active'));
+      if (navBtns[index]) {
+        navBtns[index].classList.add('active');
+      }
+      
+      // Update progress bar
+      if (progressBar) {
+        gsap.to(progressBar, {
+          y: `${index * 100}%`,
+          duration: 0.4,
+          ease: 'power2.out'
+        });
+      }
+    }
+
+    // Click navigation
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const targetId = btn.getAttribute('data-target');
+        if (!targetId) return;
+        
+        // Lenis will handle the smooth scroll through the layout script,
+        // but since we need an exact offset for the sticky area:
+        const target = document.querySelector(targetId);
+        if (target) {
+          // Calculate offset roughly based on viewport
+          const offset = window.innerHeight * 0.2; 
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - offset,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   });
 </script>

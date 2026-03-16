@@ -16,3 +16,40 @@
 		<slot />
 	</body>
 </html>
+
+<script>
+	import Lenis from 'lenis';
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	// Initialize Lenis smooth scroll
+	const lenis = new Lenis({
+		duration: 1.2,
+		easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+		smoothWheel: true,
+	});
+
+	// Connect Lenis to GSAP ScrollTrigger
+	lenis.on('scroll', ScrollTrigger.update);
+
+	gsap.ticker.add((time: number) => {
+		lenis.raf(time * 1000);
+	});
+
+	gsap.ticker.lagSmoothing(0);
+
+	// Handle anchor link clicks for smooth scrolling
+	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+		anchor.addEventListener('click', (e) => {
+			e.preventDefault();
+			const href = (anchor as HTMLAnchorElement).getAttribute('href');
+			if (!href) return;
+			const target = document.querySelector(href);
+			if (target) {
+				lenis.scrollTo(target as HTMLElement, { offset: 0 });
+			}
+		});
+	});
+</script>

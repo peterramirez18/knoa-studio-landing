@@ -1,168 +1,124 @@
 ---
+
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
-  <!-- Subtle background grid -->
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #111 1px, transparent 1px); background-size: 24px 24px;"></div>
+<section
+  id="hero"
+  class="relative min-h-screen pt-32 pb-20 px-6 lg:px-8 flex flex-col items-center justify-center overflow-hidden"
+>
+  <video
+    src="/video-placeholder.mp4"
+    class="absolute inset-0 w-full h-full object-cover z-0"
+    autoplay
+    loop
+    muted></video>
+  <div
+    class="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-center"
+  >
+    <img
+      src="/logo-knoa-dark.svg"
+      alt="Knoa Studio"
+      class="w-64 h-auto mb-12 lg:mb-16"
+    />
+    <!-- Massive Centered Heading -->
+    <div class="text-center w-full mb-12 lg:mb-16">
+      <h1
+        class="font-display font-bold text-[clamp(3.5rem,8vw,8rem)] leading-[0.9] tracking-tighter text-[var(--color-white)] mb-6 mx-auto max-w-[15ch] hero-title opacity-0 translate-y-12"
+      >
+        We build launch experiences that turn attention into revenue.
+      </h1>
+      <p
+        class="text-lg lg:text-2xl text-[var(--color-white)] font-medium max-w-2xl mx-auto hero-subtitle opacity-0 translate-y-8"
+      >
+        Product launch videos, high-impact landing pages, and web development.
+      </p>
+    </div>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <!-- Left: Copy -->
-      <div class="hero-content">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-border)] bg-white mb-8 hero-badge">
-          <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"></span>
-          <span class="text-xs font-medium text-[var(--color-text-secondary)] tracking-wide uppercase">Motion · Design · Development</span>
-        </div>
-
-        <h1 class="font-display font-bold text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] tracking-tight text-[var(--color-text)] mb-6 hero-title">
-          We build launch experiences that turn attention into
-          <span class="relative inline-block">
-            revenue
-            <svg class="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none" preserveAspectRatio="none">
-              <path d="M1 5.5Q50 1 100 4.5T199 3" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" class="hero-underline" />
-            </svg>
-          </span>.
-        </h1>
-
-        <p class="text-lg lg:text-xl text-[var(--color-text-secondary)] leading-relaxed max-w-xl mb-10 hero-subtitle">
-          Product launch videos, high-impact landing pages, and web development — designed to help brands stand out, communicate value, and grow.
-        </p>
-
-        <div class="flex flex-wrap items-center gap-4 hero-ctas">
-          <a href="#cta" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-white bg-[var(--color-text)] rounded-full hover:bg-[var(--color-accent)] transition-all duration-300 shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/15 hover:-translate-y-0.5">
-            Start a Project
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-          </a>
-          <a href="#case-studies" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-[var(--color-text)] bg-white border border-[var(--color-border)] rounded-full hover:border-[var(--color-text-muted)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-            View Work
-          </a>
-        </div>
-      </div>
-
-      <!-- Right: Interactive Motion Visual -->
-      <div class="relative hero-visual">
-        <div class="relative w-full aspect-square max-w-lg mx-auto lg:ml-auto">
-          <!-- Outer glow -->
-          <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-[var(--color-accent-light)] via-transparent to-transparent opacity-60"></div>
-
-          <!-- Canvas container -->
-          <div class="relative w-full h-full rounded-3xl border border-[var(--color-border)] bg-white/60 backdrop-blur-sm overflow-hidden shadow-2xl shadow-black/5">
-
-            <!-- SVG Motion Canvas -->
-            <svg id="hero-canvas" class="w-full h-full" viewBox="0 0 500 500" fill="none">
-              <!-- Grid lines -->
-              <g class="opacity-[0.06]">
-                <line x1="0" y1="100" x2="500" y2="100" stroke="#111" stroke-width="0.5"/>
-                <line x1="0" y1="200" x2="500" y2="200" stroke="#111" stroke-width="0.5"/>
-                <line x1="0" y1="300" x2="500" y2="300" stroke="#111" stroke-width="0.5"/>
-                <line x1="0" y1="400" x2="500" y2="400" stroke="#111" stroke-width="0.5"/>
-                <line x1="100" y1="0" x2="100" y2="500" stroke="#111" stroke-width="0.5"/>
-                <line x1="200" y1="0" x2="200" y2="500" stroke="#111" stroke-width="0.5"/>
-                <line x1="300" y1="0" x2="300" y2="500" stroke="#111" stroke-width="0.5"/>
-                <line x1="400" y1="0" x2="400" y2="500" stroke="#111" stroke-width="0.5"/>
-              </g>
-
-              <!-- Animated bezier curves -->
-              <path id="curve-1" d="M50,400 C150,380 200,200 350,180 S450,100 480,80" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
-              <path id="curve-2" d="M50,420 C180,400 220,280 360,220 S460,140 480,110" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.2" stroke-dasharray="4 4"/>
-              <path id="curve-main" d="M50,400 C150,380 200,200 350,180 S450,100 480,80" stroke="var(--color-text)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-
-              <!-- Gradient fill under curve -->
-              <defs>
-                <linearGradient id="curveGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.08"/>
-                  <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path id="curve-fill" d="M50,400 C150,380 200,200 350,180 S450,100 480,80 L480,500 L50,500 Z" fill="url(#curveGrad)"/>
-
-              <!-- Control point connectors -->
-              <line id="handle-1" x1="150" y1="380" x2="200" y2="200" stroke="var(--color-accent)" stroke-width="1" opacity="0.3" stroke-dasharray="3 3"/>
-              <line id="handle-2" x1="350" y1="180" x2="450" y2="100" stroke="var(--color-accent)" stroke-width="1" opacity="0.3" stroke-dasharray="3 3"/>
-
-              <!-- Floating nodes -->
-              <g class="hero-node" style="animation: float 6s ease-in-out infinite;">
-                <circle cx="150" cy="380" r="5" fill="white" stroke="var(--color-accent)" stroke-width="1.5"/>
-              </g>
-              <g class="hero-node" style="animation: float 6s ease-in-out infinite 1s;">
-                <circle cx="200" cy="200" r="6" fill="var(--color-accent)" stroke="white" stroke-width="2"/>
-              </g>
-              <g class="hero-node" style="animation: float 6s ease-in-out infinite 2s;">
-                <circle cx="350" cy="180" r="5" fill="white" stroke="var(--color-accent)" stroke-width="1.5"/>
-              </g>
-              <g class="hero-node" style="animation: float 6s ease-in-out infinite 3s;">
-                <circle cx="450" cy="100" r="6" fill="var(--color-accent)" stroke="white" stroke-width="2"/>
-              </g>
-
-              <!-- Floating labels -->
-              <g class="opacity-0 hero-label" id="label-1">
-                <rect x="180" y="168" width="80" height="24" rx="6" fill="white" stroke="var(--color-border)" stroke-width="1"/>
-                <text x="220" y="184" text-anchor="middle" class="text-[10px] font-sans fill-[var(--color-text)]" font-size="10" font-family="Inter, sans-serif" fill="#111">Design</text>
-              </g>
-              <g class="opacity-0 hero-label" id="label-2">
-                <rect x="410" y="68" width="80" height="24" rx="6" fill="white" stroke="var(--color-border)" stroke-width="1"/>
-                <text x="450" y="84" text-anchor="middle" class="text-[10px] font-sans fill-[var(--color-text)]" font-size="10" font-family="Inter, sans-serif" fill="#111">Launch</text>
-              </g>
-
-              <!-- Moving dot along curve -->
-              <circle id="moving-dot" r="4" fill="var(--color-accent)">
-                <animateMotion dur="4s" repeatCount="indefinite" path="M50,400 C150,380 200,200 350,180 S450,100 480,80"/>
-              </circle>
-
-              <!-- Sparkle particles -->
-              <circle class="hero-particle" cx="280" cy="250" r="2" fill="var(--color-accent)" opacity="0"/>
-              <circle class="hero-particle" cx="380" cy="150" r="1.5" fill="var(--color-accent)" opacity="0"/>
-              <circle class="hero-particle" cx="420" cy="190" r="2" fill="var(--color-text-muted)" opacity="0"/>
-            </svg>
-
-            <!-- Corner badges -->
-            <div class="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-[var(--color-border-light)] shadow-sm">
-              <span class="w-2 h-2 rounded-full bg-green-400"></span>
-              <span class="text-[10px] font-medium text-[var(--color-text-secondary)]">Growth Curve</span>
-            </div>
-
-            <div class="absolute bottom-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/90 border border-[var(--color-border-light)] shadow-sm">
-              <span class="text-[10px] font-mono text-[var(--color-text-muted)]">+247%</span>
-              <svg class="w-3 h-3 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 15l7-7 7 7"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- CTA Below Visual -->
+    <div class="mt-12 hero-cta opacity-0 translate-y-8">
+      <a
+        href="#case-studies"
+        class="group inline-flex items-center gap-3 px-8 py-4 bg-white border border-[var(--color-border)] rounded-full text-base font-semibold hover:border-[var(--color-text)] hover:shadow-lg transition-all duration-300"
+      >
+        Watch our Full Showreel
+        <span
+          class="w-8 h-8 rounded-full bg-[var(--color-bg-subtle)] flex items-center justify-center group-hover:bg-[var(--color-text)] group-hover:text-white transition-colors duration-300"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </span>
+      </a>
     </div>
   </div>
-
-  <!-- Bottom fade -->
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--color-bg)] to-transparent"></div>
 </section>
 
 <style>
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
+  .animate-pulse-slow {
+    animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
   }
 </style>
 
 <script>
-  import gsap from 'gsap';
+  import gsap from "gsap";
 
-  // Hero entrance animations
+  // Wait for DOM
   requestAnimationFrame(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out', clearProps: 'all' } });
+    const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    tl.from('.hero-badge', { opacity: 0, y: 20, duration: 0.8, delay: 0.2 })
-      .from('.hero-title', { opacity: 0, y: 30, duration: 1 }, '-=0.5')
-      .from('.hero-underline', { strokeDasharray: '0 200', duration: 1.2, ease: 'power2.inOut' }, '-=0.5')
-      .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.8 }, '-=0.7')
-      .from('.hero-ctas', { opacity: 0, y: 20, duration: 0.8 }, '-=0.5')
-      .from('.hero-visual', { opacity: 0, scale: 0.95, duration: 1.2, ease: 'power2.out' }, '-=0.8')
-      .to('.hero-label', { opacity: 1, duration: 0.6, stagger: 0.2 }, '-=0.4')
-      .to('.hero-particle', {
-        opacity: 0.5,
-        duration: 0.4,
-        stagger: 0.15,
-        repeat: -1,
-        yoyo: true,
-        repeatDelay: 2
-      }, '-=0.2');
+    tl.to(".hero-title", {
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      delay: 0.1,
+    })
+      .to(
+        ".hero-subtitle",
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+        },
+        "-=0.9",
+      )
+      .to(
+        ".hero-visual",
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.4,
+          ease: "power3.inOut",
+        },
+        "-=0.8",
+      )
+      .to(
+        ".hero-cta",
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+        },
+        "-=0.6",
+      );
   });
 </script>

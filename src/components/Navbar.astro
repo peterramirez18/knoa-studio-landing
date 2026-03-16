@@ -1,95 +1,189 @@
 ---
+import { Image } from "astro:assets";
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-4 text-[var(--color-text)]"
+>
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="flex items-center justify-between h-18">
+    <div class="flex items-center justify-between h-14">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-2 group">
-        <div class="w-8 h-8 rounded-lg bg-[var(--color-text)] flex items-center justify-center">
-          <span class="text-white font-display font-bold text-sm">K</span>
+      <a href="/" class="flex items-center gap-2 group z-50 relative">
+        <div
+          class="w-8 h-8 rounded-lg bg-[var(--color-text)] flex items-center justify-center transition-colors duration-300 logo-icon"
+        >
+          <span class="text-white font-display font-bold text-sm logo-letter"
+            >K</span
+          >
         </div>
-        <span class="font-display font-semibold text-lg text-[var(--color-text)] tracking-tight">Knoa Studio</span>
+        <span
+          class="font-display font-semibold text-lg tracking-tight transition-colors duration-300 logo-text"
+          >Knoa Studio</span
+        >
       </a>
 
-      <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#services" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200">Services</a>
-        <a href="#process" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200">Process</a>
-        <a href="#case-studies" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200">Case Studies</a>
-        <a href="#footer" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200">Company</a>
-        <a href="#cta" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-[var(--color-text)] rounded-full hover:bg-[var(--color-accent)] transition-all duration-300">
-          Contact
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10" /></svg>
+      <!-- Desktop Links & CTA -->
+      <div class="hidden md:flex items-center gap-8 z-50 relative">
+        <a
+          href="#about"
+          class="text-sm font-medium hover:opacity-70 transition-opacity duration-200"
+          >About</a
+        >
+        <a
+          href="#case-studies"
+          class="text-sm font-medium hover:opacity-70 transition-opacity duration-200"
+          >Work</a
+        >
+        <a
+          href="#services"
+          class="text-sm font-medium hover:opacity-70 transition-opacity duration-200"
+          >Services</a
+        >
+        <a
+          href="#process"
+          class="text-sm font-medium hover:opacity-70 transition-opacity duration-200"
+          >Process</a
+        >
+        <a
+          href="#cta"
+          class="inline-flex items-center justify-center h-10 px-6 text-sm font-bold text-white bg-[var(--color-text)] rounded-full hover:scale-105 transition-transform duration-300 nav-cta"
+        >
+          Let's Talk!
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
-        <span class="block w-5 h-0.5 bg-[var(--color-text)] transition-all duration-300 origin-center" id="menu-line-1"></span>
-        <span class="block w-5 h-0.5 bg-[var(--color-text)] transition-all duration-300" id="menu-line-2"></span>
-        <span class="block w-3.5 h-0.5 bg-[var(--color-text)] transition-all duration-300 origin-center" id="menu-line-3"></span>
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden flex flex-col gap-1.5 p-2 z-50 relative group"
+        aria-label="Toggle menu"
+      >
+        <span
+          class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center"
+          id="menu-line-1"></span>
+        <span
+          class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center"
+          id="menu-line-2"></span>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-[var(--color-border)]">
-    <div class="px-6 py-6 flex flex-col gap-4">
-      <a href="#services" class="text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors py-2">Services</a>
-      <a href="#process" class="text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors py-2">Process</a>
-      <a href="#case-studies" class="text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors py-2">Case Studies</a>
-      <a href="#footer" class="text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors py-2">Company</a>
-      <a href="#cta" class="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-white bg-[var(--color-text)] rounded-full hover:bg-[var(--color-accent)] transition-all duration-300 mt-2">
-        Contact
-        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10" /></svg>
-      </a>
+  <!-- Fullscreen Mobile Menu Overlay -->
+  <div
+    id="mobile-menu-overlay"
+    class="fixed inset-0 bg-[var(--color-bg)] z-40 translate-y-[-100%] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] flex flex-col"
+  >
+    <div
+      class="flex-1 flex flex-col items-center justify-center gap-8 px-6 pt-20"
+    >
+      <a
+        href="#about"
+        class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-100"
+        >About</a
+      >
+      <a
+        href="#case-studies"
+        class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-150"
+        >Work</a
+      >
+      <a
+        href="#services"
+        class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-200"
+        >Services</a
+      >
+      <a
+        href="#process"
+        class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-250"
+        >Process</a
+      >
+      <div
+        class="h-px w-16 bg-[var(--color-border)] my-4 opacity-0 scale-x-0 transition-all duration-500 delay-300 separator"
+      >
+      </div>
+      <a
+        href="#cta"
+        class="mobile-link text-xl font-medium text-[var(--color-accent)] opacity-0 translate-y-8 transition-all duration-500 delay-300"
+        >Let's Talk!</a
+      >
     </div>
   </div>
 </nav>
 
+<style>
+  /* Menu open states */
+  .menu-open #menu-line-1 {
+    transform: translateY(4px) rotate(45deg);
+  }
+  .menu-open #menu-line-2 {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+  .menu-open #mobile-menu-overlay {
+    transform: translateY(0);
+  }
+  .menu-open .mobile-link {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  .menu-open .separator {
+    opacity: 1 !important;
+    transform: scaleX(1) !important;
+  }
+</style>
+
 <script>
   // Navbar scroll effect
-  const navbar = document.getElementById('navbar');
-  let lastScroll = 0;
+  const navbar = document.getElementById("navbar");
+  const logoIcon = document.querySelector(".logo-icon");
+  const logoLetter = document.querySelector(".logo-letter");
 
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 50) {
-      navbar?.classList.add('bg-white/80', 'backdrop-blur-xl', 'border-b', 'border-[var(--color-border)]', 'shadow-sm');
-    } else {
-      navbar?.classList.remove('bg-white/80', 'backdrop-blur-xl', 'border-b', 'border-[var(--color-border)]', 'shadow-sm');
-    }
-    lastScroll = currentScroll;
-  });
+  if (navbar) {
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 50) {
+        navbar.classList.add(
+          "bg-white/90",
+          "backdrop-blur-md",
+          "shadow-sm",
+          "border-b",
+          "border-[var(--color-border)]",
+          "py-2",
+        );
+        navbar.classList.remove("bg-transparent", "py-4");
+      } else {
+        navbar.classList.remove(
+          "bg-white/90",
+          "backdrop-blur-md",
+          "shadow-sm",
+          "border-b",
+          "border-[var(--color-border)]",
+          "py-2",
+        );
+        navbar.classList.add("bg-transparent", "py-4");
+      }
+    });
+  }
 
   // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const body = document.body;
   let isOpen = false;
 
-  mobileMenuBtn?.addEventListener('click', () => {
+  function toggleMenu() {
     isOpen = !isOpen;
-    mobileMenu?.classList.toggle('hidden');
-    const l1 = document.getElementById('menu-line-1');
-    const l2 = document.getElementById('menu-line-2');
-    const l3 = document.getElementById('menu-line-3');
     if (isOpen) {
-      l1?.classList.add('rotate-45', 'translate-y-[4px]');
-      l2?.classList.add('opacity-0');
-      l3?.classList.add('-rotate-45', '-translate-y-[4px]', 'w-5');
+      body.classList.add("menu-open", "overflow-hidden");
     } else {
-      l1?.classList.remove('rotate-45', 'translate-y-[4px]');
-      l2?.classList.remove('opacity-0');
-      l3?.classList.remove('-rotate-45', '-translate-y-[4px]', 'w-5');
+      body.classList.remove("menu-open", "overflow-hidden");
     }
-  });
+  }
 
-  // Close mobile menu on link click
-  mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-      isOpen = false;
+  mobileMenuBtn?.addEventListener("click", toggleMenu);
+
+  // Close menu on link click
+  document.querySelectorAll(".mobile-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isOpen) toggleMenu();
     });
   });
 </script>

@@ -1,181 +1,101 @@
 ---
+const steps = [
+  {
+    phase: "01",
+    title: "Alignment & Goals",
+    items: [
+      "We define what you are launching, who it is for, and what success looks like",
+      "We identify the main message, audience pain points, and conversion goal",
+      "We shape the project around business impact, not just visuals"
+    ]
+  },
+  {
+    phase: "02",
+    title: "Positioning & Creative Direction",
+    items: [
+      "We turn your offer into a clear and compelling concept",
+      "We define the tone, visual language, and overall direction",
+      "We build the creative foundation for both motion and digital experience"
+    ]
+  },
+  {
+    phase: "03",
+    title: "Structure & Experience Design",
+    items: [
+      "We organize the content flow for clarity, attention, and action",
+      "We design the user journey, sections, and interface logic",
+      "We make sure every screen and scene supports the final objective"
+    ]
+  },
+  {
+    phase: "04",
+    title: "Production & Development",
+    items: [
+      "We produce the visuals, motion, and assets with high attention to detail",
+      "We develop the landing page or digital experience with performance in mind",
+      "We refine interactions, responsiveness, and technical execution"
+    ]
+  },
+  {
+    phase: "05",
+    title: "Refinement & Launch",
+    items: [
+      "We review, polish, and test everything before release",
+      "We optimize the final deliverables for web, campaigns, and devices",
+      "We help you launch with confidence and a presentation that feels premium"
+    ]
+  }
+];
 ---
 
-<section id="process" class="relative py-24 lg:py-32">
-  <!-- Top border -->
-  <div class="absolute top-0 left-6 right-6 lg:left-8 lg:right-8 h-px bg-[var(--color-border)]"></div>
+<section id="process" class="relative bg-[var(--color-text)] text-white py-24 lg:py-40 overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
+ <h2 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-6 process-title opacity-0 translate-y-12">
+  How We Build<br/>Launch-Ready Experiences
+</h2>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <!-- Section header -->
-    <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-[var(--color-accent)] mb-4 process-fade">Our Process</span>
-      <h2 class="font-display font-bold text-3xl lg:text-5xl tracking-tight text-[var(--color-text)] mb-6 process-fade">
-        A process designed for impact
-      </h2>
-      <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed process-fade">
-        Every great launch follows a curve — from discovery to momentum. Drag the handles below to see how design changes the growth trajectory.
-      </p>
-    </div>
+<p class="text-lg lg:text-xl text-[var(--color-text-muted)] max-w-2xl process-title opacity-0 translate-y-8">
+  From strategy and creative direction to execution and launch, we craft digital experiences designed to capture attention and move people to act.
+</p>
+  </div>
 
-    <!-- Interactive Graph Editor -->
-    <div class="relative max-w-4xl mx-auto mb-20 process-graph-wrapper">
-      <div class="relative rounded-2xl border border-[var(--color-border)] bg-white overflow-hidden shadow-xl shadow-black/5">
-        <!-- Graph toolbar -->
-        <div class="flex items-center justify-between px-5 py-3 border-b border-[var(--color-border-light)] bg-[var(--color-bg-subtle)]/50">
-          <div class="flex items-center gap-3">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-400/80"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-green-400/80"></span>
+  <!-- Horizontal Scroll Container -->
+  <div class="process-scroll-container w-full h-[600px] relative">
+    
+    <!-- Sticky Track Container -->
+    <div class="sticky top-1/4 w-full overflow-hidden process-track-viewport">
+      
+      <!-- The long horizontal flex track -->
+      <div class="process-track flex items-start gap-8 lg:gap-16 px-6 lg:px-8 w-[250vw] md:w-[150vw] lg:w-[120vw]">
+        
+        {steps.map((step) => (
+          <div class="process-step-card flex-shrink-0 w-[85vw] md:w-[40vw] lg:w-[30vw] border-t-2 border-[var(--color-text-secondary)] pt-8 relative group opacity-40">
+            <!-- Active indicator line -->
+            <div class="absolute top-[-2px] left-0 h-[2px] bg-white w-0 group-[.is-active]:w-full transition-all duration-700 ease-out process-progress-line"></div>
+            
+            <div class="mb-8">
+              <span class="text-sm font-mono text-[var(--color-text-muted)] mb-4 block">Phase {step.phase}</span>
+              <h3 class="font-display font-bold text-2xl lg:text-3xl text-white group-[.is-active]:text-[var(--color-accent-light)] transition-colors duration-500">
+                {step.title}
+              </h3>
             </div>
-            <span class="text-[11px] font-medium text-[var(--color-text-muted)] tracking-wide uppercase ml-2">Growth Curve Editor</span>
+            
+            <ul class="space-y-4">
+              {step.items.map((item) => (
+                <li class="flex items-start gap-3 text-[var(--color-text-muted)] group-[.is-active]:text-gray-200 transition-colors duration-500">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-text-secondary)] group-[.is-active]:bg-[var(--color-accent)] transition-colors duration-500 flex-shrink-0"></span>
+                  <span class="text-base lg:text-lg leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div class="flex items-center gap-4">
-            <div class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"></span>
-              <span class="text-[11px] text-[var(--color-text-muted)]">Impact</span>
-            </div>
-            <div id="metric-display" class="px-3 py-1 rounded-md bg-[var(--color-accent-light)] border border-[var(--color-accent)]/10">
-              <span id="metric-value" class="text-xs font-semibold text-[var(--color-accent)] font-mono">+180%</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- SVG Graph -->
-        <div class="relative" style="padding-bottom: 45%;">
-          <svg id="graph-editor" class="absolute inset-0 w-full h-full" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid meet">
-            <!-- Background grid -->
-            <defs>
-              <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--color-border-light)" stroke-width="0.5"/>
-              </pattern>
-              <linearGradient id="graphGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.12"/>
-                <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0.01"/>
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-
-            <rect width="800" height="360" fill="url(#grid-pattern)" opacity="0.5"/>
-
-            <!-- Y-axis labels -->
-            <text x="20" y="50" font-size="9" font-family="Inter, sans-serif" fill="#999" text-anchor="start">High</text>
-            <text x="20" y="180" font-size="9" font-family="Inter, sans-serif" fill="#999" text-anchor="start">Mid</text>
-            <text x="20" y="320" font-size="9" font-family="Inter, sans-serif" fill="#999" text-anchor="start">Low</text>
-
-            <!-- X-axis labels (process steps) -->
-            <text x="120" y="350" font-size="10" font-family="Outfit, sans-serif" fill="#555" text-anchor="middle" font-weight="500">Discover</text>
-            <text x="310" y="350" font-size="10" font-family="Outfit, sans-serif" fill="#555" text-anchor="middle" font-weight="500">Design</text>
-            <text x="510" y="350" font-size="10" font-family="Outfit, sans-serif" fill="#555" text-anchor="middle" font-weight="500">Build</text>
-            <text x="700" y="350" font-size="10" font-family="Outfit, sans-serif" fill="#555" text-anchor="middle" font-weight="500">Launch</text>
-
-            <!-- Step indicator dots on x-axis -->
-            <circle cx="120" cy="335" r="3" fill="var(--color-accent)" opacity="0.3"/>
-            <circle cx="310" cy="335" r="3" fill="var(--color-accent)" opacity="0.3"/>
-            <circle cx="510" cy="335" r="3" fill="var(--color-accent)" opacity="0.3"/>
-            <circle cx="700" cy="335" r="3" fill="var(--color-accent)" opacity="0.3"/>
-
-            <!-- Area fill -->
-            <path id="area-fill" d="" fill="url(#graphGrad)"/>
-
-            <!-- Comparison baseline (dashed) -->
-            <path d="M60,280 Q200,260 400,240 T740,200" stroke="var(--color-text-muted)" stroke-width="1" stroke-dasharray="6 4" fill="none" opacity="0.3"/>
-            <text x="750" y="195" font-size="8" font-family="Inter, sans-serif" fill="#999">Baseline</text>
-
-            <!-- Main bezier curve -->
-            <path id="main-curve" d="" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glow)"/>
-
-            <!-- Control point handle lines -->
-            <line id="handle-line-1" stroke="var(--color-accent)" stroke-width="1" opacity="0.4" stroke-dasharray="4 3"/>
-            <line id="handle-line-2" stroke="var(--color-accent)" stroke-width="1" opacity="0.4" stroke-dasharray="4 3"/>
-
-            <!-- Start point -->
-            <circle id="point-start" cx="60" cy="280" r="5" fill="white" stroke="var(--color-text)" stroke-width="2"/>
-
-            <!-- Control point 1 (draggable) -->
-            <g id="cp1-group" class="cursor-grab active:cursor-grabbing">
-              <circle id="cp1-hit" cx="250" cy="180" r="20" fill="transparent"/>
-              <circle id="cp1" cx="250" cy="180" r="7" fill="var(--color-accent)" stroke="white" stroke-width="2.5" filter="url(#glow)"/>
-              <circle cx="250" cy="180" r="12" fill="none" stroke="var(--color-accent)" stroke-width="1" opacity="0.2" id="cp1-ring"/>
-            </g>
-
-            <!-- Control point 2 (draggable) -->
-            <g id="cp2-group" class="cursor-grab active:cursor-grabbing">
-              <circle id="cp2-hit" cx="550" cy="100" r="20" fill="transparent"/>
-              <circle id="cp2" cx="550" cy="100" r="7" fill="var(--color-accent)" stroke="white" stroke-width="2.5" filter="url(#glow)"/>
-              <circle cx="550" cy="100" r="12" fill="none" stroke="var(--color-accent)" stroke-width="1" opacity="0.2" id="cp2-ring"/>
-            </g>
-
-            <!-- End point -->
-            <circle id="point-end" cx="740" cy="60" r="5" fill="var(--color-accent)" stroke="white" stroke-width="2"/>
-
-            <!-- Tooltip for draggable points -->
-            <g id="tooltip" opacity="0">
-              <rect x="0" y="0" width="100" height="28" rx="6" fill="var(--color-text)" opacity="0.9"/>
-              <text id="tooltip-text" x="50" y="18" font-size="10" font-family="Inter, sans-serif" fill="white" text-anchor="middle" font-weight="500"></text>
-            </g>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Hint -->
-      <p class="text-center text-xs text-[var(--color-text-muted)] mt-4">↕ Drag the purple handles to reshape the growth curve</p>
-    </div>
-
-    <!-- Process Steps -->
-    <div class="grid md:grid-cols-4 gap-6 lg:gap-8">
-      <!-- Step 1 -->
-      <div class="process-step group text-center lg:text-left">
-        <div class="w-12 h-12 rounded-xl bg-[var(--color-accent-light)] border border-[var(--color-accent)]/10 flex items-center justify-center mb-5 mx-auto lg:mx-0 group-hover:bg-[var(--color-accent)] transition-all duration-500">
-          <svg class="w-5 h-5 text-[var(--color-accent)] group-hover:text-white transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
-          </svg>
-        </div>
-        <span class="text-xs font-semibold text-[var(--color-accent)] tracking-wider uppercase mb-2 block">Step 01</span>
-        <h3 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Discover</h3>
-        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">We dive deep into your brand, goals, audience, and competitive landscape to build the strategy foundation.</p>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="process-step group text-center lg:text-left">
-        <div class="w-12 h-12 rounded-xl bg-[var(--color-accent-light)] border border-[var(--color-accent)]/10 flex items-center justify-center mb-5 mx-auto lg:mx-0 group-hover:bg-[var(--color-accent)] transition-all duration-500">
-          <svg class="w-5 h-5 text-[var(--color-accent)] group-hover:text-white transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>
-          </svg>
-        </div>
-        <span class="text-xs font-semibold text-[var(--color-accent)] tracking-wider uppercase mb-2 block">Step 02</span>
-        <h3 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Design</h3>
-        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">We craft visual concepts, motion storyboards, and UI designs that align brand identity with business objectives.</p>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="process-step group text-center lg:text-left">
-        <div class="w-12 h-12 rounded-xl bg-[var(--color-accent-light)] border border-[var(--color-accent)]/10 flex items-center justify-center mb-5 mx-auto lg:mx-0 group-hover:bg-[var(--color-accent)] transition-all duration-500">
-          <svg class="w-5 h-5 text-[var(--color-accent)] group-hover:text-white transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
-          </svg>
-        </div>
-        <span class="text-xs font-semibold text-[var(--color-accent)] tracking-wider uppercase mb-2 block">Step 03</span>
-        <h3 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Build</h3>
-        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">We bring it all to life — producing videos, coding pages, and engineering seamless product experiences.</p>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="process-step group text-center lg:text-left">
-        <div class="w-12 h-12 rounded-xl bg-[var(--color-accent-light)] border border-[var(--color-accent)]/10 flex items-center justify-center mb-5 mx-auto lg:mx-0 group-hover:bg-[var(--color-accent)] transition-all duration-500">
-          <svg class="w-5 h-5 text-[var(--color-accent)] group-hover:text-white transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
-          </svg>
-        </div>
-        <span class="text-xs font-semibold text-[var(--color-accent)] tracking-wider uppercase mb-2 block">Step 04</span>
-        <h3 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Launch</h3>
-        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">We deploy, optimize, and ensure everything performs — turning your launch into a growth moment.</p>
+        ))}
+        
       </div>
     </div>
   </div>
+
 </section>
 
 <script>
@@ -183,158 +103,57 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   gsap.registerPlugin(ScrollTrigger);
 
-  // --- Interactive Graph Editor ---
-  const svg = document.getElementById('graph-editor') as SVGSVGElement | null;
-  const mainCurve = document.getElementById('main-curve') as SVGPathElement | null;
-  const areaFill = document.getElementById('area-fill') as SVGPathElement | null;
-  const handleLine1 = document.getElementById('handle-line-1') as SVGLineElement | null;
-  const handleLine2 = document.getElementById('handle-line-2') as SVGLineElement | null;
-  const cp1 = document.getElementById('cp1') as SVGCircleElement | null;
-  const cp1Hit = document.getElementById('cp1-hit') as SVGCircleElement | null;
-  const cp1Ring = document.getElementById('cp1-ring') as SVGCircleElement | null;
-  const cp2 = document.getElementById('cp2') as SVGCircleElement | null;
-  const cp2Hit = document.getElementById('cp2-hit') as SVGCircleElement | null;
-  const cp2Ring = document.getElementById('cp2-ring') as SVGCircleElement | null;
-  const metricValue = document.getElementById('metric-value');
-  const tooltip = document.getElementById('tooltip');
-  const tooltipText = document.getElementById('tooltip-text');
-
-  // Curve control points
-  let startX = 60, startY = 280;
-  let c1x = 250, c1y = 180;
-  let c2x = 550, c2y = 100;
-  let endX = 740, endY = 60;
-
-  function updateCurve() {
-    if (!mainCurve || !areaFill || !handleLine1 || !handleLine2 || !cp1 || !cp1Hit || !cp1Ring || !cp2 || !cp2Hit || !cp2Ring) return;
-
-    const d = `M${startX},${startY} C${c1x},${c1y} ${c2x},${c2y} ${endX},${endY}`;
-    mainCurve.setAttribute('d', d);
-    areaFill.setAttribute('d', `${d} L${endX},330 L${startX},330 Z`);
-
-    handleLine1.setAttribute('x1', String(startX));
-    handleLine1.setAttribute('y1', String(startY));
-    handleLine1.setAttribute('x2', String(c1x));
-    handleLine1.setAttribute('y2', String(c1y));
-
-    handleLine2.setAttribute('x1', String(c2x));
-    handleLine2.setAttribute('y1', String(c2y));
-    handleLine2.setAttribute('x2', String(endX));
-    handleLine2.setAttribute('y2', String(endY));
-
-    [cp1, cp1Hit, cp1Ring].forEach(el => {
-      el.setAttribute('cx', String(c1x));
-      el.setAttribute('cy', String(c1y));
-    });
-    [cp2, cp2Hit, cp2Ring].forEach(el => {
-      el.setAttribute('cx', String(c2x));
-      el.setAttribute('cy', String(c2y));
-    });
-
-    // Update metric
-    const avgHeight = (startY - c1y + startY - c2y + startY - endY) / 3;
-    const pct = Math.round((avgHeight / 280) * 350);
-    if (metricValue) metricValue.textContent = `+${Math.max(0, pct)}%`;
-  }
-
-  updateCurve();
-
-  // --- Drag logic ---
-  let dragging: 'cp1' | 'cp2' | null = null;
-
-  function getSVGCoords(e: MouseEvent | TouchEvent): { x: number; y: number } | null {
-    if (!svg) return null;
-    const pt = svg.createSVGPoint();
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-    pt.x = clientX;
-    pt.y = clientY;
-    const ctm = svg.getScreenCTM();
-    if (!ctm) return null;
-    const svgPt = pt.matrixTransform(ctm.inverse());
-    return { x: svgPt.x, y: svgPt.y };
-  }
-
-  function onPointerDown(which: 'cp1' | 'cp2') {
-    return (e: MouseEvent | TouchEvent) => {
-      e.preventDefault();
-      dragging = which;
-      document.body.style.userSelect = 'none';
-    };
-  }
-
-  cp1Hit?.addEventListener('mousedown', onPointerDown('cp1'));
-  cp1Hit?.addEventListener('touchstart', onPointerDown('cp1'), { passive: false });
-  cp2Hit?.addEventListener('mousedown', onPointerDown('cp2'));
-  cp2Hit?.addEventListener('touchstart', onPointerDown('cp2'), { passive: false });
-
-  function onPointerMove(e: MouseEvent | TouchEvent) {
-    if (!dragging) return;
-    const coords = getSVGCoords(e);
-    if (!coords) return;
-
-    const clampedY = Math.max(30, Math.min(300, coords.y));
-
-    if (dragging === 'cp1') {
-      c1x = Math.max(100, Math.min(400, coords.x));
-      c1y = clampedY;
-    } else {
-      c2x = Math.max(400, Math.min(700, coords.x));
-      c2y = clampedY;
-    }
-
-    updateCurve();
-
-    // Show tooltip
-    if (tooltip && tooltipText) {
-      const tx = dragging === 'cp1' ? c1x : c2x;
-      const ty = (dragging === 'cp1' ? c1y : c2y) - 25;
-      tooltip.setAttribute('opacity', '1');
-      const rect = tooltip.querySelector('rect');
-      if (rect) {
-        rect.setAttribute('x', String(tx - 50));
-        rect.setAttribute('y', String(ty - 14));
-      }
-      tooltipText.setAttribute('x', String(tx));
-      tooltipText.setAttribute('y', String(ty + 4));
-      tooltipText.textContent = dragging === 'cp1' ? 'Design Impact' : 'Build Quality';
-    }
-  }
-
-  function onPointerUp() {
-    if (dragging && tooltip) {
-      gsap.to(tooltip, { attr: { opacity: 0 }, duration: 0.3 });
-    }
-    dragging = null;
-    document.body.style.userSelect = '';
-  }
-
-  document.addEventListener('mousemove', onPointerMove);
-  document.addEventListener('touchmove', onPointerMove, { passive: false });
-  document.addEventListener('mouseup', onPointerUp);
-  document.addEventListener('touchend', onPointerUp);
-
-  // --- GSAP animations ---
   requestAnimationFrame(() => {
-    gsap.from('.process-fade', {
-      scrollTrigger: { trigger: '#process', start: 'top 75%', toggleActions: 'play none none none', once: true },
-      opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out', clearProps: 'all'
+    // Header setup
+    gsap.to('.process-title', {
+      scrollTrigger: { trigger: '#process', start: 'top 75%', once: true },
+      opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: 'power3.out'
     });
 
-    gsap.from('.process-graph-wrapper', {
-      scrollTrigger: { trigger: '.process-graph-wrapper', start: 'top 85%', toggleActions: 'play none none none', once: true },
-      opacity: 0, y: 40, duration: 1, ease: 'power3.out', clearProps: 'all'
+    const container = document.querySelector('.process-scroll-container') as HTMLElement;
+    const track = document.querySelector('.process-track') as HTMLElement;
+    const cards = gsap.utils.toArray('.process-step-card') as HTMLElement[];
+
+    if (!container || !track || cards.length === 0) return;
+
+    // Calculate total scroll distance based on track width vs viewport width
+    const scrollDist = track.scrollWidth - window.innerWidth;
+
+    // Pin the container and translate the track horizontally
+    // GSAP handles horizontal scrolling inside a vertical scroll naturally
+    let scrollTween = gsap.to(track, {
+      x: -scrollDist,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        scrub: 0.5,
+        start: 'center center',
+        end: `+=${scrollDist}`,
+        onUpdate: (self) => {
+          // Calculate which card is currently "active" based on progress
+          // 1.0 progress means the end of the track is reached
+          
+          let activeIndex = Math.floor(self.progress * cards.length);
+          if (activeIndex >= cards.length) activeIndex = cards.length - 1;
+          
+          cards.forEach((card, idx) => {
+             if(idx === activeIndex) {
+               card.classList.add('is-active', 'opacity-100');
+               card.classList.remove('opacity-40');
+             } else {
+               card.classList.remove('is-active', 'opacity-100');
+               card.classList.add('opacity-40');
+             }
+          });
+        }
+      }
     });
-
-    gsap.from('.process-step', {
-      scrollTrigger: { trigger: '.process-step', start: 'top 90%', toggleActions: 'play none none none', once: true },
-      opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out', clearProps: 'all'
-    });
-
-    // Idle pulse on control points
-    gsap.to('#cp1-ring', { attr: { r: 16 }, opacity: 0.1, duration: 1.5, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    gsap.to('#cp2-ring', { attr: { r: 16 }, opacity: 0.1, duration: 1.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.5 });
-
-    ScrollTrigger.refresh();
+    
+    // Set initial state
+    if(cards[0]) {
+       cards[0].classList.add('is-active', 'opacity-100');
+       cards[0].classList.remove('opacity-40');
+    }
   });
 </script>
