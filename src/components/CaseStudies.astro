@@ -1,0 +1,113 @@
+---
+const caseStudies = [
+  {
+    title: 'Meridian Finance',
+    category: 'Launch Video',
+    result: '3.2M views in first week',
+    gradient: 'from-violet-100 via-indigo-50 to-purple-100',
+    accent: '#7C3AED'
+  },
+  {
+    title: 'Aura Health',
+    category: 'Landing Page',
+    result: '340% conversion increase',
+    gradient: 'from-sky-100 via-cyan-50 to-blue-100',
+    accent: '#0EA5E9'
+  },
+  {
+    title: 'Nex Robotics',
+    category: 'Web Development',
+    result: '2x engagement rate',
+    gradient: 'from-emerald-100 via-teal-50 to-green-100',
+    accent: '#10B981'
+  },
+  {
+    title: 'Pulse AI',
+    category: 'Launch Video',
+    result: '$1.2M launch revenue',
+    gradient: 'from-amber-100 via-orange-50 to-yellow-100',
+    accent: '#F59E0B'
+  },
+  {
+    title: 'Forma Studio',
+    category: 'Landing Page',
+    result: '89% reduction in bounce rate',
+    gradient: 'from-rose-100 via-pink-50 to-red-100',
+    accent: '#F43F5E'
+  },
+  {
+    title: 'Zenith Labs',
+    category: 'Web Development',
+    result: '4.8s → 0.9s load time',
+    gradient: 'from-slate-100 via-gray-50 to-zinc-100',
+    accent: '#64748B'
+  }
+];
+---
+
+<section id="case-studies" class="relative py-24 lg:py-32 bg-white">
+  <!-- Top border -->
+  <div class="absolute top-0 left-6 right-6 lg:left-8 lg:right-8 h-px bg-[var(--color-border)]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 lg:mb-20">
+      <div class="max-w-2xl">
+        <span class="inline-block text-xs font-semibold tracking-widest uppercase text-[var(--color-accent)] mb-4 cs-fade">Selected Work</span>
+        <h2 class="font-display font-bold text-3xl lg:text-5xl tracking-tight text-[var(--color-text)] cs-fade">
+          Launches that moved the needle
+        </h2>
+      </div>
+      <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors duration-300 cs-fade">
+        View all projects
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- Case study grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {caseStudies.map((study) => (
+        <div class="cs-card group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] overflow-hidden hover:border-[var(--color-text-muted)]/30 transition-all duration-500 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 cursor-pointer">
+          {/* Abstract thumbnail */}
+          <div class={`relative h-44 overflow-hidden bg-gradient-to-br ${study.gradient}`}>
+            {/* Abstract decorative shapes */}
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="relative">
+                <div class="w-24 h-24 rounded-2xl border-2 opacity-20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700" style={`border-color: ${study.accent}`}></div>
+                <div class="absolute top-3 left-3 w-24 h-24 rounded-2xl border-2 opacity-10 group-hover:scale-105 group-hover:-rotate-3 transition-all duration-700" style={`border-color: ${study.accent}`}></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" style={`background-color: ${study.accent}`}></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold tracking-wide uppercase border" style={`color: ${study.accent}; border-color: ${study.accent}20; background-color: ${study.accent}08`}>
+                {study.category}
+              </span>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2 group-hover:text-[var(--color-accent)] transition-colors duration-300">{study.title}</h3>
+            <p class="text-sm text-[var(--color-text-secondary)]">{study.result}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.cs-fade', {
+    scrollTrigger: { trigger: '#case-studies', start: 'top 75%', toggleActions: 'play none none none' },
+    opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out'
+  });
+
+  gsap.from('.cs-card', {
+    scrollTrigger: { trigger: '.cs-card', start: 'top 85%', toggleActions: 'play none none none' },
+    opacity: 0, y: 40, duration: 0.8, stagger: 0.1, ease: 'power3.out'
+  });
+</script>

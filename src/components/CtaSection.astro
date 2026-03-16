@@ -1,0 +1,42 @@
+---
+---
+
+<section id="cta" class="relative py-24 lg:py-32">
+  <!-- Top border -->
+  <div class="absolute top-0 left-6 right-6 lg:left-8 lg:right-8 h-px bg-[var(--color-border)]"></div>
+
+  <!-- Background subtle gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-accent-light)]/30 to-transparent"></div>
+
+  <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+    <!-- Decorative accent dot -->
+    <div class="w-3 h-3 rounded-full bg-[var(--color-accent)] mx-auto mb-8 cta-fade"></div>
+
+    <h2 class="font-display font-bold text-4xl lg:text-6xl tracking-tight text-[var(--color-text)] mb-6 cta-fade">
+      Let's build your next launch.
+    </h2>
+
+    <p class="text-lg lg:text-xl text-[var(--color-text-secondary)] leading-relaxed max-w-2xl mx-auto mb-10 cta-fade">
+      We help ambitious brands combine strategy, motion, design, and development into launch experiences that drive results.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 cta-fade">
+      <a href="#" class="inline-flex items-center gap-2.5 px-8 py-4 text-base font-semibold text-white bg-[var(--color-text)] rounded-full hover:bg-[var(--color-accent)] transition-all duration-300 shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/15 hover:-translate-y-0.5">
+        Start a Project
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <span class="text-sm text-[var(--color-text-muted)]">No commitment required</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.cta-fade', {
+    scrollTrigger: { trigger: '#cta', start: 'top 75%', toggleActions: 'play none none none' },
+    opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out'
+  });
+</script>

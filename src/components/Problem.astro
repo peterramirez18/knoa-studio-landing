@@ -1,0 +1,69 @@
+---
+---
+
+<section id="problem" class="relative py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-[var(--color-accent)] mb-4 problem-fade">The Problem</span>
+      <h2 class="font-display font-bold text-3xl lg:text-5xl tracking-tight text-[var(--color-text)] mb-6 problem-fade">
+        Most brands struggle to communicate their value fast enough
+      </h2>
+      <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed problem-fade">
+        In a crowded market, unclear messaging and disconnected experiences cost you attention — and revenue.
+      </p>
+    </div>
+
+    <!-- Problem cards -->
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Card 1 -->
+      <div class="problem-card group relative p-8 lg:p-10 rounded-2xl border border-[var(--color-border)] bg-white hover:border-[var(--color-text-muted)]/30 transition-all duration-500 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-[var(--color-bg-subtle)] border border-[var(--color-border-light)] flex items-center justify-center mb-6 group-hover:bg-[var(--color-accent-light)] group-hover:border-[var(--color-accent)]/20 transition-all duration-500">
+          <svg class="w-5 h-5 text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+          </svg>
+        </div>
+        <h3 class="font-display font-semibold text-lg text-[var(--color-text)] mb-3">Generic launch videos don't create impact</h3>
+        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">Template-driven content fades into the noise. Your product deserves a visual story that captures attention in seconds.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="problem-card group relative p-8 lg:p-10 rounded-2xl border border-[var(--color-border)] bg-white hover:border-[var(--color-text-muted)]/30 transition-all duration-500 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-[var(--color-bg-subtle)] border border-[var(--color-border-light)] flex items-center justify-center mb-6 group-hover:bg-[var(--color-accent-light)] group-hover:border-[var(--color-accent)]/20 transition-all duration-500">
+          <svg class="w-5 h-5 text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 8.25V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V8.25m-18 0V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6zM7.5 6h.008v.008H7.5V6zm2.25 0h.008v.008H9.75V6z" />
+          </svg>
+        </div>
+        <h3 class="font-display font-semibold text-lg text-[var(--color-text)] mb-3">Landing pages look good but don't convert</h3>
+        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">Beautiful pages without strategic structure and clear messaging fail to move visitors toward action.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="problem-card group relative p-8 lg:p-10 rounded-2xl border border-[var(--color-border)] bg-white hover:border-[var(--color-text-muted)]/30 transition-all duration-500 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-[var(--color-bg-subtle)] border border-[var(--color-border-light)] flex items-center justify-center mb-6 group-hover:bg-[var(--color-accent-light)] group-hover:border-[var(--color-accent)]/20 transition-all duration-500">
+          <svg class="w-5 h-5 text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+          </svg>
+        </div>
+        <h3 class="font-display font-semibold text-lg text-[var(--color-text)] mb-3">Design and tech are disconnected</h3>
+        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">When motion, design, and development live in silos, the final product experience suffers — and so does growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.problem-fade', {
+    scrollTrigger: { trigger: '#problem', start: 'top 80%', toggleActions: 'play none none none' },
+    opacity: 0, y: 30, duration: 0.8, stagger: 0.15, ease: 'power3.out'
+  });
+
+  gsap.from('.problem-card', {
+    scrollTrigger: { trigger: '.problem-card', start: 'top 85%', toggleActions: 'play none none none' },
+    opacity: 0, y: 40, duration: 0.8, stagger: 0.15, ease: 'power3.out'
+  });
+</script>
