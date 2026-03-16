@@ -146,21 +146,23 @@
   import gsap from 'gsap';
 
   // Hero entrance animations
-  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  requestAnimationFrame(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out', clearProps: 'all' } });
 
-  tl.from('.hero-badge', { opacity: 0, y: 20, duration: 0.8, delay: 0.2 })
-    .from('.hero-title', { opacity: 0, y: 30, duration: 1 }, '-=0.5')
-    .from('.hero-underline', { strokeDasharray: '0 200', duration: 1.2, ease: 'power2.inOut' }, '-=0.5')
-    .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.8 }, '-=0.7')
-    .from('.hero-ctas', { opacity: 0, y: 20, duration: 0.8 }, '-=0.5')
-    .from('.hero-visual', { opacity: 0, scale: 0.95, duration: 1.2, ease: 'power2.out' }, '-=0.8')
-    .to('.hero-label', { opacity: 1, duration: 0.6, stagger: 0.2 }, '-=0.4')
-    .to('.hero-particle', {
-      opacity: 0.5,
-      duration: 0.4,
-      stagger: 0.15,
-      repeat: -1,
-      yoyo: true,
-      repeatDelay: 2
-    }, '-=0.2');
+    tl.from('.hero-badge', { opacity: 0, y: 20, duration: 0.8, delay: 0.2 })
+      .from('.hero-title', { opacity: 0, y: 30, duration: 1 }, '-=0.5')
+      .from('.hero-underline', { strokeDasharray: '0 200', duration: 1.2, ease: 'power2.inOut' }, '-=0.5')
+      .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.8 }, '-=0.7')
+      .from('.hero-ctas', { opacity: 0, y: 20, duration: 0.8 }, '-=0.5')
+      .from('.hero-visual', { opacity: 0, scale: 0.95, duration: 1.2, ease: 'power2.out' }, '-=0.8')
+      .to('.hero-label', { opacity: 1, duration: 0.6, stagger: 0.2 }, '-=0.4')
+      .to('.hero-particle', {
+        opacity: 0.5,
+        duration: 0.4,
+        stagger: 0.15,
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: 2
+      }, '-=0.2');
+  });
 </script>

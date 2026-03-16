@@ -315,22 +315,26 @@
   document.addEventListener('touchend', onPointerUp);
 
   // --- GSAP animations ---
-  gsap.from('.process-fade', {
-    scrollTrigger: { trigger: '#process', start: 'top 75%', toggleActions: 'play none none none' },
-    opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out'
-  });
+  requestAnimationFrame(() => {
+    gsap.from('.process-fade', {
+      scrollTrigger: { trigger: '#process', start: 'top 75%', toggleActions: 'play none none none', once: true },
+      opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out', clearProps: 'all'
+    });
 
-  gsap.from('.process-graph-wrapper', {
-    scrollTrigger: { trigger: '.process-graph-wrapper', start: 'top 85%', toggleActions: 'play none none none' },
-    opacity: 0, y: 40, duration: 1, ease: 'power3.out'
-  });
+    gsap.from('.process-graph-wrapper', {
+      scrollTrigger: { trigger: '.process-graph-wrapper', start: 'top 85%', toggleActions: 'play none none none', once: true },
+      opacity: 0, y: 40, duration: 1, ease: 'power3.out', clearProps: 'all'
+    });
 
-  gsap.from('.process-step', {
-    scrollTrigger: { trigger: '.process-step', start: 'top 90%', toggleActions: 'play none none none' },
-    opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out'
-  });
+    gsap.from('.process-step', {
+      scrollTrigger: { trigger: '.process-step', start: 'top 90%', toggleActions: 'play none none none', once: true },
+      opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out', clearProps: 'all'
+    });
 
-  // Idle pulse on control points
-  gsap.to('#cp1-ring', { attr: { r: 16 }, opacity: 0.1, duration: 1.5, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-  gsap.to('#cp2-ring', { attr: { r: 16 }, opacity: 0.1, duration: 1.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.5 });
+    // Idle pulse on control points
+    gsap.to('#cp1-ring', { attr: { r: 16 }, opacity: 0.1, duration: 1.5, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    gsap.to('#cp2-ring', { attr: { r: 16 }, opacity: 0.1, duration: 1.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.5 });
+
+    ScrollTrigger.refresh();
+  });
 </script>
