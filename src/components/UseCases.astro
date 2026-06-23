@@ -28,7 +28,7 @@ const cases = t.useCases.items;
                 </h3>
                 <div class="w-10 h-10 rounded-full border border-[var(--color-border)] flex items-center justify-center transition-all duration-300 group-hover:border-[var(--color-accent)] group-hover:rotate-180 uc-icon relative pointer-events-none">
                   <span class="w-4 h-px bg-current absolute"></span>
-                  <span class="w-px h-4 bg-current absolute uc-icon-v transition-transform duration-300"></span>
+                  <span class="w-px h-4 bg-current absolute uc-icon-v origin-center transition-transform duration-300"></span>
                 </div>
               </div>
 
@@ -46,11 +46,7 @@ const cases = t.useCases.items;
     </div>
   </div>
 </section>
-
-<style>
-  .uc-accordion-item.is-open .uc-icon-v { transform: scaleY(0); }
-</style>
-
+`r`n
 <script>
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';

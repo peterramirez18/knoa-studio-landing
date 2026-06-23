@@ -45,14 +45,6 @@ const { t } = Astro.props;
   </div>
 </section>
 
-<style>
-  .animate-pulse-slow { animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.05); }
-  }
-</style>
-
 <script>
   import gsap from "gsap";
 

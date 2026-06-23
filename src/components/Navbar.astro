@@ -35,25 +35,17 @@ const homeHref = locale === "es" ? "/es/" : "/";
     </div>
   </div>
 
-  <div id="mobile-menu-overlay" class="fixed inset-0 bg-[var(--color-bg)] z-40 translate-y-[-100%] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] flex flex-col">
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-[var(--color-bg)] z-40 -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] flex flex-col">
     <div class="flex-1 flex flex-col items-center justify-center gap-8 px-6 pt-20">
       <a href="#about" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-100">{t.nav.about}</a>
       <a href="#case-studies" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-150">{t.nav.work}</a>
       <a href="#services" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-200">{t.nav.services}</a>
       <a href="#process" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-250">{t.nav.process}</a>
-      <div class="h-px w-16 bg-[var(--color-border)] my-4 opacity-0 scale-x-0 transition-all duration-500 delay-300 separator"></div>
+      <div class="separator h-px w-16 bg-[var(--color-border)] my-4 opacity-0 scale-x-0 transition-all duration-500 delay-300"></div>
       <a href="#cta" class="mobile-link text-xl font-medium text-[var(--color-accent)] opacity-0 translate-y-8 transition-all duration-500 delay-300">{t.nav.cta}</a>
     </div>
   </div>
 </nav>
-
-<style>
-  .menu-open #menu-line-1 { transform: translateY(4px) rotate(45deg); }
-  .menu-open #menu-line-2 { transform: translateY(-4px) rotate(-45deg); }
-  .menu-open #mobile-menu-overlay { transform: translateY(0); }
-  .menu-open .mobile-link { opacity: 1 !important; transform: translateY(0) !important; }
-  .menu-open .separator { opacity: 1 !important; transform: scaleX(1) !important; }
-</style>
 
 <script>
   const navbar = document.getElementById("navbar");
@@ -72,20 +64,35 @@ const homeHref = locale === "es" ? "/es/" : "/";
   }
 
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const overlay = document.getElementById("mobile-menu-overlay");
+  const line1 = document.getElementById("menu-line-1");
+  const line2 = document.getElementById("menu-line-2");
   const body = document.body;
+  const links = document.querySelectorAll(".mobile-link");
+  const separator = document.querySelector(".separator");
   let isOpen = false;
 
-  function toggleMenu() {
-    isOpen = !isOpen;
-    if (isOpen) body.classList.add("menu-open", "overflow-hidden");
-    else body.classList.remove("menu-open", "overflow-hidden");
+  function setMenuState(open: boolean) {
+    isOpen = open;
+    body.classList.toggle("overflow-hidden", open);
+    overlay?.classList.toggle("translate-y-0", open);
+    overlay?.classList.toggle("-translate-y-full", !open);
+    line1?.classList.toggle("translate-y-1", open);
+    line1?.classList.toggle("rotate-45", open);
+    line2?.classList.toggle("-translate-y-1", open);
+    line2?.classList.toggle("-rotate-45", open);
+    separator?.classList.toggle("opacity-100", open);
+    separator?.classList.toggle("scale-x-100", open);
+    separator?.classList.toggle("opacity-0", !open);
+    separator?.classList.toggle("scale-x-0", !open);
+    links.forEach((link) => {
+      link.classList.toggle("opacity-100", open);
+      link.classList.toggle("translate-y-0", open);
+      link.classList.toggle("opacity-0", !open);
+      link.classList.toggle("translate-y-8", !open);
+    });
   }
 
-  mobileMenuBtn?.addEventListener("click", toggleMenu);
-
-  document.querySelectorAll(".mobile-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (isOpen) toggleMenu();
-    });
-  });
+  mobileMenuBtn?.addEventListener("click", () => setMenuState(!isOpen));
+  links.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
 </script>

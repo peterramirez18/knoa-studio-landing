@@ -18,27 +18,56 @@ const projectNumbers = {
 };
 const projects = t.work.projects;
 const billing = t.work.billing;
+const projectNumberClass =
+  "font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-9 max-[900px]:mb-6";
+const projectTitleClass =
+  "font-display text-[clamp(2.2rem,4vw,4rem)] leading-[0.95] tracking-[-0.04em] font-semibold mb-4";
+const projectTypeClass = "text-[#555] text-base leading-[1.3]";
+const projectDescriptionClass =
+  "max-w-[28rem] text-[#666] leading-[1.55] mt-auto pt-8 max-[900px]:mt-0";
+const projectCopyClass =
+  "px-1 pt-6 pb-6 flex flex-col items-start max-[900px]:px-2 max-[900px]:py-10";
+const visualClass =
+  "min-h-[31rem] relative overflow-hidden rounded-lg max-[600px]:min-h-96";
+const imageClass =
+  "h-full w-full object-cover rounded-md shadow-[0_1.5rem_4rem_rgba(28,50,80,0.16)]";
 ---
 
-<section id="case-studies" class="work-section">
-  <div class="work-shell">
-    <header class="work-heading cs-reveal">
-      <h2>{t.work.title}</h2>
-      <span class="heading-line" aria-hidden="true"></span>
-      <p>{t.work.subtitle}</p>
+<section
+  id="case-studies"
+  class="bg-[#f5f5f3] px-6 pt-28 pb-36 overflow-hidden max-[600px]:px-4 max-[600px]:pt-20 max-[600px]:pb-24"
+>
+  <div class="max-w-7xl mx-auto">
+    <header
+      class="cs-reveal grid grid-cols-[minmax(0,1fr)_5rem_minmax(15rem,22rem)] items-center gap-8 mb-24 max-[900px]:grid-cols-1 max-[900px]:gap-6 max-[600px]:mb-16"
+    >
+      <h2
+        class="font-display text-[clamp(4rem,8vw,7.5rem)] leading-[0.86] tracking-[-0.065em] font-bold max-[600px]:text-[3.8rem]"
+      >
+        {t.work.title}
+      </h2>
+      <span class="h-px bg-[#a9a9a5] max-[900px]:w-20" aria-hidden="true"
+      ></span>
+      <p class="text-[1.05rem] leading-[1.35] max-w-[22rem]">
+        {t.work.subtitle}
+      </p>
     </header>
 
-    <div class="work-list">
-      <article class="project project-split cs-reveal">
-        <div class="project-copy">
-          <span class="project-number">{projectNumbers.minqik}</span>
-          <h3>{projects.minqik.title}</h3>
-          <p class="project-type">
+    <div class="border-t border-[#dcdcd7]">
+      <article
+        class="cs-reveal grid grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.8fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch border-b border-[#dcdcd7] max-[900px]:grid-cols-1"
+      >
+        <div class={projectCopyClass}>
+          <span class={projectNumberClass}>{projectNumbers.minqik}</span>
+          <h3 class={projectTitleClass}>{projects.minqik.title}</h3>
+          <p class={projectTypeClass}>
             {projects.minqik.category}<br />{projects.minqik.discipline}
           </p>
-          <p class="project-description">{projects.minqik.description}</p>
+          <p class={projectDescriptionClass}>{projects.minqik.description}</p>
         </div>
-        <div class="project-visual minqik-visual">
+        <div
+          class={`${visualClass} bg-[#dcd6ff] flex items-center justify-center max-[600px]:p-3`}
+        >
           <img
             src={minqikImage.src}
             width={minqikImage.width}
@@ -46,12 +75,17 @@ const billing = t.work.billing;
             alt={projects.minqik.title}
             loading="lazy"
             decoding="async"
+            class={imageClass}
           />
         </div>
       </article>
 
-      <article class="project project-split project-reverse cs-reveal">
-        <div class="project-visual papp-visual">
+      <article
+        class="cs-reveal grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch border-b border-[#dcdcd7] max-[900px]:grid-cols-1"
+      >
+        <div
+          class={`${visualClass} bg-[#eeeee9] flex items-center justify-center max-[900px]:order-2 max-[600px]:p-3`}
+        >
           <img
             src={parqueameImage.src}
             width={parqueameImage.width}
@@ -59,1010 +93,289 @@ const billing = t.work.billing;
             alt={projects.papp.title}
             loading="lazy"
             decoding="async"
+            class={imageClass}
           />
         </div>
-        <div class="project-copy">
-          <span class="project-number">{projectNumbers.papp}</span>
-          <h3>{projects.papp.title}</h3>
-          <p class="project-type">
+        <div class={`${projectCopyClass} max-[900px]:order-1`}>
+          <span class={projectNumberClass}>{projectNumbers.papp}</span>
+          <h3 class={projectTitleClass}>{projects.papp.title}</h3>
+          <p class={projectTypeClass}>
             {projects.papp.category}<br />{projects.papp.discipline}
           </p>
-          <p class="project-description">{projects.papp.description}</p>
+          <p class={projectDescriptionClass}>{projects.papp.description}</p>
         </div>
       </article>
 
-      <article class="project project-dark cs-reveal">
-        <div class="project-copy">
-          <span class="project-number">{projectNumbers.coopcibao}</span>
-          <h3>{projects.coopcibao.title}</h3>
-          <p class="project-type">
+      <article
+        class="cs-reveal my-5 min-h-[31rem] grid grid-cols-[minmax(16rem,0.62fr)_1.5fr] bg-[#101010] text-white rounded-lg overflow-hidden max-[900px]:grid-cols-1 max-[600px]:-mx-4 max-[600px]:rounded-none"
+      >
+        <div
+          class="p-12 flex flex-col items-start max-[600px]:px-6 max-[600px]:py-10"
+        >
+          <span class={projectNumberClass}>{projectNumbers.coopcibao}</span>
+          <h3 class={projectTitleClass}>{projects.coopcibao.title}</h3>
+          <p class="text-[#aaa] text-base leading-[1.3]">
             {projects.coopcibao.category}<br />{projects.coopcibao.discipline}
           </p>
-          <p class="project-description">{projects.coopcibao.description}</p>
+          <p class="max-w-[28rem] text-[#aaa] leading-[1.55] mt-auto pt-8">
+            {projects.coopcibao.description}
+          </p>
         </div>
-        <div class="coop-art" aria-hidden="true">
-          <div class="coop-arc"></div><div class="coop-circle"></div><div
-            class="coop-square"
+        <div
+          class="relative overflow-hidden border-l border-[#444] max-[900px]:min-h-[25rem] max-[900px]:border-l-0 max-[900px]:border-t max-[900px]:border-[#444]"
+          aria-hidden="true"
+        >
+          <div
+            class="absolute size-[25rem] border-[5rem] border-[#2f9b69] rounded-full left-[20%] top-[14%]"
           >
           </div>
-          <div class="coop-lines"></div><div class="coop-mark">C</div>
+          <div
+            class="absolute size-44 rounded-full bg-[#f0eadb] left-[10%] bottom-[9%] border-[1rem] border-double border-[#111]"
+          >
+          </div>
+          <div class="absolute size-28 bg-[#f4eee4] left-[15%] top-[10%]"></div>
+          <div
+            class="absolute w-60 h-40 right-12 bottom-12 bg-[repeating-linear-gradient(90deg,#e8e3d1_0_2px,transparent_2px_7px)] [clip-path:polygon(0_0,100%_40%,100%_100%,0_70%)]"
+          >
+          </div>
+          <div
+            class="absolute right-[15%] top-[12%] font-display text-9xl font-bold text-[#2f9b69] mix-blend-screen"
+          >
+            C
+          </div>
         </div>
       </article>
 
-      <div class="project-duo">
-        <article class="project project-mini cs-reveal">
-          <div class="project-copy">
-            <span class="project-number">{projectNumbers.kulkul}</span>
-            <h3>{projects.kulkul.title}</h3>
-            <p class="project-type">
+      <div
+        class="grid grid-cols-2 border-b border-[#dcdcd7] max-[900px]:grid-cols-1"
+      >
+        <article
+          class="cs-reveal p-10 pb-12 border-r border-[#dcdcd7] max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-[#dcdcd7] max-[600px]:px-0"
+        >
+          <div class="flex flex-col items-start">
+            <span
+              class="font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-6"
+              >{projectNumbers.kulkul}</span
+            >
+            <h3
+              class="font-display text-[clamp(2.2rem,3.5vw,3.6rem)] leading-[0.95] tracking-[-0.04em] font-semibold mb-4"
+            >
+              {projects.kulkul.title}
+            </h3>
+            <p class={projectTypeClass}>
               {projects.kulkul.category} / {projects.kulkul.discipline}
             </p>
           </div>
-          <div class="kul-art" aria-hidden="true">
-            <i class="leaf-one"></i><i class="leaf-two"></i><i class="sun"
-            ></i><i class="waves"></i><i class="dots"></i>
+          <div
+            class="h-80 my-8 relative overflow-hidden rounded-md bg-[#eee9df]"
+            aria-hidden="true"
+          >
+            <i
+              class="absolute w-48 h-28 rounded-[100%_0_100%_0] -rotate-[30deg] bg-[#ef4f35] left-[14%] top-[12%]"
+            ></i>
+            <i
+              class="absolute w-48 h-28 rounded-[100%_0_100%_0] -rotate-[30deg] bg-[#357c54] left-[34%] top-[28%]"
+            ></i>
+            <i
+              class="absolute size-20 rounded-full bg-[#d9c19d] right-[10%] bottom-[12%]"
+            ></i>
+            <i
+              class="absolute left-[8%] bottom-[14%] w-36 h-16 bg-[repeating-radial-gradient(ellipse_at_50%_100%,transparent_0_10px,#111_11px_12px,transparent_13px_20px)]"
+            ></i>
+            <i
+              class="absolute right-[12%] top-[12%] size-20 bg-[radial-gradient(#111_1.5px,transparent_2px)] bg-[length:14px_14px]"
+            ></i>
           </div>
-          <p class="project-description">{projects.kulkul.description}</p>
+          <p class="max-w-[28rem] text-[#666] leading-[1.55]">
+            {projects.kulkul.description}
+          </p>
         </article>
-        <article class="project project-mini cs-reveal">
-          <div class="project-copy">
-            <span class="project-number">{projectNumbers.lda}</span>
-            <h3>{projects.lda.title}</h3>
-            <p class="project-type">
+
+        <article class="cs-reveal p-10 pb-12 max-[600px]:px-0">
+          <div class="flex flex-col items-start">
+            <span
+              class="font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-6"
+              >{projectNumbers.lda}</span
+            >
+            <h3
+              class="font-display text-[clamp(2.2rem,3.5vw,3.6rem)] leading-[0.95] tracking-[-0.04em] font-semibold mb-4"
+            >
+              {projects.lda.title}
+            </h3>
+            <p class={projectTypeClass}>
               {projects.lda.category} / {projects.lda.discipline}
             </p>
           </div>
-          <div class="football-art" aria-hidden="true">
-            <div class="field-line center"></div><div
-              class="field-line box-left"
+          <div
+            class="h-80 my-8 relative overflow-hidden rounded-md bg-[#111]"
+            aria-hidden="true"
+          >
+            <div
+              class="absolute left-1/2 top-0 h-full w-px border border-[#eee]"
             >
-            </div><div class="field-line box-right"></div>
-            <i class="ball ball-a"></i><i class="ball ball-b"></i><i
-              class="ball ball-c"></i><svg viewBox="0 0 300 180"
-              ><path d="M48 132 C92 112 102 52 154 78 S218 124 254 38"
+              <span
+                class="absolute top-1/2 left-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#eee]"
+              ></span>
+            </div>
+            <div
+              class="absolute left-0 top-1/4 w-[24%] h-1/2 border border-[#eee]"
+            >
+            </div>
+            <div
+              class="absolute right-0 top-1/4 w-[24%] h-1/2 border border-[#eee]"
+            >
+            </div>
+            <i
+              class="absolute left-[18%] bottom-[24%] size-3 rounded-full bg-[#f8543b] border-2 border-white z-[2]"
+            ></i>
+            <i
+              class="absolute left-[52%] top-[38%] size-3 rounded-full bg-[#f8543b] border-2 border-white z-[2]"
+            ></i>
+            <i
+              class="absolute right-[16%] top-[18%] size-3 rounded-full bg-[#f8543b] border-2 border-white z-[2]"
+            ></i>
+            <svg viewBox="0 0 300 180" class="absolute inset-0 size-full"
+              ><path
+                d="M48 132 C92 112 102 52 154 78 S218 124 254 38"
+                class="fill-none stroke-[#f8543b] stroke-[3] [stroke-dasharray:8_6]"
               ></path></svg
             >
           </div>
-          <p class="project-description">{projects.lda.description}</p>
+          <p class="max-w-[28rem] text-[#666] leading-[1.55]">
+            {projects.lda.description}
+          </p>
         </article>
       </div>
 
-      <article class="project project-split project-reverse cs-reveal">
-        <div class="project-visual bci-visual" aria-hidden="true">
-          <div class="browser-bar">
-            <i></i><i></i><i></i><b>BCI</b><span>Vehicles</span><span
-              >About</span
-            ><span>Contact</span>
+      <article
+        class="cs-reveal grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch border-b border-[#dcdcd7] max-[900px]:grid-cols-1"
+      >
+        <div
+          class={`${visualClass} bg-white border border-[#ddd] max-[900px]:order-2`}
+          aria-hidden="true"
+        >
+          <div
+            class="h-14 border-b border-[#ddd] flex items-center gap-3 px-5 text-[0.65rem]"
+          >
+            <i class="size-2 rounded-full bg-[#f8543b]"></i><i
+              class="size-2 rounded-full bg-[#f4bb42]"></i><i
+              class="size-2 rounded-full bg-[#47b976]"></i><b
+              class="text-base ml-4 mr-auto">BCI</b
+            ><span class="ml-4 max-[600px]:hidden">Vehicles</span><span
+              class="ml-4 max-[600px]:hidden">About</span
+            ><span class="ml-4 max-[600px]:hidden">Contact</span>
           </div>
-          <div class="bci-copy">
-            <strong>Drive what's<br />next.</strong><span></span><i
+          <div
+            class="absolute left-10 top-[7.5rem] z-[2] flex flex-col items-start gap-5"
+          >
+            <strong
+              class="text-[clamp(2rem,4vw,4rem)] leading-[0.9] tracking-[-0.05em]"
+              >Drive what's<br />next.</strong
+            ><span class="h-[3px] w-16 bg-[#f8543b]"></span><i
+              class="bg-[#111] text-white px-4 py-3 text-xs rounded"
               >Explore vehicles</i
             >
           </div>
-          <div class="bci-building"><i></i><i></i><i></i></div>
+          <div
+            class="absolute right-0 bottom-0 w-[57%] h-3/4 flex items-end origin-bottom-right skew-y-[-8deg] max-[600px]:w-[68%]"
+          >
+            <i class="h-[70%] flex-1 bg-[#214db5] border border-white/50"></i><i
+              class="h-full flex-1 bg-[#4072e0] border border-white/50"></i><i
+              class="h-[84%] flex-1 bg-[#102d71] border border-white/50"></i>
+          </div>
         </div>
-        <div class="project-copy">
-          <span class="project-number">{projectNumbers.bci}</span>
-          <h3>{projects.bci.title}</h3>
-          <p class="project-type">
+        <div class={`${projectCopyClass} max-[900px]:order-1`}>
+          <span class={projectNumberClass}>{projectNumbers.bci}</span>
+          <h3 class={projectTitleClass}>{projects.bci.title}</h3>
+          <p class={projectTypeClass}>
             {projects.bci.category}<br />{projects.bci.discipline}
           </p>
-          <p class="project-description">{projects.bci.description}</p>
+          <p class={projectDescriptionClass}>{projects.bci.description}</p>
         </div>
       </article>
     </div>
 
-    <article class="billing-feature cs-reveal">
-      <div class="billing-copy">
-        <span class="billing-label"><i></i> {billing.label}</span>
-        <h3>{billing.title}</h3>
-        <p class="billing-type">{billing.type}</p>
-        <p>{billing.description}</p>
+    <article
+      class="cs-reveal mt-24 min-h-[34rem] grid grid-cols-[0.72fr_1.45fr] overflow-hidden rounded-[0.6rem] bg-[#101010] text-white max-[900px]:grid-cols-1 max-[600px]:-mx-4 max-[600px]:rounded-none"
+    >
+      <div
+        class="p-16 flex flex-col items-start max-[600px]:px-6 max-[600px]:py-12"
+      >
+        <span class="mb-10 text-[0.65rem] font-bold uppercase tracking-[0.15em]"
+          ><i
+            class="mr-2 inline-block size-2 rounded-full bg-[var(--color-accent)]"
+          ></i>
+          {billing.label}</span
+        >
+        <h3
+          class="font-display text-[clamp(3.3rem,5vw,5.5rem)] leading-[0.9] tracking-[-0.055em] mb-5"
+        >
+          {billing.title}
+        </h3>
+        <p class="text-[var(--color-accent)] font-semibold mb-8">
+          {billing.type}
+        </p>
+        <p
+          class="text-[#aaa] leading-[1.55] max-w-[22rem] mt-auto max-[900px]:mt-4"
+        >
+          {billing.description}
+        </p>
       </div>
-      <div class="billing-ui" aria-hidden="true">
-        <aside>
-          <b>KB</b><span class="active">{billing.overview}</span><span
+      <div
+        class="mt-10 grid grid-cols-[10rem_1fr] overflow-hidden rounded-tl-2xl border border-[#3b3b3b] bg-[#181818] max-[900px]:mx-6 max-[900px]:mt-0 max-[900px]:min-h-[25rem] max-[900px]:rounded-t-2xl max-[600px]:mx-3 max-[600px]:grid-cols-[5.5rem_1fr]"
+      >
+        <aside
+          class="border-r border-[#333] p-6 flex flex-col gap-2 max-[600px]:px-3"
+        >
+          <b class="mb-8 text-xl">KB</b><span
+            class="rounded-md bg-[#f8543b33] p-3 text-[0.65rem] text-white max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
+            >{billing.overview}</span
+          ><span
+            class="rounded-md p-3 text-[0.65rem] text-[#888] max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
             >{billing.invoices}</span
-          ><span>{billing.customers}</span><span>{billing.reports}</span><span
+          ><span
+            class="rounded-md p-3 text-[0.65rem] text-[#888] max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
+            >{billing.customers}</span
+          ><span
+            class="rounded-md p-3 text-[0.65rem] text-[#888] max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
+            >{billing.reports}</span
+          ><span
+            class="rounded-md p-3 text-[0.65rem] text-[#888] max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
             >{billing.settings}</span
           >
         </aside>
-        <div class="billing-main">
-          <div class="billing-top">
-            <strong>{billing.overview}</strong><i>{billing.newInvoice}</i>
-          </div><div class="billing-stats">
-            <span></span><span></span><span></span>
-          </div><div class="invoice-list">
-            <b>{billing.recentInvoices}</b><i></i><i></i><i></i><i></i>
+        <div class="p-6">
+          <div class="flex items-center justify-between">
+            <strong>{billing.overview}</strong><i
+              class="rounded bg-[var(--color-accent)] px-3 py-2 text-[0.6rem]"
+              >{billing.newInvoice}</i
+            >
+          </div><div
+            class="my-7 grid grid-cols-3 gap-3 max-[600px]:grid-cols-2"
+          >
+            <span
+              class="h-[5.5rem] rounded-lg border border-[#333] bg-[linear-gradient(145deg,#242424,#1b1b1b)]"
+            ></span><span
+              class="h-[5.5rem] rounded-lg border border-[#333] bg-[linear-gradient(145deg,#242424,#1b1b1b)]"
+            ></span><span
+              class="h-[5.5rem] rounded-lg border border-[#333] bg-[linear-gradient(145deg,#242424,#1b1b1b)] max-[600px]:hidden"
+            ></span>
+          </div><div>
+            <b class="text-sm">{billing.recentInvoices}</b><i
+              class="block h-11 border-b border-[#303030] after:block after:w-[65%] after:h-2 after:translate-y-5 after:rounded-full after:bg-[#343434]"
+            ></i><i
+              class="block h-11 border-b border-[#303030] after:block after:w-[65%] after:h-2 after:translate-y-5 after:rounded-full after:bg-[#343434]"
+            ></i><i
+              class="block h-11 border-b border-[#303030] after:block after:w-[65%] after:h-2 after:translate-y-5 after:rounded-full after:bg-[#343434]"
+            ></i><i
+              class="block h-11 border-b border-[#303030] after:block after:w-[65%] after:h-2 after:translate-y-5 after:rounded-full after:bg-[#343434]"
+            ></i>
           </div>
         </div>
       </div>
     </article>
   </div>
 </section>
-
-<style>
-  .work-section {
-    background: #f5f5f3;
-    padding: 7rem 1.5rem 9rem;
-    overflow: hidden;
-  }
-  .work-shell {
-    max-width: 80rem;
-    margin: 0 auto;
-  }
-  .work-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 5rem minmax(15rem, 22rem);
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 6rem;
-  }
-  .work-heading h2 {
-    font-family: var(--font-display);
-    font-size: clamp(4rem, 8vw, 7.5rem);
-    line-height: 0.86;
-    letter-spacing: -0.065em;
-    font-weight: 700;
-  }
-  .work-heading p {
-    font-size: 1.05rem;
-    line-height: 1.35;
-    max-width: 22rem;
-  }
-  .heading-line {
-    height: 1px;
-    background: #a9a9a5;
-  }
-  .work-list {
-    border-top: 1px solid #dcdcd7;
-  }
-  .project {
-    border-bottom: 1px solid #dcdcd7;
-  }
-  .project-split {
-    display: grid;
-    grid-template-columns: minmax(15rem, 0.62fr) minmax(0, 1.8fr);
-    gap: clamp(2rem, 5vw, 6rem);
-    padding: 1.2rem 0;
-    align-items: stretch;
-  }
-  .project-reverse {
-    grid-template-columns: minmax(0, 1.8fr) minmax(15rem, 0.62fr);
-  }
-  .project-copy {
-    padding: 1.5rem 0.25rem 1.5rem 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .project-number {
-    font-family: var(--font-display);
-    font-size: clamp(4.5rem, 7vw, 7rem);
-    line-height: 0.8;
-    letter-spacing: -0.06em;
-    color: var(--color-accent);
-    font-weight: 300;
-    margin-bottom: 2.25rem;
-  }
-  .project h3 {
-    font-family: var(--font-display);
-    font-size: clamp(2.2rem, 4vw, 4rem);
-    line-height: 0.95;
-    letter-spacing: -0.04em;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  .project-type {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.3;
-  }
-  .project-description {
-    max-width: 28rem;
-    color: #666;
-    line-height: 1.55;
-    margin-top: auto;
-    padding-top: 2rem;
-  }
-  .project-visual {
-    min-height: 31rem;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.5rem;
-  }
-  .minqik-visual {
-    background: #dcd6ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .minqik-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.35rem;
-    box-shadow: 0 1.5rem 4rem rgba(51, 34, 110, 0.2);
-  }
-  .minqik-orb {
-    position: absolute;
-    border-radius: 50%;
-    background: #9b87ed;
-    opacity: 0.7;
-    transition: transform 0.7s ease;
-  }
-  .orb-a {
-    width: 17rem;
-    height: 17rem;
-    left: -4rem;
-    top: 3rem;
-  }
-  .orb-b {
-    width: 13rem;
-    height: 13rem;
-    right: 2rem;
-    top: 2rem;
-  }
-  .project:hover .orb-a {
-    transform: translate(1rem, -1rem) scale(1.08);
-  }
-  .project:hover .orb-b {
-    transform: translate(-1rem, 1rem) scale(0.92);
-  }
-  .learning-window {
-    width: 75%;
-    height: 84%;
-    border-radius: 1.5rem 1.5rem 0 0;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 1.5rem 4rem rgba(51, 34, 110, 0.18);
-    z-index: 1;
-  }
-  .ui-top {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    font-size: 0.72rem;
-    color: #777;
-    margin-bottom: 3.5rem;
-  }
-  .ui-top b {
-    color: #111;
-    margin-right: auto;
-  }
-  .learning-window > strong {
-    display: block;
-    font-size: clamp(1.35rem, 2vw, 2rem);
-    line-height: 1.08;
-  }
-  .search-line {
-    width: 62%;
-    height: 2.2rem;
-    border: 1px solid #ddd;
-    border-radius: 0.4rem;
-    margin: 1.3rem 0;
-  }
-  .lesson-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-  }
-  .lesson-grid i {
-    height: 5rem;
-    border-radius: 0.5rem;
-    background: #e8e3ff;
-  }
-  .lesson-grid i:nth-child(2) {
-    background: #edf0d9;
-  }
-  .lesson-grid i:nth-child(3) {
-    background: #eee;
-  }
-  .quiz-phone {
-    position: absolute;
-    right: 6%;
-    bottom: -1rem;
-    width: 12rem;
-    min-height: 22rem;
-    background: #fff;
-    border: 0.45rem solid #111;
-    border-radius: 1.8rem;
-    z-index: 2;
-    padding: 1.4rem 0.8rem;
-    box-shadow: 0 1rem 2.5rem #2c225040;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-  }
-  .quiz-phone small {
-    font-size: 0.6rem;
-    color: #777;
-  }
-  .quiz-phone b {
-    font-size: 0.72rem;
-    line-height: 1.25;
-    margin: 0.7rem 0;
-  }
-  .answer {
-    border: 1px solid #ddd;
-    border-radius: 0.25rem;
-    padding: 0.4rem;
-    font-size: 0.6rem;
-  }
-  .answer.active {
-    border-color: #43b998;
-    background: #ebfff8;
-  }
-  .quiz-phone i {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.65rem;
-    margin-top: auto;
-  }
-  .papp-visual {
-    background: #eeeee9;
-    min-height: 29rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem;
-  }
-  .papp-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.35rem;
-    box-shadow: 0 1.5rem 4rem rgba(28, 50, 80, 0.16);
-  }
-  .map-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(
-        32deg,
-        transparent 46%,
-        #fff 47%,
-        #fff 50%,
-        transparent 51%
-      ),
-      linear-gradient(
-        115deg,
-        transparent 43%,
-        #fff 44%,
-        #fff 48%,
-        transparent 49%
-      ),
-      linear-gradient(90deg, #d6d6d0 1px, transparent 1px),
-      linear-gradient(#d6d6d0 1px, transparent 1px);
-    background-size:
-      9rem 9rem,
-      12rem 12rem,
-      4rem 4rem,
-      4rem 4rem;
-    opacity: 0.8;
-  }
-  .parking-panel {
-    position: absolute;
-    left: 2rem;
-    top: 2rem;
-    width: 12rem;
-    padding: 1.4rem;
-    background: white;
-    border-radius: 0.8rem;
-    box-shadow: 0 0.6rem 2rem #5552;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .parking-panel strong {
-    font-size: 1.15rem;
-    line-height: 1.05;
-  }
-  .parking-panel span {
-    height: 1.8rem;
-    border: 1px solid #ddd;
-    border-radius: 0.35rem;
-  }
-  .parking-panel i {
-    font-size: 0.65rem;
-    padding-bottom: 0.55rem;
-    border-bottom: 1px solid #eee;
-  }
-  .map-pin {
-    position: absolute;
-    left: 58%;
-    top: 47%;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    background: #3769eb;
-    color: white;
-    display: grid;
-    place-items: center;
-    font-weight: 700;
-    font-size: 1.3rem;
-  }
-  .map-pin::first-letter {
-    transform: rotate(45deg);
-  }
-  .map-route {
-    position: absolute;
-    width: 16rem;
-    height: 8rem;
-    border: 2px dashed #3769eb;
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    left: 42%;
-    top: 24%;
-    transform: rotate(15deg);
-  }
-  .navigate-chip {
-    position: absolute;
-    right: 2rem;
-    bottom: 2rem;
-    background: #111;
-    color: white;
-    border-radius: 2rem;
-    padding: 0.8rem 1.4rem;
-    font-size: 0.8rem;
-  }
-  .navigate-chip span {
-    margin-left: 1rem;
-  }
-  .project-dark {
-    min-height: 31rem;
-    display: grid;
-    grid-template-columns: minmax(16rem, 0.62fr) 1.5fr;
-    background: #101010;
-    color: white;
-    margin: 1.2rem 0;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    border: 0;
-  }
-  .project-dark .project-copy {
-    padding: 3rem;
-  }
-  .project-dark .project-type,
-  .project-dark .project-description {
-    color: #aaa;
-  }
-  .coop-art {
-    position: relative;
-    overflow: hidden;
-    border-left: 1px solid #444;
-  }
-  .coop-arc {
-    position: absolute;
-    width: 25rem;
-    height: 25rem;
-    border: 5rem solid #2f9b69;
-    border-radius: 50%;
-    left: 20%;
-    top: 14%;
-  }
-  .coop-circle {
-    position: absolute;
-    width: 11rem;
-    height: 11rem;
-    border-radius: 50%;
-    background: #f0eadb;
-    left: 10%;
-    bottom: 9%;
-    border: 1rem double #111;
-  }
-  .coop-square {
-    position: absolute;
-    width: 7rem;
-    height: 7rem;
-    background: #f4eee4;
-    left: 15%;
-    top: 10%;
-  }
-  .coop-lines {
-    position: absolute;
-    width: 15rem;
-    height: 10rem;
-    right: 3rem;
-    bottom: 3rem;
-    background: repeating-linear-gradient(
-      90deg,
-      #e8e3d1 0 2px,
-      transparent 2px 7px
-    );
-    clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 70%);
-  }
-  .coop-mark {
-    position: absolute;
-    right: 15%;
-    top: 12%;
-    font-size: 9rem;
-    font-family: var(--font-display);
-    font-weight: 700;
-    color: #2f9b69;
-    mix-blend-mode: screen;
-  }
-  .project-duo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid #dcdcd7;
-  }
-  .project-mini {
-    padding: 2.5rem 2.5rem 3rem;
-    border-bottom: 0;
-  }
-  .project-mini:first-child {
-    border-right: 1px solid #dcdcd7;
-  }
-  .project-mini .project-copy {
-    padding: 0;
-  }
-  .project-mini .project-number {
-    margin-bottom: 1.5rem;
-  }
-  .project-mini h3 {
-    font-size: clamp(2.2rem, 3.5vw, 3.6rem);
-  }
-  .project-mini .project-description {
-    margin-top: 0;
-  }
-  .kul-art,
-  .football-art {
-    height: 20rem;
-    margin: 2rem 0;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.4rem;
-    background: #eee9df;
-  }
-  .kul-art .leaf-one,
-  .kul-art .leaf-two {
-    position: absolute;
-    width: 12rem;
-    height: 7rem;
-    border-radius: 100% 0 100% 0;
-    transform: rotate(-30deg);
-  }
-  .leaf-one {
-    background: #ef4f35;
-    left: 14%;
-    top: 12%;
-  }
-  .leaf-two {
-    background: #357c54;
-    left: 34%;
-    top: 28%;
-  }
-  .kul-art .sun {
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    background: #d9c19d;
-    right: 10%;
-    bottom: 12%;
-  }
-  .waves {
-    position: absolute;
-    left: 8%;
-    bottom: 14%;
-    width: 9rem;
-    height: 4rem;
-    background: repeating-radial-gradient(
-      ellipse at 50% 100%,
-      transparent 0 10px,
-      #111 11px 12px,
-      transparent 13px 20px
-    );
-  }
-  .dots {
-    position: absolute;
-    right: 12%;
-    top: 12%;
-    width: 5rem;
-    height: 5rem;
-    background: radial-gradient(#111 1.5px, transparent 2px);
-    background-size: 14px 14px;
-  }
-  .football-art {
-    background: #111;
-  }
-  .field-line {
-    position: absolute;
-    border: 1px solid #eee;
-  }
-  .field-line.center {
-    width: 1px;
-    height: 100%;
-    left: 50%;
-  }
-  .field-line.center::after {
-    content: "";
-    position: absolute;
-    width: 8rem;
-    height: 8rem;
-    border: 1px solid #eee;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .box-left {
-    left: 0;
-    top: 25%;
-    width: 24%;
-    height: 50%;
-  }
-  .box-right {
-    right: 0;
-    top: 25%;
-    width: 24%;
-    height: 50%;
-  }
-  .football-art svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .football-art path {
-    fill: none;
-    stroke: #f8543b;
-    stroke-width: 3;
-    stroke-dasharray: 8 6;
-  }
-  .ball {
-    position: absolute;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background: #f8543b;
-    border: 2px solid white;
-    z-index: 2;
-  }
-  .ball-a {
-    left: 18%;
-    bottom: 24%;
-  }
-  .ball-b {
-    left: 52%;
-    top: 38%;
-  }
-  .ball-c {
-    right: 16%;
-    top: 18%;
-  }
-  .bci-visual {
-    min-height: 29rem;
-    background: #fff;
-    border: 1px solid #ddd;
-  }
-  .browser-bar {
-    height: 3.6rem;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0 1.2rem;
-    font-size: 0.65rem;
-  }
-  .browser-bar > i {
-    width: 0.45rem;
-    height: 0.45rem;
-    border-radius: 50%;
-    background: #f8543b;
-  }
-  .browser-bar > i:nth-child(2) {
-    background: #f4bb42;
-  }
-  .browser-bar > i:nth-child(3) {
-    background: #47b976;
-  }
-  .browser-bar b {
-    font-size: 1rem;
-    margin: 0 auto 0 1rem;
-  }
-  .browser-bar span {
-    margin-left: 1rem;
-  }
-  .bci-copy {
-    position: absolute;
-    left: 2.5rem;
-    top: 7.5rem;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.3rem;
-  }
-  .bci-copy strong {
-    font-size: clamp(2rem, 4vw, 4rem);
-    line-height: 0.9;
-    letter-spacing: -0.05em;
-  }
-  .bci-copy span {
-    width: 4rem;
-    height: 3px;
-    background: #f8543b;
-  }
-  .bci-copy i {
-    background: #111;
-    color: white;
-    padding: 0.7rem 1rem;
-    font-size: 0.7rem;
-    border-radius: 0.25rem;
-  }
-  .bci-building {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 57%;
-    height: 75%;
-    display: flex;
-    align-items: flex-end;
-    transform: skewY(-8deg);
-    transform-origin: bottom right;
-  }
-  .bci-building i {
-    height: 70%;
-    flex: 1;
-    background: #214db5;
-    border: 1px solid #fff8;
-  }
-  .bci-building i:nth-child(2) {
-    height: 100%;
-    background: #4072e0;
-  }
-  .bci-building i:nth-child(3) {
-    height: 84%;
-    background: #102d71;
-  }
-  .billing-feature {
-    margin-top: 6rem;
-    background: #101010;
-    color: white;
-    border-radius: 0.6rem;
-    min-height: 34rem;
-    display: grid;
-    grid-template-columns: 0.72fr 1.45fr;
-    overflow: hidden;
-  }
-  .billing-copy {
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .billing-label {
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.65rem;
-    font-weight: 700;
-    margin-bottom: 2.5rem;
-  }
-  .billing-label i {
-    display: inline-block;
-    width: 0.45rem;
-    height: 0.45rem;
-    border-radius: 50%;
-    background: var(--color-accent);
-    margin-right: 0.55rem;
-  }
-  .billing-copy h3 {
-    font-family: var(--font-display);
-    font-size: clamp(3.3rem, 5vw, 5.5rem);
-    line-height: 0.9;
-    letter-spacing: -0.055em;
-    margin-bottom: 1.2rem;
-  }
-  .billing-type {
-    color: var(--color-accent);
-    font-weight: 600;
-    margin-bottom: 2rem;
-  }
-  .billing-copy > p:last-child {
-    color: #aaa;
-    line-height: 1.55;
-    max-width: 22rem;
-    margin-top: auto;
-  }
-  .billing-ui {
-    margin: 2.5rem 0 0;
-    display: grid;
-    grid-template-columns: 10rem 1fr;
-    background: #181818;
-    border: 1px solid #3b3b3b;
-    border-radius: 1rem 0 0 0;
-    overflow: hidden;
-  }
-  .billing-ui aside {
-    border-right: 1px solid #333;
-    padding: 1.5rem 0.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .billing-ui aside b {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  .billing-ui aside span {
-    font-size: 0.65rem;
-    color: #888;
-    padding: 0.65rem;
-    border-radius: 0.35rem;
-  }
-  .billing-ui aside .active {
-    color: white;
-    background: #f8543b33;
-  }
-  .billing-main {
-    padding: 1.6rem;
-  }
-  .billing-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .billing-top i {
-    background: var(--color-accent);
-    padding: 0.6rem 0.8rem;
-    border-radius: 0.3rem;
-    font-size: 0.6rem;
-  }
-  .billing-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.7rem;
-    margin: 1.7rem 0;
-  }
-  .billing-stats span {
-    height: 5.5rem;
-    border: 1px solid #333;
-    border-radius: 0.5rem;
-    background: linear-gradient(145deg, #242424, #1b1b1b);
-  }
-  .invoice-list b {
-    font-size: 0.8rem;
-  }
-  .invoice-list i {
-    display: block;
-    height: 2.8rem;
-    border-bottom: 1px solid #303030;
-  }
-  .invoice-list i::after {
-    content: "";
-    display: block;
-    width: 65%;
-    height: 0.45rem;
-    background: #343434;
-    border-radius: 1rem;
-    transform: translateY(1.2rem);
-  }
-  .cs-reveal {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  @media (max-width: 900px) {
-    .work-heading {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .heading-line {
-      width: 5rem;
-    }
-    .project-split,
-    .project-reverse {
-      grid-template-columns: 1fr;
-    }
-    .project-reverse .project-visual {
-      order: 2;
-    }
-    .project-reverse .project-copy {
-      order: 1;
-    }
-    .project-copy {
-      padding: 2.5rem 0.5rem;
-    }
-    .project-number {
-      margin-bottom: 1.5rem;
-    }
-    .project-description {
-      margin-top: 0;
-    }
-    .project-duo {
-      grid-template-columns: 1fr;
-    }
-    .project-mini:first-child {
-      border-right: 0;
-      border-bottom: 1px solid #dcdcd7;
-    }
-    .project-dark {
-      grid-template-columns: 1fr;
-    }
-    .coop-art {
-      min-height: 25rem;
-      border-left: 0;
-      border-top: 1px solid #444;
-    }
-    .billing-feature {
-      grid-template-columns: 1fr;
-    }
-    .billing-ui {
-      margin: 0 1.5rem 0;
-      min-height: 25rem;
-      border-radius: 1rem 1rem 0 0;
-    }
-    .billing-copy > p:last-child {
-      margin-top: 1rem;
-    }
-  }
-  @media (max-width: 600px) {
-    .work-section {
-      padding: 5rem 1rem 6rem;
-    }
-    .work-heading {
-      margin-bottom: 4rem;
-    }
-    .work-heading h2 {
-      font-size: 3.8rem;
-    }
-    .project-visual {
-      min-height: 24rem;
-    }
-    .minqik-visual,
-    .papp-visual {
-      padding: 0.75rem;
-    }
-    .parking-panel {
-      left: 1rem;
-      top: 1rem;
-      width: 10rem;
-    }
-    .project-mini {
-      padding: 2.5rem 0;
-    }
-    .project-dark {
-      margin-inline: -1rem;
-      border-radius: 0;
-    }
-    .project-dark .project-copy {
-      padding: 2.5rem 1.5rem;
-    }
-    .billing-feature {
-      margin-inline: -1rem;
-      border-radius: 0;
-    }
-    .billing-copy {
-      padding: 3rem 1.5rem;
-    }
-    .billing-ui {
-      grid-template-columns: 5.5rem 1fr;
-      margin: 0 0.75rem;
-    }
-    .billing-ui aside span {
-      font-size: 0.55rem;
-      padding: 0.5rem 0.35rem;
-    }
-    .billing-stats {
-      grid-template-columns: 1fr 1fr;
-    }
-    .billing-stats span:last-child {
-      display: none;
-    }
-    .browser-bar span {
-      display: none;
-    }
-    .bci-building {
-      width: 68%;
-    }
-  }
-</style>
 
 <script>
   import gsap from "gsap";
