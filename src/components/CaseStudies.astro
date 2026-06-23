@@ -1,62 +1,35 @@
----
-const projects = {
-  minqik: {
-    number: "01",
-    title: "Minqik",
-    category: "Learning App",
-    discipline: "Product Experience",
-    description: "An interactive learning app that turns knowledge into engaging quizzes.",
-  },
-  papp: {
-    number: "02",
-    title: "Papp",
-    category: "Parking App",
-    discipline: "Digital Product",
-    description: "A marketplace that makes it easier to rent and list available parking spaces.",
-  },
-  coopcibao: {
-    number: "03",
-    title: "Coopcibao",
-    category: "Motion Graphics",
-    discipline: "Brand Communication",
-    description: "Motion-led visual communication created for one of the Dominican Republic’s cooperatives.",
-  },
-  kulkul: {
-    number: "04",
-    title: "Kul Kul",
-    category: "Motion Graphics",
-    discipline: "Brand Content",
-    description: "Animated brand content designed to communicate with energy and clarity.",
-  },
-  lda: {
-    number: "05",
-    title: "LDA",
-    category: "Promotional Video",
-    discipline: "Motion Graphics",
-    description: "A promotional video for Liga Dominicana de Fútbol, built around the energy of the game.",
-  },
-  bci: {
-    number: "06",
-    title: "BCI",
-    category: "Website",
-    discipline: "Web Development",
-    description: "A digital presence for BCI, Changan vehicle distributors in the Dominican Republic.",
-  },
+﻿---
+import type { Dictionary } from "../i18n";
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const projectNumbers = {
+  minqik: "01",
+  papp: "02",
+  coopcibao: "03",
+  kulkul: "04",
+  lda: "05",
+  bci: "06",
 };
+const projects = t.work.projects;
+const billing = t.work.billing;
 ---
 
 <section id="case-studies" class="work-section">
   <div class="work-shell">
     <header class="work-heading cs-reveal">
-      <h2>Selected Work</h2>
+      <h2>{t.work.title}</h2>
       <span class="heading-line" aria-hidden="true"></span>
-      <p>Digital products, motion, and web experiences built for real brands.</p>
+      <p>{t.work.subtitle}</p>
     </header>
 
     <div class="work-list">
       <article class="project project-split cs-reveal">
         <div class="project-copy">
-          <span class="project-number">{projects.minqik.number}</span>
+          <span class="project-number">{projectNumbers.minqik}</span>
           <h3>{projects.minqik.title}</h3>
           <p class="project-type">{projects.minqik.category}<br />{projects.minqik.discipline}</p>
           <p class="project-description">{projects.minqik.description}</p>
@@ -70,7 +43,7 @@ const projects = {
             <div class="lesson-grid"><i></i><i></i><i></i></div>
           </div>
           <div class="quiz-phone">
-            <small>Quiz · 2/10</small><b>Which principle creates emphasis?</b>
+            <small>Quiz - 2/10</small><b>Which principle creates emphasis?</b>
             <span class="answer active">Contrast</span><span class="answer">Alignment</span><span class="answer">Repetition</span>
             <i>Next</i>
           </div>
@@ -85,7 +58,7 @@ const projects = {
           <div class="navigate-chip">Navigate <span>↗</span></div>
         </div>
         <div class="project-copy">
-          <span class="project-number">{projects.papp.number}</span>
+          <span class="project-number">{projectNumbers.papp}</span>
           <h3>{projects.papp.title}</h3>
           <p class="project-type">{projects.papp.category}<br />{projects.papp.discipline}</p>
           <p class="project-description">{projects.papp.description}</p>
@@ -94,7 +67,7 @@ const projects = {
 
       <article class="project project-dark cs-reveal">
         <div class="project-copy">
-          <span class="project-number">{projects.coopcibao.number}</span>
+          <span class="project-number">{projectNumbers.coopcibao}</span>
           <h3>{projects.coopcibao.title}</h3>
           <p class="project-type">{projects.coopcibao.category}<br />{projects.coopcibao.discipline}</p>
           <p class="project-description">{projects.coopcibao.description}</p>
@@ -108,7 +81,7 @@ const projects = {
       <div class="project-duo">
         <article class="project project-mini cs-reveal">
           <div class="project-copy">
-            <span class="project-number">{projects.kulkul.number}</span>
+            <span class="project-number">{projectNumbers.kulkul}</span>
             <h3>{projects.kulkul.title}</h3>
             <p class="project-type">{projects.kulkul.category} / {projects.kulkul.discipline}</p>
           </div>
@@ -117,7 +90,7 @@ const projects = {
         </article>
         <article class="project project-mini cs-reveal">
           <div class="project-copy">
-            <span class="project-number">{projects.lda.number}</span>
+            <span class="project-number">{projectNumbers.lda}</span>
             <h3>{projects.lda.title}</h3>
             <p class="project-type">{projects.lda.category} / {projects.lda.discipline}</p>
           </div>
@@ -132,11 +105,11 @@ const projects = {
       <article class="project project-split project-reverse cs-reveal">
         <div class="project-visual bci-visual" aria-hidden="true">
           <div class="browser-bar"><i></i><i></i><i></i><b>BCI</b><span>Vehicles</span><span>About</span><span>Contact</span></div>
-          <div class="bci-copy"><strong>Drive what’s<br />next.</strong><span></span><i>Explore vehicles</i></div>
+          <div class="bci-copy"><strong>Drive what's<br />next.</strong><span></span><i>Explore vehicles</i></div>
           <div class="bci-building"><i></i><i></i><i></i></div>
         </div>
         <div class="project-copy">
-          <span class="project-number">{projects.bci.number}</span>
+          <span class="project-number">{projectNumbers.bci}</span>
           <h3>{projects.bci.title}</h3>
           <p class="project-type">{projects.bci.category}<br />{projects.bci.discipline}</p>
           <p class="project-description">{projects.bci.description}</p>
@@ -146,14 +119,14 @@ const projects = {
 
     <article class="billing-feature cs-reveal">
       <div class="billing-copy">
-        <span class="billing-label"><i></i> Built by Knoa</span>
-        <h3>Knoa Billing</h3>
-        <p class="billing-type">Knoa Product · Billing Platform</p>
-        <p>Our billing system built to make invoicing and day-to-day business management simpler.</p>
+        <span class="billing-label"><i></i> {billing.label}</span>
+        <h3>{billing.title}</h3>
+        <p class="billing-type">{billing.type}</p>
+        <p>{billing.description}</p>
       </div>
       <div class="billing-ui" aria-hidden="true">
-        <aside><b>KB</b><span class="active">Overview</span><span>Invoices</span><span>Customers</span><span>Reports</span><span>Settings</span></aside>
-        <div class="billing-main"><div class="billing-top"><strong>Overview</strong><i>New invoice</i></div><div class="billing-stats"><span></span><span></span><span></span></div><div class="invoice-list"><b>Recent invoices</b><i></i><i></i><i></i><i></i></div></div>
+        <aside><b>KB</b><span class="active">{billing.overview}</span><span>{billing.invoices}</span><span>{billing.customers}</span><span>{billing.reports}</span><span>{billing.settings}</span></aside>
+        <div class="billing-main"><div class="billing-top"><strong>{billing.overview}</strong><i>{billing.newInvoice}</i></div><div class="billing-stats"><span></span><span></span><span></span></div><div class="invoice-list"><b>{billing.recentInvoices}</b><i></i><i></i><i></i><i></i></div></div>
       </div>
     </article>
   </div>
@@ -205,13 +178,7 @@ const projects = {
 
   requestAnimationFrame(() => {
     gsap.utils.toArray<HTMLElement>(".cs-reveal").forEach((element) => {
-      gsap.to(element, {
-        scrollTrigger: { trigger: element, start: "top 88%", once: true },
-        opacity: 1,
-        y: 0,
-        duration: .9,
-        ease: "power3.out",
-      });
+      gsap.to(element, { scrollTrigger: { trigger: element, start: "top 88%", once: true }, opacity: 1, y: 0, duration: .9, ease: "power3.out" });
     });
   });
 </script>

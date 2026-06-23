@@ -1,78 +1,47 @@
----
+﻿---
+import type { Dictionary } from "../i18n";
 
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
 ---
 
 <footer id="footer" class="relative pt-16 pb-8 bg-white">
-  <!-- Top border -->
-  <div
-    class="absolute top-0 left-6 right-6 lg:left-8 lg:right-8 h-px bg-[var(--color-border)]"
-  >
-  </div>
+  <div class="absolute top-0 left-6 right-6 lg:left-8 lg:right-8 h-px bg-[var(--color-border)]"></div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="mb-16">
-      <!-- Brand -->
       <div class="md:col-span-2">
         <a href="#" class="flex items-center gap-2">
           <img src="/logo-knoa-light.svg" alt="Knoa Studio" class="w-56" />
         </a>
       </div>
 
-      <!-- Link columns -->
       <ul class="flex items-center gap-6 w-full justify-between">
         <li class="flex flex-1">
-          <a
-            href="mailto:hello@knoastudio.com"
-            class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200"
-            >hello@knoastudio.com</a
-          >
+          <a href="mailto:hello@knoastudio.com" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200">hello@knoastudio.com</a>
         </li>
         <li>
-          <a
-            href="#services"
-            class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap"
-            >Launch Videos</a
-          >
+          <a href="#services" class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap">{t.footer.launchVideos}</a>
         </li>
         <li>
-          <a
-            href="#services"
-            class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap"
-            >Landing Pages</a
-          >
+          <a href="#services" class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap">{t.footer.landingPages}</a>
         </li>
         <li>
-          <a
-            href="#services"
-            class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap"
-            >Web Development</a
-          >
+          <a href="#services" class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap">{t.footer.webDevelopment}</a>
         </li>
       </ul>
     </div>
 
-    <!-- Bottom bar -->
     <div class="pt-8 border-t border-[var(--color-border)]">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[var(--color-text-muted)]">
-          © 2025 Knoa Studio. All rights reserved.
-        </p>
+        <p class="text-xs text-[var(--color-text-muted)]">{t.footer.copyright}</p>
         <div class="flex items-center gap-6">
-          <a
-            href="#"
-            class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200"
-            >LinkedIn</a
-          >
-          <a
-            href="#"
-            class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200"
-            >Instagram</a
-          >
-          <a
-            href="#"
-            class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200"
-            >Behance</a
-          >
+          <a href="#" class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200">LinkedIn</a>
+          <a href="#" class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200">Instagram</a>
+          <a href="#" class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200">Behance</a>
         </div>
       </div>
     </div>
