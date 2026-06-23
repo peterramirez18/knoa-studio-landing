@@ -193,5 +193,15 @@
     "landingPages": "Landing Pages",
     "webDevelopment": "Development",
     "copyright": "© 2026 Knoa Studio. All rights reserved."
+  },
+  "contact": {
+    "eyebrow": "Tell us about the launch",
+    "title": "Start a project",
+    "description": "Share a little context and we will get back to you with the next step.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Submit Form",
+    "close": "Close contact form"
   }
 }

@@ -38,11 +38,12 @@ const socialLinks = ["LinkedIn", "Instagram", "Behance"];
             {t.footer.subheadline}
           </p>
           <a
-            href="mailto:hello@knoastudio.com"
-            class="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#101010] transition-transform duration-300 hover:-translate-y-0.5"
+            href="#contact"
+            data-contact-modal-open
+            class="group relative inline-flex items-center justify-center isolation-auto overflow-hidden rounded-full border-2 border-white bg-transparent px-10 py-5 text-xl font-bold text-white transition-colors duration-500 hover:border-transparent hover:text-white"
           >
-            {t.footer.emailLabel}
-            <span class="text-[var(--color-accent)]">→</span>
+            <span class="absolute inset-0 -z-10 h-full w-full -translate-y-full rounded-full bg-[var(--color-accent)] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0"></span>
+            {t.cta.button}
           </a>
         </div>
 

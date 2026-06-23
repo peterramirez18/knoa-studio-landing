@@ -193,5 +193,15 @@
     "landingPages": "Landing pages",
     "webDevelopment": "Desarrollo",
     "copyright": "© 2026 Knoa Studio. Todos los derechos reservados."
+  },
+  "contact": {
+    "eyebrow": "Cu?ntanos del lanzamiento",
+    "title": "Iniciar proyecto",
+    "description": "Comparte un poco de contexto y te responderemos con el pr?ximo paso.",
+    "name": "Nombre",
+    "email": "Email",
+    "message": "Mensaje",
+    "submit": "Enviar formulario",
+    "close": "Cerrar formulario de contacto"
   }
 }
