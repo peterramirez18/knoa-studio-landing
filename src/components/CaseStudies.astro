@@ -1,5 +1,6 @@
-﻿---
+---
 import type { Dictionary } from "../i18n";
+import minqikImage from "../assets/projects/minqik.png";
 
 interface Props {
   t: Dictionary;
@@ -31,36 +32,40 @@ const billing = t.work.billing;
         <div class="project-copy">
           <span class="project-number">{projectNumbers.minqik}</span>
           <h3>{projects.minqik.title}</h3>
-          <p class="project-type">{projects.minqik.category}<br />{projects.minqik.discipline}</p>
+          <p class="project-type">
+            {projects.minqik.category}<br />{projects.minqik.discipline}
+          </p>
           <p class="project-description">{projects.minqik.description}</p>
         </div>
-        <div class="project-visual minqik-visual" aria-hidden="true">
-          <div class="minqik-orb orb-a"></div><div class="minqik-orb orb-b"></div>
-          <div class="learning-window">
-            <div class="ui-top"><b>Minqik</b><span>Courses</span><span>Progress</span></div>
-            <strong>What do you want<br />to learn today?</strong>
-            <div class="search-line"></div>
-            <div class="lesson-grid"><i></i><i></i><i></i></div>
-          </div>
-          <div class="quiz-phone">
-            <small>Quiz - 2/10</small><b>Which principle creates emphasis?</b>
-            <span class="answer active">Contrast</span><span class="answer">Alignment</span><span class="answer">Repetition</span>
-            <i>Next</i>
-          </div>
+        <div class="project-visual minqik-visual">
+          <img
+            src={minqikImage.src}
+            width={minqikImage.width}
+            height={minqikImage.height}
+            alt={projects.minqik.title}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </article>
 
       <article class="project project-split project-reverse cs-reveal">
         <div class="project-visual papp-visual" aria-hidden="true">
           <div class="map-grid"></div>
-          <div class="parking-panel"><strong>Find parking<br />near you</strong><span></span><i>Central Plaza</i><i>River Park</i><i>City Center</i></div>
+          <div class="parking-panel">
+            <strong>Find parking<br />near you</strong><span></span><i
+              >Central Plaza</i
+            ><i>River Park</i><i>City Center</i>
+          </div>
           <div class="map-route"></div><div class="map-pin">P</div>
           <div class="navigate-chip">Navigate <span>↗</span></div>
         </div>
         <div class="project-copy">
           <span class="project-number">{projectNumbers.papp}</span>
           <h3>{projects.papp.title}</h3>
-          <p class="project-type">{projects.papp.category}<br />{projects.papp.discipline}</p>
+          <p class="project-type">
+            {projects.papp.category}<br />{projects.papp.discipline}
+          </p>
           <p class="project-description">{projects.papp.description}</p>
         </div>
       </article>
@@ -69,11 +74,16 @@ const billing = t.work.billing;
         <div class="project-copy">
           <span class="project-number">{projectNumbers.coopcibao}</span>
           <h3>{projects.coopcibao.title}</h3>
-          <p class="project-type">{projects.coopcibao.category}<br />{projects.coopcibao.discipline}</p>
+          <p class="project-type">
+            {projects.coopcibao.category}<br />{projects.coopcibao.discipline}
+          </p>
           <p class="project-description">{projects.coopcibao.description}</p>
         </div>
         <div class="coop-art" aria-hidden="true">
-          <div class="coop-arc"></div><div class="coop-circle"></div><div class="coop-square"></div>
+          <div class="coop-arc"></div><div class="coop-circle"></div><div
+            class="coop-square"
+          >
+          </div>
           <div class="coop-lines"></div><div class="coop-mark">C</div>
         </div>
       </article>
@@ -83,20 +93,34 @@ const billing = t.work.billing;
           <div class="project-copy">
             <span class="project-number">{projectNumbers.kulkul}</span>
             <h3>{projects.kulkul.title}</h3>
-            <p class="project-type">{projects.kulkul.category} / {projects.kulkul.discipline}</p>
+            <p class="project-type">
+              {projects.kulkul.category} / {projects.kulkul.discipline}
+            </p>
           </div>
-          <div class="kul-art" aria-hidden="true"><i class="leaf-one"></i><i class="leaf-two"></i><i class="sun"></i><i class="waves"></i><i class="dots"></i></div>
+          <div class="kul-art" aria-hidden="true">
+            <i class="leaf-one"></i><i class="leaf-two"></i><i class="sun"
+            ></i><i class="waves"></i><i class="dots"></i>
+          </div>
           <p class="project-description">{projects.kulkul.description}</p>
         </article>
         <article class="project project-mini cs-reveal">
           <div class="project-copy">
             <span class="project-number">{projectNumbers.lda}</span>
             <h3>{projects.lda.title}</h3>
-            <p class="project-type">{projects.lda.category} / {projects.lda.discipline}</p>
+            <p class="project-type">
+              {projects.lda.category} / {projects.lda.discipline}
+            </p>
           </div>
           <div class="football-art" aria-hidden="true">
-            <div class="field-line center"></div><div class="field-line box-left"></div><div class="field-line box-right"></div>
-            <i class="ball ball-a"></i><i class="ball ball-b"></i><i class="ball ball-c"></i><svg viewBox="0 0 300 180"><path d="M48 132 C92 112 102 52 154 78 S218 124 254 38" /></svg>
+            <div class="field-line center"></div><div
+              class="field-line box-left"
+            >
+            </div><div class="field-line box-right"></div>
+            <i class="ball ball-a"></i><i class="ball ball-b"></i><i
+              class="ball ball-c"></i><svg viewBox="0 0 300 180"
+              ><path d="M48 132 C92 112 102 52 154 78 S218 124 254 38"
+              ></path></svg
+            >
           </div>
           <p class="project-description">{projects.lda.description}</p>
         </article>
@@ -104,14 +128,24 @@ const billing = t.work.billing;
 
       <article class="project project-split project-reverse cs-reveal">
         <div class="project-visual bci-visual" aria-hidden="true">
-          <div class="browser-bar"><i></i><i></i><i></i><b>BCI</b><span>Vehicles</span><span>About</span><span>Contact</span></div>
-          <div class="bci-copy"><strong>Drive what's<br />next.</strong><span></span><i>Explore vehicles</i></div>
+          <div class="browser-bar">
+            <i></i><i></i><i></i><b>BCI</b><span>Vehicles</span><span
+              >About</span
+            ><span>Contact</span>
+          </div>
+          <div class="bci-copy">
+            <strong>Drive what's<br />next.</strong><span></span><i
+              >Explore vehicles</i
+            >
+          </div>
           <div class="bci-building"><i></i><i></i><i></i></div>
         </div>
         <div class="project-copy">
           <span class="project-number">{projectNumbers.bci}</span>
           <h3>{projects.bci.title}</h3>
-          <p class="project-type">{projects.bci.category}<br />{projects.bci.discipline}</p>
+          <p class="project-type">
+            {projects.bci.category}<br />{projects.bci.discipline}
+          </p>
           <p class="project-description">{projects.bci.description}</p>
         </div>
       </article>
@@ -125,50 +159,896 @@ const billing = t.work.billing;
         <p>{billing.description}</p>
       </div>
       <div class="billing-ui" aria-hidden="true">
-        <aside><b>KB</b><span class="active">{billing.overview}</span><span>{billing.invoices}</span><span>{billing.customers}</span><span>{billing.reports}</span><span>{billing.settings}</span></aside>
-        <div class="billing-main"><div class="billing-top"><strong>{billing.overview}</strong><i>{billing.newInvoice}</i></div><div class="billing-stats"><span></span><span></span><span></span></div><div class="invoice-list"><b>{billing.recentInvoices}</b><i></i><i></i><i></i><i></i></div></div>
+        <aside>
+          <b>KB</b><span class="active">{billing.overview}</span><span
+            >{billing.invoices}</span
+          ><span>{billing.customers}</span><span>{billing.reports}</span><span
+            >{billing.settings}</span
+          >
+        </aside>
+        <div class="billing-main">
+          <div class="billing-top">
+            <strong>{billing.overview}</strong><i>{billing.newInvoice}</i>
+          </div><div class="billing-stats">
+            <span></span><span></span><span></span>
+          </div><div class="invoice-list">
+            <b>{billing.recentInvoices}</b><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
       </div>
     </article>
   </div>
 </section>
 
 <style>
-  .work-section { background: #f5f5f3; padding: 7rem 1.5rem 9rem; overflow: hidden; }
-  .work-shell { max-width: 80rem; margin: 0 auto; }
-  .work-heading { display: grid; grid-template-columns: minmax(0, 1fr) 5rem minmax(15rem, 22rem); align-items: center; gap: 2rem; margin-bottom: 6rem; }
-  .work-heading h2 { font-family: var(--font-display); font-size: clamp(4rem, 8vw, 7.5rem); line-height: .86; letter-spacing: -.065em; font-weight: 700; }
-  .work-heading p { font-size: 1.05rem; line-height: 1.35; max-width: 22rem; }
-  .heading-line { height: 1px; background: #a9a9a5; }
-  .work-list { border-top: 1px solid #dcdcd7; }
-  .project { border-bottom: 1px solid #dcdcd7; }
-  .project-split { display: grid; grid-template-columns: minmax(15rem, .62fr) minmax(0, 1.8fr); gap: clamp(2rem, 5vw, 6rem); padding: 1.2rem 0; align-items: stretch; }
-  .project-reverse { grid-template-columns: minmax(0, 1.8fr) minmax(15rem, .62fr); }
-  .project-copy { padding: 1.5rem .25rem 1.5rem .5rem; display: flex; flex-direction: column; align-items: flex-start; }
-  .project-number { font-family: var(--font-display); font-size: clamp(4.5rem, 7vw, 7rem); line-height: .8; letter-spacing: -.06em; color: var(--color-accent); font-weight: 300; margin-bottom: 2.25rem; }
-  .project h3 { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 4rem); line-height: .95; letter-spacing: -.04em; font-weight: 600; margin-bottom: 1rem; }
-  .project-type { color: #555; font-size: 1rem; line-height: 1.3; }
-  .project-description { max-width: 28rem; color: #666; line-height: 1.55; margin-top: auto; padding-top: 2rem; }
-  .project-visual { min-height: 31rem; position: relative; overflow: hidden; border-radius: .5rem; }
-  .minqik-visual { background: #dcd6ff; display: flex; align-items: flex-end; justify-content: center; padding: 3rem 4rem 0; }
-  .minqik-orb { position: absolute; border-radius: 50%; background: #9b87ed; opacity: .7; transition: transform .7s ease; }
-  .orb-a { width: 17rem; height: 17rem; left: -4rem; top: 3rem; }.orb-b { width: 13rem; height: 13rem; right: 2rem; top: 2rem; }
-  .project:hover .orb-a { transform: translate(1rem,-1rem) scale(1.08); }.project:hover .orb-b { transform: translate(-1rem,1rem) scale(.92); }
-  .learning-window { width: 75%; height: 84%; border-radius: 1.5rem 1.5rem 0 0; padding: 2rem; background: rgba(255,255,255,.9); box-shadow: 0 1.5rem 4rem rgba(51,34,110,.18); z-index: 1; }
-  .ui-top { display: flex; gap: 1.5rem; align-items: center; font-size: .72rem; color: #777; margin-bottom: 3.5rem; }.ui-top b { color: #111; margin-right: auto; }
-  .learning-window > strong { display: block; font-size: clamp(1.35rem, 2vw, 2rem); line-height: 1.08; }.search-line { width: 62%; height: 2.2rem; border: 1px solid #ddd; border-radius: .4rem; margin: 1.3rem 0; }
-  .lesson-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; }.lesson-grid i { height: 5rem; border-radius: .5rem; background: #e8e3ff; }.lesson-grid i:nth-child(2){background:#edf0d9}.lesson-grid i:nth-child(3){background:#eee}
-  .quiz-phone { position: absolute; right: 6%; bottom: -1rem; width: 12rem; min-height: 22rem; background: #fff; border: .45rem solid #111; border-radius: 1.8rem; z-index: 2; padding: 1.4rem .8rem; box-shadow: 0 1rem 2.5rem #2c225040; display:flex; flex-direction:column; gap:.55rem; }
-  .quiz-phone small { font-size:.6rem; color:#777; }.quiz-phone b { font-size:.72rem; line-height:1.25; margin:.7rem 0; }.answer { border:1px solid #ddd; border-radius:.25rem; padding:.4rem; font-size:.6rem; }.answer.active{border-color:#43b998;background:#ebfff8}.quiz-phone i{background:#111;color:white;text-align:center;padding:.5rem;border-radius:.25rem;font-size:.65rem;margin-top:auto}
-  .papp-visual { background: #eeeee9; min-height: 29rem; }
-  .map-grid { position:absolute;inset:0;background-image:linear-gradient(32deg,transparent 46%,#fff 47%,#fff 50%,transparent 51%),linear-gradient(115deg,transparent 43%,#fff 44%,#fff 48%,transparent 49%),linear-gradient(90deg,#d6d6d0 1px,transparent 1px),linear-gradient(#d6d6d0 1px,transparent 1px);background-size:9rem 9rem,12rem 12rem,4rem 4rem,4rem 4rem;opacity:.8; }
-  .parking-panel { position:absolute;left:2rem;top:2rem;width:12rem;padding:1.4rem;background:white;border-radius:.8rem;box-shadow:0 .6rem 2rem #5552;display:flex;flex-direction:column;gap:.75rem}.parking-panel strong{font-size:1.15rem;line-height:1.05}.parking-panel span{height:1.8rem;border:1px solid #ddd;border-radius:.35rem}.parking-panel i{font-size:.65rem;padding-bottom:.55rem;border-bottom:1px solid #eee}.map-pin{position:absolute;left:58%;top:47%;width:3rem;height:3rem;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#3769eb;color:white;display:grid;place-items:center;font-weight:700;font-size:1.3rem}.map-pin::first-letter{transform:rotate(45deg)}.map-route{position:absolute;width:16rem;height:8rem;border:2px dashed #3769eb;border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;left:42%;top:24%;transform:rotate(15deg)}.navigate-chip{position:absolute;right:2rem;bottom:2rem;background:#111;color:white;border-radius:2rem;padding:.8rem 1.4rem;font-size:.8rem}.navigate-chip span{margin-left:1rem}
-  .project-dark { min-height: 31rem; display:grid;grid-template-columns:minmax(16rem,.62fr) 1.5fr;background:#101010;color:white;margin:1.2rem 0;border-radius:.5rem;overflow:hidden;border:0}.project-dark .project-copy{padding:3rem}.project-dark .project-type,.project-dark .project-description{color:#aaa}.coop-art{position:relative;overflow:hidden;border-left:1px solid #444}.coop-arc{position:absolute;width:25rem;height:25rem;border:5rem solid #2f9b69;border-radius:50%;left:20%;top:14%}.coop-circle{position:absolute;width:11rem;height:11rem;border-radius:50%;background:#f0eadb;left:10%;bottom:9%;border:1rem double #111}.coop-square{position:absolute;width:7rem;height:7rem;background:#f4eee4;left:15%;top:10%}.coop-lines{position:absolute;width:15rem;height:10rem;right:3rem;bottom:3rem;background:repeating-linear-gradient(90deg,#e8e3d1 0 2px,transparent 2px 7px);clip-path:polygon(0 0,100% 40%,100% 100%,0 70%)}.coop-mark{position:absolute;right:15%;top:12%;font-size:9rem;font-family:var(--font-display);font-weight:700;color:#2f9b69;mix-blend-mode:screen}
-  .project-duo { display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #dcdcd7}.project-mini{padding:2.5rem 2.5rem 3rem;border-bottom:0}.project-mini:first-child{border-right:1px solid #dcdcd7}.project-mini .project-copy{padding:0}.project-mini .project-number{margin-bottom:1.5rem}.project-mini h3{font-size:clamp(2.2rem,3.5vw,3.6rem)}.project-mini .project-description{margin-top:0}.kul-art,.football-art{height:20rem;margin:2rem 0;position:relative;overflow:hidden;border-radius:.4rem;background:#eee9df}.kul-art .leaf-one,.kul-art .leaf-two{position:absolute;width:12rem;height:7rem;border-radius:100% 0 100% 0;transform:rotate(-30deg)}.leaf-one{background:#ef4f35;left:14%;top:12%}.leaf-two{background:#357c54;left:34%;top:28%}.kul-art .sun{position:absolute;width:5rem;height:5rem;border-radius:50%;background:#d9c19d;right:10%;bottom:12%}.waves{position:absolute;left:8%;bottom:14%;width:9rem;height:4rem;background:repeating-radial-gradient(ellipse at 50% 100%,transparent 0 10px,#111 11px 12px,transparent 13px 20px)}.dots{position:absolute;right:12%;top:12%;width:5rem;height:5rem;background:radial-gradient(#111 1.5px,transparent 2px);background-size:14px 14px}.football-art{background:#111}.field-line{position:absolute;border:1px solid #eee}.field-line.center{width:1px;height:100%;left:50%}.field-line.center::after{content:"";position:absolute;width:8rem;height:8rem;border:1px solid #eee;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}.box-left{left:0;top:25%;width:24%;height:50%}.box-right{right:0;top:25%;width:24%;height:50%}.football-art svg{position:absolute;inset:0;width:100%;height:100%}.football-art path{fill:none;stroke:#f8543b;stroke-width:3;stroke-dasharray:8 6}.ball{position:absolute;width:.75rem;height:.75rem;border-radius:50%;background:#f8543b;border:2px solid white;z-index:2}.ball-a{left:18%;bottom:24%}.ball-b{left:52%;top:38%}.ball-c{right:16%;top:18%}
-  .bci-visual { min-height:29rem;background:#fff;border:1px solid #ddd;}.browser-bar{height:3.6rem;border-bottom:1px solid #ddd;display:flex;align-items:center;gap:.7rem;padding:0 1.2rem;font-size:.65rem}.browser-bar>i{width:.45rem;height:.45rem;border-radius:50%;background:#f8543b}.browser-bar>i:nth-child(2){background:#f4bb42}.browser-bar>i:nth-child(3){background:#47b976}.browser-bar b{font-size:1rem;margin:0 auto 0 1rem}.browser-bar span{margin-left:1rem}.bci-copy{position:absolute;left:2.5rem;top:7.5rem;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:1.3rem}.bci-copy strong{font-size:clamp(2rem,4vw,4rem);line-height:.9;letter-spacing:-.05em}.bci-copy span{width:4rem;height:3px;background:#f8543b}.bci-copy i{background:#111;color:white;padding:.7rem 1rem;font-size:.7rem;border-radius:.25rem}.bci-building{position:absolute;right:0;bottom:0;width:57%;height:75%;display:flex;align-items:flex-end;transform:skewY(-8deg);transform-origin:bottom right}.bci-building i{height:70%;flex:1;background:#214db5;border:1px solid #fff8}.bci-building i:nth-child(2){height:100%;background:#4072e0}.bci-building i:nth-child(3){height:84%;background:#102d71}
-  .billing-feature { margin-top:6rem;background:#101010;color:white;border-radius:.6rem;min-height:34rem;display:grid;grid-template-columns:.72fr 1.45fr;overflow:hidden}.billing-copy{padding:4rem;display:flex;flex-direction:column;align-items:flex-start}.billing-label{text-transform:uppercase;letter-spacing:.15em;font-size:.65rem;font-weight:700;margin-bottom:2.5rem}.billing-label i{display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:var(--color-accent);margin-right:.55rem}.billing-copy h3{font-family:var(--font-display);font-size:clamp(3.3rem,5vw,5.5rem);line-height:.9;letter-spacing:-.055em;margin-bottom:1.2rem}.billing-type{color:var(--color-accent);font-weight:600;margin-bottom:2rem}.billing-copy>p:last-child{color:#aaa;line-height:1.55;max-width:22rem;margin-top:auto}.billing-ui{margin:2.5rem 0 0;display:grid;grid-template-columns:10rem 1fr;background:#181818;border:1px solid #3b3b3b;border-radius:1rem 0 0 0;overflow:hidden}.billing-ui aside{border-right:1px solid #333;padding:1.5rem .8rem;display:flex;flex-direction:column;gap:.5rem}.billing-ui aside b{font-size:1.2rem;margin-bottom:2rem}.billing-ui aside span{font-size:.65rem;color:#888;padding:.65rem;border-radius:.35rem}.billing-ui aside .active{color:white;background:#f8543b33}.billing-main{padding:1.6rem}.billing-top{display:flex;justify-content:space-between;align-items:center}.billing-top i{background:var(--color-accent);padding:.6rem .8rem;border-radius:.3rem;font-size:.6rem}.billing-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:1.7rem 0}.billing-stats span{height:5.5rem;border:1px solid #333;border-radius:.5rem;background:linear-gradient(145deg,#242424,#1b1b1b)}.invoice-list b{font-size:.8rem}.invoice-list i{display:block;height:2.8rem;border-bottom:1px solid #303030}.invoice-list i::after{content:"";display:block;width:65%;height:.45rem;background:#343434;border-radius:1rem;transform:translateY(1.2rem)}
-  .cs-reveal{opacity:0;transform:translateY(3rem)}
-  @media (max-width: 900px){.work-heading{grid-template-columns:1fr;gap:1.5rem}.heading-line{width:5rem}.project-split,.project-reverse{grid-template-columns:1fr}.project-reverse .project-visual{order:2}.project-reverse .project-copy{order:1}.project-copy{padding:2.5rem .5rem}.project-number{margin-bottom:1.5rem}.project-description{margin-top:0}.project-duo{grid-template-columns:1fr}.project-mini:first-child{border-right:0;border-bottom:1px solid #dcdcd7}.project-dark{grid-template-columns:1fr}.coop-art{min-height:25rem;border-left:0;border-top:1px solid #444}.billing-feature{grid-template-columns:1fr}.billing-ui{margin:0 1.5rem 0;min-height:25rem;border-radius:1rem 1rem 0 0}.billing-copy>p:last-child{margin-top:1rem}}
-  @media (max-width: 600px){.work-section{padding:5rem 1rem 6rem}.work-heading{margin-bottom:4rem}.work-heading h2{font-size:3.8rem}.project-visual{min-height:24rem}.minqik-visual{padding:2rem 1rem 0}.learning-window{width:90%;padding:1.3rem}.quiz-phone{width:9rem;min-height:18rem;right:2%}.parking-panel{left:1rem;top:1rem;width:10rem}.project-mini{padding:2.5rem 0}.project-dark{margin-inline:-1rem;border-radius:0}.project-dark .project-copy{padding:2.5rem 1.5rem}.billing-feature{margin-inline:-1rem;border-radius:0}.billing-copy{padding:3rem 1.5rem}.billing-ui{grid-template-columns:5.5rem 1fr;margin:0 .75rem}.billing-ui aside span{font-size:.55rem;padding:.5rem .35rem}.billing-stats{grid-template-columns:1fr 1fr}.billing-stats span:last-child{display:none}.browser-bar span{display:none}.bci-building{width:68%}}
+  .work-section {
+    background: #f5f5f3;
+    padding: 7rem 1.5rem 9rem;
+    overflow: hidden;
+  }
+  .work-shell {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  .work-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 5rem minmax(15rem, 22rem);
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 6rem;
+  }
+  .work-heading h2 {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    line-height: 0.86;
+    letter-spacing: -0.065em;
+    font-weight: 700;
+  }
+  .work-heading p {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    max-width: 22rem;
+  }
+  .heading-line {
+    height: 1px;
+    background: #a9a9a5;
+  }
+  .work-list {
+    border-top: 1px solid #dcdcd7;
+  }
+  .project {
+    border-bottom: 1px solid #dcdcd7;
+  }
+  .project-split {
+    display: grid;
+    grid-template-columns: minmax(15rem, 0.62fr) minmax(0, 1.8fr);
+    gap: clamp(2rem, 5vw, 6rem);
+    padding: 1.2rem 0;
+    align-items: stretch;
+  }
+  .project-reverse {
+    grid-template-columns: minmax(0, 1.8fr) minmax(15rem, 0.62fr);
+  }
+  .project-copy {
+    padding: 1.5rem 0.25rem 1.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-number {
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 7vw, 7rem);
+    line-height: 0.8;
+    letter-spacing: -0.06em;
+    color: var(--color-accent);
+    font-weight: 300;
+    margin-bottom: 2.25rem;
+  }
+  .project h3 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .project-type {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  .project-description {
+    max-width: 28rem;
+    color: #666;
+    line-height: 1.55;
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+  .project-visual {
+    min-height: 31rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  .minqik-visual {
+    background: #dcd6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .minqik-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.35rem;
+    box-shadow: 0 1.5rem 4rem rgba(51, 34, 110, 0.2);
+  }
+  .minqik-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: #9b87ed;
+    opacity: 0.7;
+    transition: transform 0.7s ease;
+  }
+  .orb-a {
+    width: 17rem;
+    height: 17rem;
+    left: -4rem;
+    top: 3rem;
+  }
+  .orb-b {
+    width: 13rem;
+    height: 13rem;
+    right: 2rem;
+    top: 2rem;
+  }
+  .project:hover .orb-a {
+    transform: translate(1rem, -1rem) scale(1.08);
+  }
+  .project:hover .orb-b {
+    transform: translate(-1rem, 1rem) scale(0.92);
+  }
+  .learning-window {
+    width: 75%;
+    height: 84%;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1.5rem 4rem rgba(51, 34, 110, 0.18);
+    z-index: 1;
+  }
+  .ui-top {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: 0.72rem;
+    color: #777;
+    margin-bottom: 3.5rem;
+  }
+  .ui-top b {
+    color: #111;
+    margin-right: auto;
+  }
+  .learning-window > strong {
+    display: block;
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    line-height: 1.08;
+  }
+  .search-line {
+    width: 62%;
+    height: 2.2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.4rem;
+    margin: 1.3rem 0;
+  }
+  .lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  .lesson-grid i {
+    height: 5rem;
+    border-radius: 0.5rem;
+    background: #e8e3ff;
+  }
+  .lesson-grid i:nth-child(2) {
+    background: #edf0d9;
+  }
+  .lesson-grid i:nth-child(3) {
+    background: #eee;
+  }
+  .quiz-phone {
+    position: absolute;
+    right: 6%;
+    bottom: -1rem;
+    width: 12rem;
+    min-height: 22rem;
+    background: #fff;
+    border: 0.45rem solid #111;
+    border-radius: 1.8rem;
+    z-index: 2;
+    padding: 1.4rem 0.8rem;
+    box-shadow: 0 1rem 2.5rem #2c225040;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .quiz-phone small {
+    font-size: 0.6rem;
+    color: #777;
+  }
+  .quiz-phone b {
+    font-size: 0.72rem;
+    line-height: 1.25;
+    margin: 0.7rem 0;
+  }
+  .answer {
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    padding: 0.4rem;
+    font-size: 0.6rem;
+  }
+  .answer.active {
+    border-color: #43b998;
+    background: #ebfff8;
+  }
+  .quiz-phone i {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.65rem;
+    margin-top: auto;
+  }
+  .papp-visual {
+    background: #eeeee9;
+    min-height: 29rem;
+  }
+  .map-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        32deg,
+        transparent 46%,
+        #fff 47%,
+        #fff 50%,
+        transparent 51%
+      ),
+      linear-gradient(
+        115deg,
+        transparent 43%,
+        #fff 44%,
+        #fff 48%,
+        transparent 49%
+      ),
+      linear-gradient(90deg, #d6d6d0 1px, transparent 1px),
+      linear-gradient(#d6d6d0 1px, transparent 1px);
+    background-size:
+      9rem 9rem,
+      12rem 12rem,
+      4rem 4rem,
+      4rem 4rem;
+    opacity: 0.8;
+  }
+  .parking-panel {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    width: 12rem;
+    padding: 1.4rem;
+    background: white;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.6rem 2rem #5552;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .parking-panel strong {
+    font-size: 1.15rem;
+    line-height: 1.05;
+  }
+  .parking-panel span {
+    height: 1.8rem;
+    border: 1px solid #ddd;
+    border-radius: 0.35rem;
+  }
+  .parking-panel i {
+    font-size: 0.65rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid #eee;
+  }
+  .map-pin {
+    position: absolute;
+    left: 58%;
+    top: 47%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    background: #3769eb;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+  .map-pin::first-letter {
+    transform: rotate(45deg);
+  }
+  .map-route {
+    position: absolute;
+    width: 16rem;
+    height: 8rem;
+    border: 2px dashed #3769eb;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    left: 42%;
+    top: 24%;
+    transform: rotate(15deg);
+  }
+  .navigate-chip {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    background: #111;
+    color: white;
+    border-radius: 2rem;
+    padding: 0.8rem 1.4rem;
+    font-size: 0.8rem;
+  }
+  .navigate-chip span {
+    margin-left: 1rem;
+  }
+  .project-dark {
+    min-height: 31rem;
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.62fr) 1.5fr;
+    background: #101010;
+    color: white;
+    margin: 1.2rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 0;
+  }
+  .project-dark .project-copy {
+    padding: 3rem;
+  }
+  .project-dark .project-type,
+  .project-dark .project-description {
+    color: #aaa;
+  }
+  .coop-art {
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid #444;
+  }
+  .coop-arc {
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    border: 5rem solid #2f9b69;
+    border-radius: 50%;
+    left: 20%;
+    top: 14%;
+  }
+  .coop-circle {
+    position: absolute;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    background: #f0eadb;
+    left: 10%;
+    bottom: 9%;
+    border: 1rem double #111;
+  }
+  .coop-square {
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    background: #f4eee4;
+    left: 15%;
+    top: 10%;
+  }
+  .coop-lines {
+    position: absolute;
+    width: 15rem;
+    height: 10rem;
+    right: 3rem;
+    bottom: 3rem;
+    background: repeating-linear-gradient(
+      90deg,
+      #e8e3d1 0 2px,
+      transparent 2px 7px
+    );
+    clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 70%);
+  }
+  .coop-mark {
+    position: absolute;
+    right: 15%;
+    top: 12%;
+    font-size: 9rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #2f9b69;
+    mix-blend-mode: screen;
+  }
+  .project-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #dcdcd7;
+  }
+  .project-mini {
+    padding: 2.5rem 2.5rem 3rem;
+    border-bottom: 0;
+  }
+  .project-mini:first-child {
+    border-right: 1px solid #dcdcd7;
+  }
+  .project-mini .project-copy {
+    padding: 0;
+  }
+  .project-mini .project-number {
+    margin-bottom: 1.5rem;
+  }
+  .project-mini h3 {
+    font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+  }
+  .project-mini .project-description {
+    margin-top: 0;
+  }
+  .kul-art,
+  .football-art {
+    height: 20rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    background: #eee9df;
+  }
+  .kul-art .leaf-one,
+  .kul-art .leaf-two {
+    position: absolute;
+    width: 12rem;
+    height: 7rem;
+    border-radius: 100% 0 100% 0;
+    transform: rotate(-30deg);
+  }
+  .leaf-one {
+    background: #ef4f35;
+    left: 14%;
+    top: 12%;
+  }
+  .leaf-two {
+    background: #357c54;
+    left: 34%;
+    top: 28%;
+  }
+  .kul-art .sun {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: #d9c19d;
+    right: 10%;
+    bottom: 12%;
+  }
+  .waves {
+    position: absolute;
+    left: 8%;
+    bottom: 14%;
+    width: 9rem;
+    height: 4rem;
+    background: repeating-radial-gradient(
+      ellipse at 50% 100%,
+      transparent 0 10px,
+      #111 11px 12px,
+      transparent 13px 20px
+    );
+  }
+  .dots {
+    position: absolute;
+    right: 12%;
+    top: 12%;
+    width: 5rem;
+    height: 5rem;
+    background: radial-gradient(#111 1.5px, transparent 2px);
+    background-size: 14px 14px;
+  }
+  .football-art {
+    background: #111;
+  }
+  .field-line {
+    position: absolute;
+    border: 1px solid #eee;
+  }
+  .field-line.center {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+  }
+  .field-line.center::after {
+    content: "";
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .box-left {
+    left: 0;
+    top: 25%;
+    width: 24%;
+    height: 50%;
+  }
+  .box-right {
+    right: 0;
+    top: 25%;
+    width: 24%;
+    height: 50%;
+  }
+  .football-art svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .football-art path {
+    fill: none;
+    stroke: #f8543b;
+    stroke-width: 3;
+    stroke-dasharray: 8 6;
+  }
+  .ball {
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: #f8543b;
+    border: 2px solid white;
+    z-index: 2;
+  }
+  .ball-a {
+    left: 18%;
+    bottom: 24%;
+  }
+  .ball-b {
+    left: 52%;
+    top: 38%;
+  }
+  .ball-c {
+    right: 16%;
+    top: 18%;
+  }
+  .bci-visual {
+    min-height: 29rem;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+  .browser-bar {
+    height: 3.6rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0 1.2rem;
+    font-size: 0.65rem;
+  }
+  .browser-bar > i {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #f8543b;
+  }
+  .browser-bar > i:nth-child(2) {
+    background: #f4bb42;
+  }
+  .browser-bar > i:nth-child(3) {
+    background: #47b976;
+  }
+  .browser-bar b {
+    font-size: 1rem;
+    margin: 0 auto 0 1rem;
+  }
+  .browser-bar span {
+    margin-left: 1rem;
+  }
+  .bci-copy {
+    position: absolute;
+    left: 2.5rem;
+    top: 7.5rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.3rem;
+  }
+  .bci-copy strong {
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+  }
+  .bci-copy span {
+    width: 4rem;
+    height: 3px;
+    background: #f8543b;
+  }
+  .bci-copy i {
+    background: #111;
+    color: white;
+    padding: 0.7rem 1rem;
+    font-size: 0.7rem;
+    border-radius: 0.25rem;
+  }
+  .bci-building {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 57%;
+    height: 75%;
+    display: flex;
+    align-items: flex-end;
+    transform: skewY(-8deg);
+    transform-origin: bottom right;
+  }
+  .bci-building i {
+    height: 70%;
+    flex: 1;
+    background: #214db5;
+    border: 1px solid #fff8;
+  }
+  .bci-building i:nth-child(2) {
+    height: 100%;
+    background: #4072e0;
+  }
+  .bci-building i:nth-child(3) {
+    height: 84%;
+    background: #102d71;
+  }
+  .billing-feature {
+    margin-top: 6rem;
+    background: #101010;
+    color: white;
+    border-radius: 0.6rem;
+    min-height: 34rem;
+    display: grid;
+    grid-template-columns: 0.72fr 1.45fr;
+    overflow: hidden;
+  }
+  .billing-copy {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .billing-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.65rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+  }
+  .billing-label i {
+    display: inline-block;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    margin-right: 0.55rem;
+  }
+  .billing-copy h3 {
+    font-family: var(--font-display);
+    font-size: clamp(3.3rem, 5vw, 5.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+    margin-bottom: 1.2rem;
+  }
+  .billing-type {
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  .billing-copy > p:last-child {
+    color: #aaa;
+    line-height: 1.55;
+    max-width: 22rem;
+    margin-top: auto;
+  }
+  .billing-ui {
+    margin: 2.5rem 0 0;
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    background: #181818;
+    border: 1px solid #3b3b3b;
+    border-radius: 1rem 0 0 0;
+    overflow: hidden;
+  }
+  .billing-ui aside {
+    border-right: 1px solid #333;
+    padding: 1.5rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .billing-ui aside b {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .billing-ui aside span {
+    font-size: 0.65rem;
+    color: #888;
+    padding: 0.65rem;
+    border-radius: 0.35rem;
+  }
+  .billing-ui aside .active {
+    color: white;
+    background: #f8543b33;
+  }
+  .billing-main {
+    padding: 1.6rem;
+  }
+  .billing-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .billing-top i {
+    background: var(--color-accent);
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.3rem;
+    font-size: 0.6rem;
+  }
+  .billing-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+    margin: 1.7rem 0;
+  }
+  .billing-stats span {
+    height: 5.5rem;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    background: linear-gradient(145deg, #242424, #1b1b1b);
+  }
+  .invoice-list b {
+    font-size: 0.8rem;
+  }
+  .invoice-list i {
+    display: block;
+    height: 2.8rem;
+    border-bottom: 1px solid #303030;
+  }
+  .invoice-list i::after {
+    content: "";
+    display: block;
+    width: 65%;
+    height: 0.45rem;
+    background: #343434;
+    border-radius: 1rem;
+    transform: translateY(1.2rem);
+  }
+  .cs-reveal {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  @media (max-width: 900px) {
+    .work-heading {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .heading-line {
+      width: 5rem;
+    }
+    .project-split,
+    .project-reverse {
+      grid-template-columns: 1fr;
+    }
+    .project-reverse .project-visual {
+      order: 2;
+    }
+    .project-reverse .project-copy {
+      order: 1;
+    }
+    .project-copy {
+      padding: 2.5rem 0.5rem;
+    }
+    .project-number {
+      margin-bottom: 1.5rem;
+    }
+    .project-description {
+      margin-top: 0;
+    }
+    .project-duo {
+      grid-template-columns: 1fr;
+    }
+    .project-mini:first-child {
+      border-right: 0;
+      border-bottom: 1px solid #dcdcd7;
+    }
+    .project-dark {
+      grid-template-columns: 1fr;
+    }
+    .coop-art {
+      min-height: 25rem;
+      border-left: 0;
+      border-top: 1px solid #444;
+    }
+    .billing-feature {
+      grid-template-columns: 1fr;
+    }
+    .billing-ui {
+      margin: 0 1.5rem 0;
+      min-height: 25rem;
+      border-radius: 1rem 1rem 0 0;
+    }
+    .billing-copy > p:last-child {
+      margin-top: 1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .work-section {
+      padding: 5rem 1rem 6rem;
+    }
+    .work-heading {
+      margin-bottom: 4rem;
+    }
+    .work-heading h2 {
+      font-size: 3.8rem;
+    }
+    .project-visual {
+      min-height: 24rem;
+    }
+    .minqik-visual {
+      padding: 0.75rem;
+    }
+    .parking-panel {
+      left: 1rem;
+      top: 1rem;
+      width: 10rem;
+    }
+    .project-mini {
+      padding: 2.5rem 0;
+    }
+    .project-dark {
+      margin-inline: -1rem;
+      border-radius: 0;
+    }
+    .project-dark .project-copy {
+      padding: 2.5rem 1.5rem;
+    }
+    .billing-feature {
+      margin-inline: -1rem;
+      border-radius: 0;
+    }
+    .billing-copy {
+      padding: 3rem 1.5rem;
+    }
+    .billing-ui {
+      grid-template-columns: 5.5rem 1fr;
+      margin: 0 0.75rem;
+    }
+    .billing-ui aside span {
+      font-size: 0.55rem;
+      padding: 0.5rem 0.35rem;
+    }
+    .billing-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+    .billing-stats span:last-child {
+      display: none;
+    }
+    .browser-bar span {
+      display: none;
+    }
+    .bci-building {
+      width: 68%;
+    }
+  }
 </style>
 
 <script>
@@ -178,7 +1058,13 @@ const billing = t.work.billing;
 
   requestAnimationFrame(() => {
     gsap.utils.toArray<HTMLElement>(".cs-reveal").forEach((element) => {
-      gsap.to(element, { scrollTrigger: { trigger: element, start: "top 88%", once: true }, opacity: 1, y: 0, duration: .9, ease: "power3.out" });
+      gsap.to(element, {
+        scrollTrigger: { trigger: element, start: "top 88%", once: true },
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: "power3.out",
+      });
     });
   });
 </script>

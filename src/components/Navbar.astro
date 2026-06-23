@@ -1,186 +1,88 @@
 ---
-import { Image } from "astro:assets";
+import type { Dictionary, Locale } from "../i18n";
+
+interface Props {
+  locale?: Locale;
+  t: Dictionary;
+}
+
+const { locale = "en", t } = Astro.props;
+const homeHref = locale === "es" ? "/es/" : "/";
 ---
 
-<nav
-  id="navbar"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-4 text-[var(--color-text)]"
->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-4 text-[var(--color-text)]">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between h-14">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group z-50 relative">
-        <div
-          class="w-8 h-8 rounded-lg bg-[var(--color-text)] flex items-center justify-center transition-colors duration-300 logo-icon"
-        >
-          <span class="text-white font-display font-bold text-sm logo-letter"
-            >K</span
-          >
+      <a href={homeHref} class="flex items-center gap-2 group z-50 relative">
+        <div class="w-8 h-8 rounded-lg bg-[var(--color-text)] flex items-center justify-center transition-colors duration-300 logo-icon">
+          <span class="text-white font-display font-bold text-sm logo-letter">K</span>
         </div>
-        <span
-          class="font-display font-semibold text-lg tracking-tight transition-colors duration-300 logo-text"
-          >Knoa Studio</span
-        >
+        <span class="font-display font-semibold text-lg tracking-tight transition-colors duration-300 logo-text">Knoa Studio</span>
       </a>
 
-      <!-- Desktop Links & CTA -->
       <div class="hidden md:flex items-center gap-8 z-50 relative">
-        <a
-          href="#about"
-          class="text-sm font-medium hover:opacity-70 transition-opacity duration-200"
-          >About</a
-        >
-        <a
-          href="#case-studies"
-          class="text-sm font-medium hover:opacity-70 transition-opacity duration-200"
-          >Work</a
-        >
-        <a
-          href="#services"
-          class="text-sm font-medium hover:opacity-70 transition-opacity duration-200"
-          >Services</a
-        >
-        <a
-          href="#process"
-          class="text-sm font-medium hover:opacity-70 transition-opacity duration-200"
-          >Process</a
-        >
-        <a
-          href="#cta"
-          class="inline-flex items-center justify-center h-10 px-6 text-sm font-bold text-white bg-[var(--color-text)] rounded-full hover:scale-105 transition-transform duration-300 nav-cta"
-        >
-          Let's Talk!
-        </a>
+        <a href="#about" class="text-sm font-medium hover:opacity-70 transition-opacity duration-200">{t.nav.about}</a>
+        <a href="#case-studies" class="text-sm font-medium hover:opacity-70 transition-opacity duration-200">{t.nav.work}</a>
+        <a href="#services" class="text-sm font-medium hover:opacity-70 transition-opacity duration-200">{t.nav.services}</a>
+        <a href="#process" class="text-sm font-medium hover:opacity-70 transition-opacity duration-200">{t.nav.process}</a>
+        <a href="#cta" class="inline-flex items-center justify-center h-10 px-6 text-sm font-bold text-white bg-[var(--color-text)] rounded-full hover:scale-105 transition-transform duration-300 nav-cta">{t.nav.cta}</a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button
-        id="mobile-menu-btn"
-        class="md:hidden flex flex-col gap-1.5 p-2 z-50 relative group"
-        aria-label="Toggle menu"
-      >
-        <span
-          class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center"
-          id="menu-line-1"></span>
-        <span
-          class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center"
-          id="menu-line-2"></span>
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50 relative group" aria-label={t.nav.menuLabel}>
+        <span class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center" id="menu-line-1"></span>
+        <span class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center" id="menu-line-2"></span>
       </button>
     </div>
   </div>
 
-  <!-- Fullscreen Mobile Menu Overlay -->
-  <div
-    id="mobile-menu-overlay"
-    class="fixed inset-0 bg-[var(--color-bg)] z-40 translate-y-[-100%] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] flex flex-col"
-  >
-    <div
-      class="flex-1 flex flex-col items-center justify-center gap-8 px-6 pt-20"
-    >
-      <a
-        href="#about"
-        class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-100"
-        >About</a
-      >
-      <a
-        href="#case-studies"
-        class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-150"
-        >Work</a
-      >
-      <a
-        href="#services"
-        class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-200"
-        >Services</a
-      >
-      <a
-        href="#process"
-        class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-250"
-        >Process</a
-      >
-      <div
-        class="h-px w-16 bg-[var(--color-border)] my-4 opacity-0 scale-x-0 transition-all duration-500 delay-300 separator"
-      >
-      </div>
-      <a
-        href="#cta"
-        class="mobile-link text-xl font-medium text-[var(--color-accent)] opacity-0 translate-y-8 transition-all duration-500 delay-300"
-        >Let's Talk!</a
-      >
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-[var(--color-bg)] z-40 translate-y-[-100%] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] flex flex-col">
+    <div class="flex-1 flex flex-col items-center justify-center gap-8 px-6 pt-20">
+      <a href="#about" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-100">{t.nav.about}</a>
+      <a href="#case-studies" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-150">{t.nav.work}</a>
+      <a href="#services" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-200">{t.nav.services}</a>
+      <a href="#process" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-250">{t.nav.process}</a>
+      <div class="h-px w-16 bg-[var(--color-border)] my-4 opacity-0 scale-x-0 transition-all duration-500 delay-300 separator"></div>
+      <a href="#cta" class="mobile-link text-xl font-medium text-[var(--color-accent)] opacity-0 translate-y-8 transition-all duration-500 delay-300">{t.nav.cta}</a>
     </div>
   </div>
 </nav>
 
 <style>
-  /* Menu open states */
-  .menu-open #menu-line-1 {
-    transform: translateY(4px) rotate(45deg);
-  }
-  .menu-open #menu-line-2 {
-    transform: translateY(-4px) rotate(-45deg);
-  }
-  .menu-open #mobile-menu-overlay {
-    transform: translateY(0);
-  }
-  .menu-open .mobile-link {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-  .menu-open .separator {
-    opacity: 1 !important;
-    transform: scaleX(1) !important;
-  }
+  .menu-open #menu-line-1 { transform: translateY(4px) rotate(45deg); }
+  .menu-open #menu-line-2 { transform: translateY(-4px) rotate(-45deg); }
+  .menu-open #mobile-menu-overlay { transform: translateY(0); }
+  .menu-open .mobile-link { opacity: 1 !important; transform: translateY(0) !important; }
+  .menu-open .separator { opacity: 1 !important; transform: scaleX(1) !important; }
 </style>
 
 <script>
-  // Navbar scroll effect
   const navbar = document.getElementById("navbar");
-  const logoIcon = document.querySelector(".logo-icon");
-  const logoLetter = document.querySelector(".logo-letter");
 
   if (navbar) {
     window.addEventListener("scroll", () => {
       const currentScroll = window.scrollY;
       if (currentScroll > 50) {
-        navbar.classList.add(
-          "bg-white/90",
-          "backdrop-blur-md",
-          "shadow-sm",
-          "border-b",
-          "border-[var(--color-border)]",
-          "py-2",
-        );
+        navbar.classList.add("bg-white/90", "backdrop-blur-md", "shadow-sm", "border-b", "border-[var(--color-border)]", "py-2");
         navbar.classList.remove("bg-transparent", "py-4");
       } else {
-        navbar.classList.remove(
-          "bg-white/90",
-          "backdrop-blur-md",
-          "shadow-sm",
-          "border-b",
-          "border-[var(--color-border)]",
-          "py-2",
-        );
+        navbar.classList.remove("bg-white/90", "backdrop-blur-md", "shadow-sm", "border-b", "border-[var(--color-border)]", "py-2");
         navbar.classList.add("bg-transparent", "py-4");
       }
     });
   }
 
-  // Mobile menu toggle
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const body = document.body;
   let isOpen = false;
 
   function toggleMenu() {
     isOpen = !isOpen;
-    if (isOpen) {
-      body.classList.add("menu-open", "overflow-hidden");
-    } else {
-      body.classList.remove("menu-open", "overflow-hidden");
-    }
+    if (isOpen) body.classList.add("menu-open", "overflow-hidden");
+    else body.classList.remove("menu-open", "overflow-hidden");
   }
 
   mobileMenuBtn?.addEventListener("click", toggleMenu);
 
-  // Close menu on link click
   document.querySelectorAll(".mobile-link").forEach((link) => {
     link.addEventListener("click", () => {
       if (isOpen) toggleMenu();
