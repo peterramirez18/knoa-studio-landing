@@ -1,6 +1,7 @@
 ---
 import type { Dictionary } from "../i18n";
 import minqikImage from "../assets/projects/minqik.png";
+import parqueameImage from "../assets/projects/parqueameapp.png";
 
 interface Props {
   t: Dictionary;
@@ -50,15 +51,15 @@ const billing = t.work.billing;
       </article>
 
       <article class="project project-split project-reverse cs-reveal">
-        <div class="project-visual papp-visual" aria-hidden="true">
-          <div class="map-grid"></div>
-          <div class="parking-panel">
-            <strong>Find parking<br />near you</strong><span></span><i
-              >Central Plaza</i
-            ><i>River Park</i><i>City Center</i>
-          </div>
-          <div class="map-route"></div><div class="map-pin">P</div>
-          <div class="navigate-chip">Navigate <span>↗</span></div>
+        <div class="project-visual papp-visual">
+          <img
+            src={parqueameImage.src}
+            width={parqueameImage.width}
+            height={parqueameImage.height}
+            alt={projects.papp.title}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div class="project-copy">
           <span class="project-number">{projectNumbers.papp}</span>
@@ -404,6 +405,17 @@ const billing = t.work.billing;
   .papp-visual {
     background: #eeeee9;
     min-height: 29rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+  }
+  .papp-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.35rem;
+    box-shadow: 0 1.5rem 4rem rgba(28, 50, 80, 0.16);
   }
   .map-grid {
     position: absolute;
@@ -1003,7 +1015,8 @@ const billing = t.work.billing;
     .project-visual {
       min-height: 24rem;
     }
-    .minqik-visual {
+    .minqik-visual,
+    .papp-visual {
       padding: 0.75rem;
     }
     .parking-panel {
