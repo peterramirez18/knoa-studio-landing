@@ -1,48 +1,31 @@
----
+﻿---
+import type { Dictionary } from "../i18n";
 
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
 ---
 
 <section id="about" class="relative py-24 lg:py-40 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
-      <!-- Left: Title Area -->
       <div class="lg:col-span-5 about-left opacity-0 translate-y-12">
-        <h2
-          class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--color-text)] mb-4"
-        >
-          We <span class="text-[var(--color-accent)] italic font-light"
-            >are</span
-          > Knoa Studio
+        <h2 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--color-text)] mb-4">
+          {t.about.titleBefore} <span class="text-[var(--color-accent)] italic font-light">{t.about.titleAccent}</span> {t.about.titleAfter}
         </h2>
-        <h3
-          class="font-sans text-xl sm:text-2xl text-[var(--color-text)] font-semibold mb-8"
-        >
-          Your partner in motion & growth
+        <h3 class="font-sans text-xl sm:text-2xl text-[var(--color-text)] font-semibold mb-8">
+          {t.about.subtitle}
         </h3>
       </div>
 
-      <!-- Right: Description Area -->
-      <div
-        class="lg:col-span-7 flex flex-col justify-center about-right opacity-0 translate-y-12"
-      >
-        <div
-          class="prose prose-lg text-[var(--color-text-secondary)] font-medium leading-relaxed max-w-none"
-        >
-          <p
-            class="mb-6 text-xl lg:text-2xl text-[var(--color-text)] leading-snug"
-          >
-            We're a creative studio building high-end launch experiences for
-            ambitious brands and products. By combining motion, design, and
-            development, we create digital assets that cut through the noise and
-            drive measurable revenue.
+      <div class="lg:col-span-7 flex flex-col justify-center about-right opacity-0 translate-y-12">
+        <div class="prose prose-lg text-[var(--color-text-secondary)] font-medium leading-relaxed max-w-none">
+          <p class="mb-6 text-xl lg:text-2xl text-[var(--color-text)] leading-snug">
+            {t.about.paragraph1}
           </p>
-          <p>
-            Whether it's a breathtaking promotional video, a high-converting
-            landing page, or a complete digital product ecosystem, every project
-            is tailored to communicate your unique value and engineered for
-            performance. If you're looking for a partner to elevate your next
-            big launch, we're ready to build it with you.
-          </p>
+          <p>{t.about.paragraph2}</p>
         </div>
       </div>
     </div>
@@ -56,27 +39,12 @@
 
   requestAnimationFrame(() => {
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 75%",
-        toggleActions: "play none none none",
-        once: true,
-      },
+      scrollTrigger: { trigger: "#about", start: "top 75%", toggleActions: "play none none none", once: true },
     });
 
-    tl.to(".about-left", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power3.out",
-    }).to(
+    tl.to(".about-left", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }).to(
       ".about-right",
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-      },
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
       "-=0.6",
     );
   });

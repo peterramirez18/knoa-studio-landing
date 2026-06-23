@@ -1,5 +1,11 @@
----
+﻿---
+import type { Dictionary } from "../i18n";
 
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
 ---
 
 <section
@@ -15,49 +21,23 @@
     playsinline
     preload="metadata"></video>
   <div class="absolute inset-0 z-[1] bg-black/45"></div>
-  <div
-    class="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-center"
-  >
-    <img
-      src="/logo-knoa-dark.svg"
-      alt="Knoa Studio"
-      class="w-64 h-auto mb-12 lg:mb-16"
-    />
-    <!-- Massive Centered Heading -->
+  <div class="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-center">
+    <img src="/logo-knoa-dark.svg" alt="Knoa Studio" class="w-64 h-auto mb-12 lg:mb-16" />
     <div class="text-center w-full mb-12 lg:mb-16">
-      <h1
-        class="font-display font-bold text-[clamp(3.5rem,8vw,8rem)] leading-[0.9] tracking-tighter text-[var(--color-white)] mb-6 mx-auto max-w-[15ch] hero-title opacity-0 translate-y-12"
-      >
-        We build launch experiences that turn attention into revenue.
+      <h1 class="font-display font-bold text-[clamp(3.5rem,8vw,8rem)] leading-[0.9] tracking-tighter text-[var(--color-white)] mb-6 mx-auto max-w-[15ch] hero-title opacity-0 translate-y-12">
+        {t.hero.title}
       </h1>
-      <p
-        class="text-lg lg:text-2xl text-[var(--color-white)] font-medium max-w-2xl mx-auto hero-subtitle opacity-0 translate-y-8"
-      >
-        Product launch videos, high-impact landing pages, and web development.
+      <p class="text-lg lg:text-2xl text-[var(--color-white)] font-medium max-w-2xl mx-auto hero-subtitle opacity-0 translate-y-8">
+        {t.hero.subtitle}
       </p>
     </div>
 
-    <!-- CTA Below Visual -->
     <div class="mt-12 hero-cta opacity-0 translate-y-8">
-      <a
-        href="#case-studies"
-        class="group inline-flex items-center gap-3 px-8 py-4 bg-white border border-[var(--color-border)] rounded-full text-base font-semibold hover:border-[var(--color-text)] hover:shadow-lg transition-all duration-300"
-      >
-        Explore Our Work
-        <span
-          class="w-8 h-8 rounded-full bg-[var(--color-bg-subtle)] flex items-center justify-center group-hover:bg-[var(--color-text)] group-hover:text-white transition-colors duration-300"
-        >
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2.5"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      <a href="#case-studies" class="group inline-flex items-center gap-3 px-8 py-4 bg-white border border-[var(--color-border)] rounded-full text-base font-semibold hover:border-[var(--color-text)] hover:shadow-lg transition-all duration-300">
+        {t.hero.cta}
+        <span class="w-8 h-8 rounded-full bg-[var(--color-bg-subtle)] flex items-center justify-center group-hover:bg-[var(--color-text)] group-hover:text-white transition-colors duration-300">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </span>
       </a>
@@ -66,62 +46,22 @@
 </section>
 
 <style>
-  .animate-pulse-slow {
-    animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
+  .animate-pulse-slow { animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
   @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.7;
-      transform: scale(1.05);
-    }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
   }
 </style>
 
 <script>
   import gsap from "gsap";
 
-  // Wait for DOM
   requestAnimationFrame(() => {
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    tl.to(".hero-title", {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      delay: 0.1,
-    })
-      .to(
-        ".hero-subtitle",
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-        },
-        "-=0.9",
-      )
-      .to(
-        ".hero-visual",
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 1.4,
-          ease: "power3.inOut",
-        },
-        "-=0.8",
-      )
-      .to(
-        ".hero-cta",
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-        },
-        "-=0.6",
-      );
+    tl.to(".hero-title", { y: 0, opacity: 1, duration: 1.2, delay: 0.1 })
+      .to(".hero-subtitle", { y: 0, opacity: 1, duration: 1 }, "-=0.9")
+      .to(".hero-visual", { scale: 1, opacity: 1, duration: 1.4, ease: "power3.inOut" }, "-=0.8")
+      .to(".hero-cta", { y: 0, opacity: 1, duration: 0.8 }, "-=0.6");
   });
 </script>

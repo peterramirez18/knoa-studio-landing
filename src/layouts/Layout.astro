@@ -1,16 +1,39 @@
+﻿---
+import type { Locale } from "../i18n";
+
+interface Props {
+  lang?: Locale;
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+}
+
+const {
+  lang = "en",
+  title = "Knoa Studio - Launch Experiences That Drive Revenue",
+  description = "Knoa Studio combines motion, design, and development to build launch experiences that turn attention into revenue.",
+  canonicalPath = "/",
+} = Astro.props;
+const siteUrl = Astro.site ? new URL(canonicalPath, Astro.site).toString() : canonicalPath;
+---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<link rel="alternate" hreflang="en" href="/" />
+		<link rel="alternate" hreflang="es" href="/es/" />
+		<link rel="alternate" hreflang="x-default" href="/" />
+		<link rel="canonical" href={siteUrl} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Knoa Studio — Launch Experiences That Drive Revenue</title>
-		<meta name="description" content="Knoa Studio combines motion, design, and development to build launch experiences that turn attention into revenue. Product launch videos, landing pages, and web development." />
-		<meta property="og:title" content="Knoa Studio — Launch Experiences That Drive Revenue" />
-		<meta property="og:description" content="We build launch experiences that turn attention into revenue. Product launch videos, high-impact landing pages, and web development." />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
+		<meta property="og:locale" content={lang === "es" ? "es_DO" : "en_US"} />
 	</head>
 	<body>
 		<slot />
@@ -24,14 +47,12 @@
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	// Initialize Lenis smooth scroll
 	const lenis = new Lenis({
 		duration: 1.2,
 		easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 		smoothWheel: true,
 	});
 
-	// Connect Lenis to GSAP ScrollTrigger
 	lenis.on('scroll', ScrollTrigger.update);
 
 	gsap.ticker.add((time: number) => {
@@ -40,7 +61,6 @@
 
 	gsap.ticker.lagSmoothing(0);
 
-	// Handle anchor link clicks for smooth scrolling
 	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 		anchor.addEventListener('click', (e) => {
 			e.preventDefault();

@@ -1,50 +1,27 @@
----
-const cases = [
-  {
-    title: "Product Launch Campaigns",
-    description: "We create launch assets that help new products or services enter the market with clarity, energy, and a premium visual presence."
-  },
-  {
-    title: "Landing Pages That Convert",
-    description: "We design and build high-impact landing pages focused on presenting your offer clearly, building trust fast, and turning traffic into leads or sales."
-  },
-  {
-    title: "Launch Videos for Digital Products",
-    description: "We turn software, platforms, and online services into compelling visual stories that make the value feel immediate and easy to understand."
-  },
-  {
-    title: "Web Experiences with Motion",
-    description: "We combine development and motion to create modern web experiences with stronger storytelling, better flow, and more memorable interactions."
-  },
-  {
-    title: "Brand Presentation Systems",
-    description: "We help brands present themselves with consistency across visuals, messaging, and motion, creating a more polished and credible perception."
-  },
-  {
-    title: "Marketing Assets for Growth",
-    description: "From campaign visuals to promotional content, we produce digital assets that support launches, ads, and ongoing brand communication."
-  }
-];
+﻿---
+import type { Dictionary } from "../i18n";
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const cases = t.useCases.items;
 ---
 
 <section id="use-cases" class="relative py-24 lg:py-40 bg-white">
-  
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-24">
-      
-      <!-- Left: Title -->
       <div class="lg:col-span-5 uc-fade opacity-0 translate-y-12">
         <h2 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--color-text)] mb-6 sticky top-40">
-  Built for Launches, Growth, and Digital Presence
-</h2>
+          {t.useCases.title}
+        </h2>
       </div>
 
-      <!-- Right: Accordion -->
       <div class="lg:col-span-7">
         <div class="flex flex-col border-b border-[var(--color-border)]">
-          {cases.map((item, index) => (
+          {cases.map((item) => (
             <div class="uc-accordion-item border-t border-[var(--color-border)] group cursor-pointer overflow-hidden">
-              <!-- Header -->
               <div class="uc-accordion-header flex items-center justify-between py-6 lg:py-8 transition-colors duration-300 group-hover:text-[var(--color-accent)]">
                 <h3 class="font-display font-bold text-2xl lg:text-4xl text-[var(--color-text)] transition-colors duration-300 group-hover:text-[var(--color-accent)] pointer-events-none">
                   {item.title}
@@ -54,8 +31,7 @@ const cases = [
                   <span class="w-px h-4 bg-current absolute uc-icon-v transition-transform duration-300"></span>
                 </div>
               </div>
-              
-              <!-- Content Body -->
+
               <div class="uc-accordion-content h-0 overflow-hidden">
                 <div class="pb-8 pt-2">
                   <p class="text-lg lg:text-xl text-[var(--color-text-secondary)] font-medium leading-relaxed max-w-2xl">
@@ -67,16 +43,12 @@ const cases = [
           ))}
         </div>
       </div>
-
     </div>
   </div>
-
 </section>
 
 <style>
-  .uc-accordion-item.is-open .uc-icon-v {
-    transform: scaleY(0);
-  }
+  .uc-accordion-item.is-open .uc-icon-v { transform: scaleY(0); }
 </style>
 
 <script>
@@ -85,30 +57,18 @@ const cases = [
   gsap.registerPlugin(ScrollTrigger);
 
   requestAnimationFrame(() => {
-    // Reveal
-    gsap.to('.uc-fade', {
-      scrollTrigger: { trigger: '#use-cases', start: 'top 75%', once: true },
-      opacity: 1, y: 0, duration: 1, ease: 'power3.out'
-    });
+    gsap.to('.uc-fade', { scrollTrigger: { trigger: '#use-cases', start: 'top 75%', once: true }, opacity: 1, y: 0, duration: 1, ease: 'power3.out' });
 
-    gsap.fromTo('.uc-accordion-item', 
-      { opacity: 0, y: 30 },
-      { 
-        scrollTrigger: { trigger: '.uc-accordion-item', start: 'top 85%', once: true },
-        opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out'
-      }
-    );
+    gsap.fromTo('.uc-accordion-item', { opacity: 0, y: 30 }, { scrollTrigger: { trigger: '.uc-accordion-item', start: 'top 85%', once: true }, opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out' });
 
-    // Accordion Logic
     const items = document.querySelectorAll('.uc-accordion-item');
     items.forEach(item => {
       const header = item.querySelector('.uc-accordion-header') as HTMLElement;
       const content = item.querySelector('.uc-accordion-content') as HTMLElement;
-      
+
       header.addEventListener('click', () => {
         const isOpen = item.classList.contains('is-open');
-        
-        // Close all others
+
         items.forEach(otherItem => {
           if (otherItem !== item && otherItem.classList.contains('is-open')) {
             otherItem.classList.remove('is-open');
@@ -116,13 +76,11 @@ const cases = [
           }
         });
 
-        // Toggle current
         if (isOpen) {
           item.classList.remove('is-open');
           gsap.to(content, { height: 0, duration: 0.5, ease: 'power3.inOut' });
         } else {
           item.classList.add('is-open');
-          // auto height calculation for GSAP
           gsap.set(content, { height: 'auto' });
           const height = content.offsetHeight;
           gsap.set(content, { height: 0 });

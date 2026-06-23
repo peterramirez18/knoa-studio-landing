@@ -1,0 +1,32 @@
+﻿---
+import Layout from "../layouts/Layout.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import Hero from "./Hero.astro";
+import About from "./About.astro";
+import CaseStudies from "./CaseStudies.astro";
+import Services from "./Services.astro";
+import Process from "./Process.astro";
+import UseCases from "./UseCases.astro";
+import CtaSection from "./CtaSection.astro";
+import Footer from "./Footer.astro";
+import { getDictionary, normalizeLocale } from "../i18n";
+import "../styles/global.css";
+
+const locale = normalizeLocale(Astro.currentLocale);
+const t = getDictionary(locale);
+const canonicalPath = locale === "es" ? "/es/" : "/";
+---
+
+<Layout lang={locale} title={t.meta.title} description={t.meta.description} canonicalPath={canonicalPath}>
+  <LanguageSwitcher locale={locale} t={t} />
+  <main>
+    <Hero t={t} />
+    <About t={t} />
+    <CaseStudies t={t} />
+    <Services t={t} />
+    <Process t={t} />
+    <UseCases t={t} />
+    <CtaSection t={t} />
+  </main>
+  <Footer t={t} />
+</Layout>

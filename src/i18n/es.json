@@ -1,0 +1,91 @@
+﻿{
+  "meta": {
+    "title": "Knoa Studio - Experiencias de lanzamiento que generan resultados",
+    "description": "Knoa Studio combina motion, diseño y desarrollo para crear experiencias de lanzamiento que convierten atención en resultados."
+  },
+  "language": { "label": "Idioma", "english": "EN", "spanish": "ES" },
+  "nav": {
+    "about": "Nosotros",
+    "work": "Trabajo",
+    "services": "Servicios",
+    "process": "Proceso",
+    "cta": "Hablemos",
+    "menuLabel": "Abrir menu"
+  },
+  "hero": {
+    "title": "Creamos experiencias de lanzamiento que convierten atención en resultados.",
+    "subtitle": "Videos de lanzamiento, landing pages de alto impacto y desarrollo web.",
+    "cta": "Explora nuestro trabajo"
+  },
+  "about": {
+    "titleBefore": "Somos",
+    "titleAccent": "Knoa",
+    "titleAfter": "Studio",
+    "subtitle": "Tu aliado en movimiento y crecimiento",
+    "paragraph1": "Somos un estudio creativo que construye experiencias de lanzamiento de alto nivel para marcas y productos ambiciosos. Combinamos motion, diseño y desarrollo para crear activos digitales que destacan y generan resultados medibles.",
+    "paragraph2": "Ya sea un video promocional impactante, una landing page enfocada en conversión o un ecosistema digital completo, cada proyecto se diseña para comunicar tu valor y rendir al máximo. Si buscas un aliado para elevar tu próximo lanzamiento, estamos listos para construirlo contigo."
+  },
+  "work": {
+    "title": "Trabajo seleccionado",
+    "subtitle": "Productos digitales, motion y experiencias web creadas para marcas reales.",
+    "projects": {
+      "minqik": { "title": "Minqik", "category": "App educativa", "discipline": "Experiencia de producto", "description": "Una app de aprendizaje interactivo que convierte el conocimiento en quizzes dinámicos." },
+      "papp": { "title": "Papp", "category": "App de parqueos", "discipline": "Producto digital", "description": "Un marketplace que facilita alquilar y publicar espacios de estacionamiento disponibles." },
+      "coopcibao": { "title": "Coopcibao", "category": "Motion graphics", "discipline": "Comunicación de marca", "description": "Comunicación visual en movimiento creada para una cooperativa de la República Dominicana." },
+      "kulkul": { "title": "Kul Kul", "category": "Motion graphics", "discipline": "Contenido de marca", "description": "Contenido animado diseñado para comunicar con energía y claridad." },
+      "lda": { "title": "LDA", "category": "Video promocional", "discipline": "Motion graphics", "description": "Un video promocional para la Liga Dominicana de Futbol, construido alrededor de la energía del juego." },
+      "bci": { "title": "BCI", "category": "Sitio web", "discipline": "Desarrollo web", "description": "Una presencia digital para BCI, distribuidores de vehículos Changan en la República Dominicana." }
+    },
+    "billing": {
+      "label": "Creado por Knoa",
+      "title": "Knoa Billing",
+      "type": "Producto Knoa - Sistema de facturación",
+      "description": "Nuestro sistema de facturación, creado para simplificar la emisión de comprobantes y la gestión diaria del negocio.",
+      "overview": "Resumen",
+      "invoices": "Facturas",
+      "customers": "Clientes",
+      "reports": "Reportes",
+      "settings": "Ajustes",
+      "newInvoice": "Nueva factura",
+      "recentInvoices": "Facturas recientes"
+    }
+  },
+  "services": {
+    "title": "El poder de nuestro enfoque",
+    "items": [
+      { "title": "Videos de lanzamiento de productos y servicios", "description": "Videos cinematográficos que cuentan historias, capturan el valor de tu producto en segundos y generan una conexión real." },
+      { "title": "Landing pages de alto impacto", "description": "Páginas enfocadas en conversión, con estructura estratégica, diseño premium y animaciones que guían a la acción." },
+      { "title": "Desarrollo web", "description": "Experiencias web rápidas, accesibles y cuidadosamente desarrolladas con tecnologías modernas y buenas prácticas." }
+    ]
+  },
+  "process": {
+    "title": "Cómo construimos\nexperiencias listas para lanzar",
+    "intro": "Desde la estrategia y dirección creativa hasta la ejecución y el lanzamiento, creamos experiencias digitales que capturan atención y motivan a actuar.",
+    "phase": "Fase",
+    "steps": [
+      { "title": "Alineación y objetivos", "items": ["Definimos qué vas a lanzar, para quién y cómo se ve el éxito", "Identificamos el mensaje principal, los problemas de la audiencia y la meta de conversión", "Diseñamos el proyecto alrededor del impacto en el negocio, no solo de lo visual"] },
+      { "title": "Posicionamiento y dirección creativa", "items": ["Convertimos tu oferta en un concepto claro y atractivo", "Definimos el tono, lenguaje visual y dirección general", "Construimos la base creativa para el motion y la experiencia digital"] },
+      { "title": "Estructura y diseño de experiencia", "items": ["Organizamos el contenido para aportar claridad, atención y acción", "Diseñamos el recorrido, las secciones y la lógica de interfaz", "Aseguramos que cada pantalla y escena apoye el objetivo final"] },
+      { "title": "Producción y desarrollo", "items": ["Producimos visuales, motion y recursos con gran atención al detalle", "Desarrollamos la landing page o experiencia digital pensando en rendimiento", "Refinamos interacciones, adaptación responsive y ejecución técnica"] },
+      { "title": "Refinamiento y lanzamiento", "items": ["Revisamos, pulimos y probamos todo antes de publicar", "Optimizamos los entregables para web, campañas y dispositivos", "Te ayudamos a lanzar con confianza y una presentación premium"] }
+    ]
+  },
+  "useCases": {
+    "title": "Creado para lanzamientos, crecimiento y presencia digital",
+    "items": [
+      { "title": "Campañas de lanzamiento", "description": "Creamos recursos que ayudan a introducir productos o servicios al mercado con claridad, energía y una presencia visual premium." },
+      { "title": "Landing pages que convierten", "description": "Diseñamos y desarrollamos landing pages enfocadas en presentar tu oferta, generar confianza y convertir tráfico en leads o ventas." },
+      { "title": "Videos para productos digitales", "description": "Transformamos software, plataformas y servicios en historias visuales que comunican su valor de forma inmediata." },
+      { "title": "Experiencias web con motion", "description": "Combinamos desarrollo y movimiento para crear experiencias con mejor narrativa, fluidez e impacto memorable." },
+      { "title": "Sistemas de presentación de marca", "description": "Ayudamos a las marcas a presentarse con consistencia en sus visuales, mensajes y movimiento." },
+      { "title": "Recursos de marketing para crecer", "description": "Producimos visuales y contenido promocional para lanzamientos, anuncios y comunicación continua de marca." }
+    ]
+  },
+  "cta": { "title": "¿Listo para elevar tu próximo lanzamiento?", "button": "Hablemos" },
+  "footer": {
+    "launchVideos": "Videos de lanzamiento",
+    "landingPages": "Landing pages",
+    "webDevelopment": "Desarrollo web",
+    "copyright": "© 2026 Knoa Studio. Todos los derechos reservados."
+  }
+}

@@ -1,0 +1,23 @@
+﻿---
+import type { Dictionary, Locale } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  t: Dictionary;
+}
+
+const { locale, t } = Astro.props;
+---
+
+<nav class="language-switcher" aria-label={t.language.label}>
+  <a href="/" lang="en" aria-current={locale === "en" ? "page" : undefined}>{t.language.english}</a>
+  <span aria-hidden="true">/</span>
+  <a href="/es/" lang="es" aria-current={locale === "es" ? "page" : undefined}>{t.language.spanish}</a>
+</nav>
+
+<style>
+  .language-switcher { position: fixed; top: 1.25rem; right: 1.5rem; z-index: 60; display: flex; align-items: center; gap: .5rem; padding: .55rem .8rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(17,17,17,.72); color: white; backdrop-filter: blur(14px); font-size: .72rem; font-weight: 700; letter-spacing: .08em; }
+  .language-switcher a { opacity: .55; transition: opacity .2s ease; }
+  .language-switcher a:hover, .language-switcher a[aria-current="page"] { opacity: 1; }
+  .language-switcher a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: .2rem; }
+</style>
