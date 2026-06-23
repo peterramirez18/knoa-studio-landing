@@ -2,6 +2,10 @@
 import type { Dictionary } from "../i18n";
 import minqikImage from "../assets/projects/minqik.png";
 import parqueameImage from "../assets/projects/parqueameapp.png";
+import bciImage from "../assets/projects/bci.png";
+import billingImage from "../assets/projects/billing.png";
+import reinasVideo from "../assets/projects/REINAS.mp4";
+import ldaVideo from "../assets/projects/BUMPER LDF 1.mp4";
 
 interface Props {
   t: Dictionary;
@@ -11,8 +15,8 @@ const { t } = Astro.props;
 const projectNumbers = {
   minqik: "01",
   papp: "02",
-  coopcibao: "03",
-  kulkul: "04",
+  reinas: "03",
+  coopcibao: "04",
   lda: "05",
   bci: "06",
 };
@@ -30,6 +34,8 @@ const projectCopyClass =
 const visualClass =
   "min-h-[31rem] relative overflow-hidden rounded-lg max-[600px]:min-h-96";
 const imageClass =
+  "h-full w-full object-cover rounded-md shadow-[0_1.5rem_4rem_rgba(28,50,80,0.16)]";
+const videoClass =
   "h-full w-full object-cover rounded-md shadow-[0_1.5rem_4rem_rgba(28,50,80,0.16)]";
 ---
 
@@ -53,9 +59,9 @@ const imageClass =
       </p>
     </header>
 
-    <div class="border-t border-[#dcdcd7]">
+    <div>
       <article
-        class="cs-reveal grid grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.8fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch border-b border-[#dcdcd7] max-[900px]:grid-cols-1"
+        class="cs-reveal grid grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.8fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
       >
         <div class={projectCopyClass}>
           <span class={projectNumberClass}>{projectNumbers.minqik}</span>
@@ -81,7 +87,7 @@ const imageClass =
       </article>
 
       <article
-        class="cs-reveal grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch border-b border-[#dcdcd7] max-[900px]:grid-cols-1"
+        class="cs-reveal grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
       >
         <div
           class={`${visualClass} bg-[#eeeee9] flex items-center justify-center max-[900px]:order-2 max-[600px]:p-3`}
@@ -112,86 +118,77 @@ const imageClass =
         <div
           class="p-12 flex flex-col items-start max-[600px]:px-6 max-[600px]:py-10"
         >
-          <span class={projectNumberClass}>{projectNumbers.coopcibao}</span>
-          <h3 class={projectTitleClass}>{projects.coopcibao.title}</h3>
+          <span class={projectNumberClass}>{projectNumbers.reinas}</span>
+          <h3 class={projectTitleClass}>{projects.reinas.title}</h3>
           <p class="text-[#aaa] text-base leading-[1.3]">
-            {projects.coopcibao.category}<br />{projects.coopcibao.discipline}
+            {projects.reinas.category}<br />{projects.reinas.discipline}
           </p>
           <p class="max-w-[28rem] text-[#aaa] leading-[1.55] mt-auto pt-8">
-            {projects.coopcibao.description}
+            {projects.reinas.description}
           </p>
         </div>
         <div
-          class="relative overflow-hidden border-l border-[#444] max-[900px]:min-h-[25rem] max-[900px]:border-l-0 max-[900px]:border-t max-[900px]:border-[#444]"
-          aria-hidden="true"
+          class="relative overflow-hidden max-[900px]:min-h-[25rem] max-[900px]:border-[#444]"
         >
-          <div
-            class="absolute size-[25rem] border-[5rem] border-[#2f9b69] rounded-full left-[20%] top-[14%]"
-          >
-          </div>
-          <div
-            class="absolute size-44 rounded-full bg-[#f0eadb] left-[10%] bottom-[9%] border-[1rem] border-double border-[#111]"
-          >
-          </div>
-          <div class="absolute size-28 bg-[#f4eee4] left-[15%] top-[10%]"></div>
-          <div
-            class="absolute w-60 h-40 right-12 bottom-12 bg-[repeating-linear-gradient(90deg,#e8e3d1_0_2px,transparent_2px_7px)] [clip-path:polygon(0_0,100%_40%,100%_100%,0_70%)]"
-          >
-          </div>
-          <div
-            class="absolute right-[15%] top-[12%] font-display text-9xl font-bold text-[#2f9b69] mix-blend-screen"
-          >
-            C
-          </div>
+          <video
+            src={reinasVideo}
+            class="h-full w-full object-cover"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"></video>
         </div>
       </article>
 
-      <div
-        class="grid grid-cols-2 border-b border-[#dcdcd7] max-[900px]:grid-cols-1"
-      >
+      <div class="grid grid-cols-2 max-[900px]:grid-cols-1 gap-10">
         <article
-          class="cs-reveal p-10 pb-12 border-r border-[#dcdcd7] max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-[#dcdcd7] max-[600px]:px-0"
+          class="cs-reveal pb-12 max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-[#dcdcd7] max-[600px]:px-0"
         >
           <div class="flex flex-col items-start">
             <span
               class="font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-6"
-              >{projectNumbers.kulkul}</span
+              >{projectNumbers.coopcibao}</span
             >
             <h3
               class="font-display text-[clamp(2.2rem,3.5vw,3.6rem)] leading-[0.95] tracking-[-0.04em] font-semibold mb-4"
             >
-              {projects.kulkul.title}
+              {projects.coopcibao.title}
             </h3>
             <p class={projectTypeClass}>
-              {projects.kulkul.category} / {projects.kulkul.discipline}
+              {projects.coopcibao.category} / {projects.coopcibao.discipline}
             </p>
           </div>
           <div
-            class="h-80 my-8 relative overflow-hidden rounded-md bg-[#eee9df]"
+            class="h-80 my-8 relative overflow-hidden rounded-md bg-[#101010]"
             aria-hidden="true"
           >
-            <i
-              class="absolute w-48 h-28 rounded-[100%_0_100%_0] -rotate-[30deg] bg-[#ef4f35] left-[14%] top-[12%]"
-            ></i>
-            <i
-              class="absolute w-48 h-28 rounded-[100%_0_100%_0] -rotate-[30deg] bg-[#357c54] left-[34%] top-[28%]"
-            ></i>
-            <i
-              class="absolute size-20 rounded-full bg-[#d9c19d] right-[10%] bottom-[12%]"
-            ></i>
-            <i
-              class="absolute left-[8%] bottom-[14%] w-36 h-16 bg-[repeating-radial-gradient(ellipse_at_50%_100%,transparent_0_10px,#111_11px_12px,transparent_13px_20px)]"
-            ></i>
-            <i
-              class="absolute right-[12%] top-[12%] size-20 bg-[radial-gradient(#111_1.5px,transparent_2px)] bg-[length:14px_14px]"
-            ></i>
+            <div
+              class="absolute size-[16rem] rounded-full left-[18%] top-[12%]"
+            >
+            </div>
+            <div
+              class="absolute size-28 rounded-full bg-[#f0eadb] left-[8%] bottom-[9%] border-[0.65rem] border-double border-[#111]"
+            >
+            </div>
+            <div class="absolute size-20 bg-[#f4eee4] left-[14%] top-[10%]">
+            </div>
+            <div
+              class="absolute w-44 h-28 right-8 bottom-8 bg-[repeating-linear-gradient(90deg,#e8e3d1_0_2px,transparent_2px_7px)] [clip-path:polygon(0_0,100%_40%,100%_100%,0_70%)]"
+            >
+            </div>
+            <div
+              class="absolute right-[13%] top-[10%] font-display text-8xl font-bold text-[#2f9b69] mix-blend-screen"
+            >
+              C
+            </div>
           </div>
           <p class="max-w-[28rem] text-[#666] leading-[1.55]">
-            {projects.kulkul.description}
+            {projects.coopcibao.description}
           </p>
         </article>
 
-        <article class="cs-reveal p-10 pb-12 max-[600px]:px-0">
+        <article class="cs-reveal pb-12 max-[600px]:px-0">
           <div class="flex flex-col items-start">
             <span
               class="font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-6"
@@ -207,39 +204,16 @@ const imageClass =
             </p>
           </div>
           <div
-            class="h-80 my-8 relative overflow-hidden rounded-md bg-[#111]"
-            aria-hidden="true"
+            class="h-80 my-8 relative overflow-hidden rounded-md bg-[#101010]"
           >
-            <div
-              class="absolute left-1/2 top-0 h-full w-px border border-[#eee]"
-            >
-              <span
-                class="absolute top-1/2 left-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#eee]"
-              ></span>
-            </div>
-            <div
-              class="absolute left-0 top-1/4 w-[24%] h-1/2 border border-[#eee]"
-            >
-            </div>
-            <div
-              class="absolute right-0 top-1/4 w-[24%] h-1/2 border border-[#eee]"
-            >
-            </div>
-            <i
-              class="absolute left-[18%] bottom-[24%] size-3 rounded-full bg-[#f8543b] border-2 border-white z-[2]"
-            ></i>
-            <i
-              class="absolute left-[52%] top-[38%] size-3 rounded-full bg-[#f8543b] border-2 border-white z-[2]"
-            ></i>
-            <i
-              class="absolute right-[16%] top-[18%] size-3 rounded-full bg-[#f8543b] border-2 border-white z-[2]"
-            ></i>
-            <svg viewBox="0 0 300 180" class="absolute inset-0 size-full"
-              ><path
-                d="M48 132 C92 112 102 52 154 78 S218 124 254 38"
-                class="fill-none stroke-[#f8543b] stroke-[3] [stroke-dasharray:8_6]"
-              ></path></svg
-            >
+            <video
+              src={ldaVideo}
+              class={videoClass}
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"></video>
           </div>
           <p class="max-w-[28rem] text-[#666] leading-[1.55]">
             {projects.lda.description}
@@ -248,41 +222,20 @@ const imageClass =
       </div>
 
       <article
-        class="cs-reveal grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch border-b border-[#dcdcd7] max-[900px]:grid-cols-1"
+        class="cs-reveal grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
       >
         <div
-          class={`${visualClass} bg-white border border-[#ddd] max-[900px]:order-2`}
-          aria-hidden="true"
+          class={`${visualClass} bg-white flex items-center justify-center max-[900px]:order-2`}
         >
-          <div
-            class="h-14 border-b border-[#ddd] flex items-center gap-3 px-5 text-[0.65rem]"
-          >
-            <i class="size-2 rounded-full bg-[#f8543b]"></i><i
-              class="size-2 rounded-full bg-[#f4bb42]"></i><i
-              class="size-2 rounded-full bg-[#47b976]"></i><b
-              class="text-base ml-4 mr-auto">BCI</b
-            ><span class="ml-4 max-[600px]:hidden">Vehicles</span><span
-              class="ml-4 max-[600px]:hidden">About</span
-            ><span class="ml-4 max-[600px]:hidden">Contact</span>
-          </div>
-          <div
-            class="absolute left-10 top-[7.5rem] z-[2] flex flex-col items-start gap-5"
-          >
-            <strong
-              class="text-[clamp(2rem,4vw,4rem)] leading-[0.9] tracking-[-0.05em]"
-              >Drive what's<br />next.</strong
-            ><span class="h-[3px] w-16 bg-[#f8543b]"></span><i
-              class="bg-[#111] text-white px-4 py-3 text-xs rounded"
-              >Explore vehicles</i
-            >
-          </div>
-          <div
-            class="absolute right-0 bottom-0 w-[57%] h-3/4 flex items-end origin-bottom-right skew-y-[-8deg] max-[600px]:w-[68%]"
-          >
-            <i class="h-[70%] flex-1 bg-[#214db5] border border-white/50"></i><i
-              class="h-full flex-1 bg-[#4072e0] border border-white/50"></i><i
-              class="h-[84%] flex-1 bg-[#102d71] border border-white/50"></i>
-          </div>
+          <img
+            src={bciImage.src}
+            width={bciImage.width}
+            height={bciImage.height}
+            alt={projects.bci.title}
+            loading="lazy"
+            decoding="async"
+            class={imageClass}
+          />
         </div>
         <div class={`${projectCopyClass} max-[900px]:order-1`}>
           <span class={projectNumberClass}>{projectNumbers.bci}</span>
@@ -322,56 +275,17 @@ const imageClass =
         </p>
       </div>
       <div
-        class="mt-10 grid grid-cols-[10rem_1fr] overflow-hidden rounded-tl-2xl border border-[#3b3b3b] bg-[#181818] max-[900px]:mx-6 max-[900px]:mt-0 max-[900px]:min-h-[25rem] max-[900px]:rounded-t-2xl max-[600px]:mx-3 max-[600px]:grid-cols-[5.5rem_1fr]"
+        class="mt-10 flex items-center overflow-hidden rounded-tl-2xl bg-[#181818] max-[900px]:mx-6 max-[900px]:mt-0 max-[900px]:min-h-[25rem] max-[900px]:rounded-t-2xl max-[600px]:mx-3"
       >
-        <aside
-          class="border-r border-[#333] p-6 flex flex-col gap-2 max-[600px]:px-3"
-        >
-          <b class="mb-8 text-xl">KB</b><span
-            class="rounded-md bg-[#f8543b33] p-3 text-[0.65rem] text-white max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
-            >{billing.overview}</span
-          ><span
-            class="rounded-md p-3 text-[0.65rem] text-[#888] max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
-            >{billing.invoices}</span
-          ><span
-            class="rounded-md p-3 text-[0.65rem] text-[#888] max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
-            >{billing.customers}</span
-          ><span
-            class="rounded-md p-3 text-[0.65rem] text-[#888] max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
-            >{billing.reports}</span
-          ><span
-            class="rounded-md p-3 text-[0.65rem] text-[#888] max-[600px]:px-1.5 max-[600px]:text-[0.55rem]"
-            >{billing.settings}</span
-          >
-        </aside>
-        <div class="p-6">
-          <div class="flex items-center justify-between">
-            <strong>{billing.overview}</strong><i
-              class="rounded bg-[var(--color-accent)] px-3 py-2 text-[0.6rem]"
-              >{billing.newInvoice}</i
-            >
-          </div><div
-            class="my-7 grid grid-cols-3 gap-3 max-[600px]:grid-cols-2"
-          >
-            <span
-              class="h-[5.5rem] rounded-lg border border-[#333] bg-[linear-gradient(145deg,#242424,#1b1b1b)]"
-            ></span><span
-              class="h-[5.5rem] rounded-lg border border-[#333] bg-[linear-gradient(145deg,#242424,#1b1b1b)]"
-            ></span><span
-              class="h-[5.5rem] rounded-lg border border-[#333] bg-[linear-gradient(145deg,#242424,#1b1b1b)] max-[600px]:hidden"
-            ></span>
-          </div><div>
-            <b class="text-sm">{billing.recentInvoices}</b><i
-              class="block h-11 border-b border-[#303030] after:block after:w-[65%] after:h-2 after:translate-y-5 after:rounded-full after:bg-[#343434]"
-            ></i><i
-              class="block h-11 border-b border-[#303030] after:block after:w-[65%] after:h-2 after:translate-y-5 after:rounded-full after:bg-[#343434]"
-            ></i><i
-              class="block h-11 border-b border-[#303030] after:block after:w-[65%] after:h-2 after:translate-y-5 after:rounded-full after:bg-[#343434]"
-            ></i><i
-              class="block h-11 border-b border-[#303030] after:block after:w-[65%] after:h-2 after:translate-y-5 after:rounded-full after:bg-[#343434]"
-            ></i>
-          </div>
-        </div>
+        <img
+          src={billingImage.src}
+          width={billingImage.width}
+          height={billingImage.height}
+          alt={billing.title}
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-cover shadow-[0_1.5rem_4rem_rgba(0,0,0,0.25)]"
+        />
       </div>
     </article>
   </div>

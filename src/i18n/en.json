@@ -3,7 +3,11 @@
     "title": "Knoa Studio - Launch Experiences That Drive Revenue",
     "description": "Knoa Studio combines motion, design, and development to build launch experiences that turn attention into revenue."
   },
-  "language": { "label": "Language", "english": "EN", "spanish": "ES" },
+  "language": {
+    "label": "Language",
+    "english": "EN",
+    "spanish": "ES"
+  },
   "nav": {
     "about": "About",
     "work": "Work",
@@ -29,12 +33,42 @@
     "title": "Selected Work",
     "subtitle": "Digital products, motion, and web experiences built for real brands.",
     "projects": {
-      "minqik": { "title": "Minqik", "category": "Learning App", "discipline": "Product Experience", "description": "An interactive learning app that turns knowledge into engaging quizzes." },
-      "papp": { "title": "Papp", "category": "Parking App", "discipline": "Digital Product", "description": "A marketplace that makes it easier to rent and list available parking spaces." },
-      "coopcibao": { "title": "Coopcibao", "category": "Motion Graphics", "discipline": "Brand Communication", "description": "Motion-led visual communication created for one of the Dominican Republic's cooperatives." },
-      "kulkul": { "title": "Kul Kul", "category": "Motion Graphics", "discipline": "Brand Content", "description": "Animated brand content designed to communicate with energy and clarity." },
-      "lda": { "title": "LDA", "category": "Promotional Video", "discipline": "Motion Graphics", "description": "A promotional video for Liga Dominicana de Futbol, built around the energy of the game." },
-      "bci": { "title": "BCI", "category": "Website", "discipline": "Web Development", "description": "A digital presence for BCI, Changan vehicle distributors in the Dominican Republic." }
+      "minqik": {
+        "title": "Minqik",
+        "category": "Learning App",
+        "discipline": "Product Experience",
+        "description": "An interactive learning app that turns knowledge into engaging quizzes."
+      },
+      "papp": {
+        "title": "Papp",
+        "category": "Parking App",
+        "discipline": "Digital Product",
+        "description": "A marketplace that makes it easier to rent and list available parking spaces."
+      },
+      "coopcibao": {
+        "title": "Coopcibao",
+        "category": "Motion Graphics",
+        "discipline": "Brand Communication",
+        "description": "Motion-led visual communication created for one of the Dominican Republic's cooperatives."
+      },
+      "reinas": {
+        "title": "Reinas del Caribe",
+        "category": "Motion Graphics",
+        "discipline": "Sports Campaign",
+        "description": "Motion graphics created for the Dominican Republic women's national volleyball team, celebrating the energy and pride of the game."
+      },
+      "lda": {
+        "title": "LDA",
+        "category": "Promotional Video",
+        "discipline": "Motion Graphics",
+        "description": "A promotional video for Liga Dominicana de Futbol, built around the energy of the game."
+      },
+      "bci": {
+        "title": "BCI",
+        "category": "Website",
+        "discipline": "Development",
+        "description": "A digital presence for BCI, Changan vehicle distributors in the Dominican Republic."
+      }
     },
     "billing": {
       "label": "Built by Knoa",
@@ -53,9 +87,18 @@
   "services": {
     "title": "The Power of Our Approach",
     "items": [
-      { "title": "Product & Service Launch Videos", "description": "Cinematic, story-driven videos that capture your product's value in seconds and make audiences feel something." },
-      { "title": "High-Impact Landing Pages", "description": "Conversion-focused pages with strategic structure, premium design, and animations that guide visitors to action." },
-      { "title": "Web Development", "description": "Performant, accessible, and beautifully engineered web experiences built with modern technologies and best practices." }
+      {
+        "title": "Product & Service Launch Videos",
+        "description": "Cinematic, story-driven videos that capture your product's value in seconds and make audiences feel something."
+      },
+      {
+        "title": "High-Impact Landing Pages",
+        "description": "Conversion-focused pages with strategic structure, premium design, and animations that guide visitors to action."
+      },
+      {
+        "title": "Development",
+        "description": "Performant, accessible, and beautifully engineered web and mobile experiences built with modern technologies and best practices."
+      }
     ]
   },
   "process": {
@@ -63,29 +106,92 @@
     "intro": "From strategy and creative direction to execution and launch, we craft digital experiences designed to capture attention and move people to act.",
     "phase": "Phase",
     "steps": [
-      { "title": "Alignment & Goals", "items": ["We define what you are launching, who it is for, and what success looks like", "We identify the main message, audience pain points, and conversion goal", "We shape the project around business impact, not just visuals"] },
-      { "title": "Positioning & Creative Direction", "items": ["We turn your offer into a clear and compelling concept", "We define the tone, visual language, and overall direction", "We build the creative foundation for both motion and digital experience"] },
-      { "title": "Structure & Experience Design", "items": ["We organize the content flow for clarity, attention, and action", "We design the user journey, sections, and interface logic", "We make sure every screen and scene supports the final objective"] },
-      { "title": "Production & Development", "items": ["We produce the visuals, motion, and assets with high attention to detail", "We develop the landing page or digital experience with performance in mind", "We refine interactions, responsiveness, and technical execution"] },
-      { "title": "Refinement & Launch", "items": ["We review, polish, and test everything before release", "We optimize the final deliverables for web, campaigns, and devices", "We help you launch with confidence and a presentation that feels premium"] }
+      {
+        "title": "Alignment & Goals",
+        "items": [
+          "We define what you are launching, who it is for, and what success looks like",
+          "We identify the main message, audience pain points, and conversion goal",
+          "We shape the project around business impact, not just visuals"
+        ]
+      },
+      {
+        "title": "Positioning & Creative Direction",
+        "items": [
+          "We turn your offer into a clear and compelling concept",
+          "We define the tone, visual language, and overall direction",
+          "We build the creative foundation for both motion and digital experience"
+        ]
+      },
+      {
+        "title": "Structure & Experience Design",
+        "items": [
+          "We organize the content flow for clarity, attention, and action",
+          "We design the user journey, sections, and interface logic",
+          "We make sure every screen and scene supports the final objective"
+        ]
+      },
+      {
+        "title": "Production & Development",
+        "items": [
+          "We produce the visuals, motion, and assets with high attention to detail",
+          "We develop the landing page or digital experience with performance in mind",
+          "We refine interactions, responsiveness, and technical execution"
+        ]
+      },
+      {
+        "title": "Refinement & Launch",
+        "items": [
+          "We review, polish, and test everything before release",
+          "We optimize the final deliverables for web, campaigns, and devices",
+          "We help you launch with confidence and a presentation that feels premium"
+        ]
+      }
     ]
   },
   "useCases": {
     "title": "Built for Launches, Growth, and Digital Presence",
     "items": [
-      { "title": "Product Launch Campaigns", "description": "We create launch assets that help new products or services enter the market with clarity, energy, and a premium visual presence." },
-      { "title": "Landing Pages That Convert", "description": "We design and build high-impact landing pages focused on presenting your offer clearly, building trust fast, and turning traffic into leads or sales." },
-      { "title": "Launch Videos for Digital Products", "description": "We turn software, platforms, and online services into compelling visual stories that make the value feel immediate and easy to understand." },
-      { "title": "Web Experiences with Motion", "description": "We combine development and motion to create modern web experiences with stronger storytelling, better flow, and more memorable interactions." },
-      { "title": "Brand Presentation Systems", "description": "We help brands present themselves with consistency across visuals, messaging, and motion, creating a more polished and credible perception." },
-      { "title": "Marketing Assets for Growth", "description": "From campaign visuals to promotional content, we produce digital assets that support launches, ads, and ongoing brand communication." }
+      {
+        "title": "Product Launch Campaigns",
+        "description": "We create launch assets that help new products or services enter the market with clarity, energy, and a premium visual presence."
+      },
+      {
+        "title": "Landing Pages That Convert",
+        "description": "We design and build high-impact landing pages focused on presenting your offer clearly, building trust fast, and turning traffic into leads or sales."
+      },
+      {
+        "title": "Launch Videos for Digital Products",
+        "description": "We turn software, platforms, and online services into compelling visual stories that make the value feel immediate and easy to understand."
+      },
+      {
+        "title": "Web Experiences with Motion",
+        "description": "We combine development and motion to create modern web experiences with stronger storytelling, better flow, and more memorable interactions."
+      },
+      {
+        "title": "Brand Presentation Systems",
+        "description": "We help brands present themselves with consistency across visuals, messaging, and motion, creating a more polished and credible perception."
+      },
+      {
+        "title": "Marketing Assets for Growth",
+        "description": "From campaign visuals to promotional content, we produce digital assets that support launches, ads, and ongoing brand communication."
+      }
     ]
   },
-  "cta": { "title": "Ready to elevate your next launch?", "button": "Let's Talk!" },
+  "cta": {
+    "title": "Ready to elevate your next launch?",
+    "button": "Let's Talk!"
+  },
   "footer": {
+    "headline": "Let's build the launch people remember.",
+    "subheadline": "Motion, landing pages, and web experiences shaped to make your next release feel impossible to ignore.",
+    "emailLabel": "Start a project",
+    "studioLabel": "Creative launch studio",
+    "navLabel": "Explore",
+    "socialLabel": "Social",
+    "top": "Back to top",
     "launchVideos": "Launch Videos",
     "landingPages": "Landing Pages",
-    "webDevelopment": "Web Development",
+    "webDevelopment": "Development",
     "copyright": "© 2026 Knoa Studio. All rights reserved."
   }
 }

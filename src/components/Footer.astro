@@ -6,43 +6,86 @@ interface Props {
 }
 
 const { t } = Astro.props;
+const footerLinks = [
+  { label: t.nav.about, href: "#about" },
+  { label: t.nav.work, href: "#case-studies" },
+  { label: t.nav.services, href: "#services" },
+  { label: t.nav.process, href: "#process" },
+];
+const serviceTags = [t.footer.launchVideos, t.footer.landingPages, t.footer.webDevelopment];
+const socialLinks = ["LinkedIn", "Instagram", "Behance"];
 ---
 
-<footer id="footer" class="relative pt-16 pb-8 bg-white">
-  <div class="absolute top-0 left-6 right-6 lg:left-8 lg:right-8 h-px bg-[var(--color-border)]"></div>
-
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="mb-16">
-      <div class="md:col-span-2">
-        <a href="#" class="flex items-center gap-2">
-          <img src="/logo-knoa-light.svg" alt="Knoa Studio" class="w-56" />
+<footer id="footer" class="bg-[#101010] text-white">
+  <div class="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-16">
+    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div class="max-w-2xl">
+        <a href="#hero" class="mb-8 inline-flex w-fit items-center" aria-label="Knoa Studio">
+          <img src="/logo-knoa-dark.svg" alt="Knoa Studio" class="w-48 h-auto" />
         </a>
+
+        <p class="mb-8 text-xs font-bold uppercase tracking-[0.18em] text-white/35">
+          {t.footer.studioLabel}
+        </p>
+        <h2 class="max-w-[12ch] font-display text-[clamp(2.8rem,7vw,5.8rem)] font-bold leading-[0.9] tracking-[-0.055em]">
+          {t.footer.headline}
+        </h2>
       </div>
 
-      <ul class="flex items-center gap-6 w-full justify-between">
-        <li class="flex flex-1">
-          <a href="mailto:hello@knoastudio.com" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200">hello@knoastudio.com</a>
-        </li>
-        <li>
-          <a href="#services" class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap">{t.footer.launchVideos}</a>
-        </li>
-        <li>
-          <a href="#services" class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap">{t.footer.landingPages}</a>
-        </li>
-        <li>
-          <a href="#services" class="text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 whitespace-nowrap">{t.footer.webDevelopment}</a>
-        </li>
-      </ul>
+      <div class="grid gap-10 sm:grid-cols-2">
+        <div>
+          <p class="mb-4 text-sm leading-relaxed text-white/55">
+            {t.footer.subheadline}
+          </p>
+          <a
+            href="mailto:hello@knoastudio.com"
+            class="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#101010] transition-transform duration-300 hover:-translate-y-0.5"
+          >
+            {t.footer.emailLabel}
+            <span class="text-[var(--color-accent)]">→</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 sm:grid-cols-1">
+          <div>
+            <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white/35">{t.footer.navLabel}</p>
+            <nav class="grid gap-2">
+              {footerLinks.map((link) => (
+                <a href={link.href} class="text-sm font-semibold text-white/60 transition-colors duration-300 hover:text-white">
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white/35">{t.footer.socialLabel}</p>
+            <div class="grid gap-2">
+              {socialLinks.map((label) => (
+                <a href="#" class="text-sm font-semibold text-white/60 transition-colors duration-300 hover:text-white">
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="pt-8 border-t border-[var(--color-border)]">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[var(--color-text-muted)]">{t.footer.copyright}</p>
-        <div class="flex items-center gap-6">
-          <a href="#" class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200">LinkedIn</a>
-          <a href="#" class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200">Instagram</a>
-          <a href="#" class="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200">Behance</a>
-        </div>
+    <div class="mt-12 border-t border-white/12 pt-6">
+      <div class="mb-6 flex flex-wrap gap-2">
+        {serviceTags.map((tag) => (
+          <span class="rounded-full border border-white/12 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white/40">
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div class="flex flex-col gap-3 text-xs text-white/40 md:flex-row md:items-center md:justify-between">
+        <p>{t.footer.copyright}</p>
+        <a href="#hero" class="w-fit font-bold uppercase tracking-[0.16em] text-white/55 transition-colors duration-300 hover:text-white">
+          {t.footer.top}
+        </a>
       </div>
     </div>
   </div>
