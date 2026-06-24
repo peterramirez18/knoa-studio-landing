@@ -12,6 +12,12 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   vite: {
+    server: {
+      hmr: {
+        host: "localhost",
+        clientPort: 4321,
+      },
+    },
     resolve: {
       alias: {
         "astro/entrypoints/prerender": astroPrerenderEntrypoint,

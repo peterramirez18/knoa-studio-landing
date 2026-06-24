@@ -1,0 +1,44 @@
+---
+interface Props {
+  before?: string;
+  accent?: string;
+  after?: string;
+  tone?: "dark" | "light";
+  class?: string;
+}
+
+const {
+  before = "",
+  accent = "",
+  after = "",
+  tone = "dark",
+  class: className = "",
+} = Astro.props;
+
+const mainColor = tone === "light" ? "text-white" : "text-[var(--color-text)]";
+const accentSeparator = before.match(/[¿¡]$/) ? "" : " ";
+const afterSeparator = after.match(/^[,.;:!?]/) ? "" : " ";
+const headingClass = [
+  "font-display text-4xl font-bold leading-[0.98] tracking-tight sm:text-5xl lg:text-6xl",
+  mainColor,
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<h2 class={headingClass}>
+  {before && <span>{before}</span>}
+  {accent && (
+    <>
+      {before && " "}
+      <span class="font-light italic text-[var(--color-accent)]">{accent}</span>
+    </>
+  )}
+  {after && (
+    <>
+      {(before || accent) && " "}
+      <span>{after}</span>
+    </>
+  )}
+</h2>

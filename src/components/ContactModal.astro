@@ -1,5 +1,6 @@
 ---
 import type { Dictionary } from "../i18n";
+import Button from "./Button.astro";
 
 interface Props {
   t: Dictionary;
@@ -93,15 +94,9 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
         ></textarea>
       </label>
 
-      <button
-        type="submit"
-        class="group cursor-pointer relative mt-2 inline-flex items-center justify-center isolation-auto overflow-hidden rounded-full border-2 border-[var(--color-text)] bg-transparent px-8 py-4 text-base font-bold text-[var(--color-text)] transition-colors duration-500 hover:border-transparent hover:text-white"
-      >
-        <span
-          class="absolute inset-0 -z-10 h-full w-full -translate-y-full rounded-full bg-[var(--color-accent)] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0"
-        ></span>
+      <Button type="submit" size="md" class="mt-2 cursor-pointer">
         {t.contact.submit}
-      </button>
+      </Button>
     </form>
   </div>
 </div>

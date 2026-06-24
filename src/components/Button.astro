@@ -1,0 +1,62 @@
+---
+type ButtonVariant = "dark" | "light" | "white";
+type ButtonSize = "sm" | "md" | "lg";
+
+interface Props {
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  contactModal?: boolean;
+  class?: string;
+  ariaLabel?: string;
+}
+
+const {
+  href,
+  type = "button",
+  variant = "dark",
+  size = "md",
+  contactModal = false,
+  class: className = "",
+  ariaLabel,
+} = Astro.props;
+
+const baseClass =
+  "group relative inline-flex items-center justify-center isolation-auto overflow-hidden rounded-full border-2 font-bold transition-colors duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2";
+const sizeClasses: Record<ButtonSize, string> = {
+  sm: "h-11 px-6 text-sm",
+  md: "px-8 py-4 text-base",
+  lg: "px-10 py-5 text-xl",
+};
+const variantClasses: Record<ButtonVariant, string> = {
+  dark: "border-[var(--color-text)] bg-transparent text-[var(--color-text)] hover:border-transparent hover:text-white",
+  light: "border-white bg-transparent text-white hover:border-transparent hover:text-white focus-visible:ring-offset-black",
+  white: "border-white bg-white text-black hover:border-transparent hover:text-white focus-visible:ring-offset-black",
+};
+const buttonClass = [baseClass, sizeClasses[size], variantClasses[variant], className].filter(Boolean).join(" ");
+const fillClass =
+  "absolute inset-0 -z-10 h-full w-full -translate-y-full rounded-full bg-[var(--color-accent)] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0 group-focus-visible:translate-y-0";
+---
+
+{href ? (
+  <a
+    href={href}
+    class={buttonClass}
+    data-contact-modal-open={contactModal ? "" : undefined}
+    aria-label={ariaLabel}
+  >
+    <span class={fillClass}></span>
+    <slot />
+  </a>
+) : (
+  <button
+    type={type}
+    class={buttonClass}
+    data-contact-modal-open={contactModal ? "" : undefined}
+    aria-label={ariaLabel}
+  >
+    <span class={fillClass}></span>
+    <slot />
+  </button>
+)}

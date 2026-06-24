@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import LanguageSwitcher from "./LanguageSwitcher.astro";
+import Navbar from "./Navbar.astro";
 import Hero from "./Hero.astro";
 import About from "./About.astro";
 import CaseStudies from "./CaseStudies.astro";
@@ -19,7 +19,7 @@ const canonicalPath = locale === "es" ? "/es/" : "/";
 ---
 
 <Layout lang={locale} title={t.meta.title} description={t.meta.description} canonicalPath={canonicalPath}>
-  <LanguageSwitcher locale={locale} t={t} />
+  <Navbar locale={locale} t={t} />
   <main>
     <Hero t={t} />
     <About t={t} />

@@ -1,5 +1,6 @@
 ---
 import type { Dictionary } from "../i18n";
+import SectionHeading from "./SectionHeading.astro";
 
 interface Props {
   t: Dictionary;
@@ -10,16 +11,25 @@ const steps = t.process.steps.map((step, index) => ({
   ...step,
   phase: String(index + 1).padStart(2, "0"),
 }));
-const titleLines = t.process.title.split("\n");
+const highlightWord = (value: string, words: string[]) => {
+  const title = value.replace(/\n/g, " ").trim();
+  const word = words.find((candidate) => title.toLowerCase().includes(candidate.toLowerCase()));
+  if (!word) return { before: title, accent: "", after: "" };
+  const index = title.toLowerCase().indexOf(word.toLowerCase());
+  return {
+    before: title.slice(0, index).trimEnd(),
+    accent: title.slice(index, index + word.length),
+    after: title.slice(index + word.length).trimStart(),
+  };
+};
+const processHeading = highlightWord(t.process.title, ["Build", "construimos"]);
 ---
 
 <section id="process" class="relative bg-[var(--color-text)] text-white py-24 lg:py-40 overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
-    <h2 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-6 process-title opacity-0 translate-y-12">
-      {titleLines.map((line, index) => (
-        <>{line}{index < titleLines.length - 1 && <br />}</>
-      ))}
-    </h2>
+    <div class="mb-6 process-title opacity-0 translate-y-12">
+      <SectionHeading before={processHeading.before} accent={processHeading.accent} after={processHeading.after} tone="light" class="max-w-4xl" />
+    </div>
 
     <p class="text-lg lg:text-xl text-[var(--color-text-muted)] max-w-2xl process-title opacity-0 translate-y-8">
       {t.process.intro}

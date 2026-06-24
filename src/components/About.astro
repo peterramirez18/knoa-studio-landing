@@ -1,5 +1,6 @@
 ---
 import type { Dictionary } from "../i18n";
+import SectionHeading from "./SectionHeading.astro";
 
 interface Props {
   t: Dictionary;
@@ -12,9 +13,7 @@ const { t } = Astro.props;
   <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
       <div class="lg:col-span-5 about-left opacity-0 translate-y-12">
-        <h2 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--color-text)] mb-4">
-          {t.about.titleBefore} <span class="text-[var(--color-accent)] italic font-light">{t.about.titleAccent}</span> {t.about.titleAfter}
-        </h2>
+        <SectionHeading before={t.about.titleBefore} accent={t.about.titleAccent} after={t.about.titleAfter} class="mb-4" />
         <h3 class="font-sans text-xl sm:text-2xl text-[var(--color-text)] font-semibold mb-8">
           {t.about.subtitle}
         </h3>

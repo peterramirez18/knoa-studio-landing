@@ -1,26 +1,39 @@
 ---
 import type { Dictionary } from "../i18n";
+import Button from "./Button.astro";
+import SectionHeading from "./SectionHeading.astro";
 
 interface Props {
   t: Dictionary;
 }
 
 const { t } = Astro.props;
+const highlightWord = (value: string, words: string[]) => {
+  const title = value.trim();
+  const word = words.find((candidate) => title.toLowerCase().includes(candidate.toLowerCase()));
+  if (!word) return { before: title, accent: "", after: "" };
+  const index = title.toLowerCase().indexOf(word.toLowerCase());
+  return {
+    before: title.slice(0, index).trimEnd(),
+    accent: title.slice(index, index + word.length),
+    after: title.slice(index + word.length).trimStart(),
+  };
+};
+const ctaHeading = highlightWord(t.cta.title, ["Ready", "Listo"]);
 ---
 
 <section id="cta" class="relative py-32 lg:py-56 overflow-hidden bg-[var(--color-bg)]">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
     <div class="w-4 h-4 rounded-full bg-[var(--color-accent)] mb-8 cta-element opacity-0 scale-50"></div>
 
-    <h2 class="font-display font-bold text-5xl sm:text-7xl lg:text-[5rem] leading-[0.9] tracking-tighter text-[var(--color-text)] mb-12 max-w-4xl cta-element opacity-0 translate-y-16">
-      {t.cta.title}
-    </h2>
+    <div class="mb-12 max-w-4xl cta-element opacity-0 translate-y-16">
+      <SectionHeading before={ctaHeading.before} accent={ctaHeading.accent} after={ctaHeading.after} />
+    </div>
 
     <div class="cta-element opacity-0 translate-y-8">
-      <a href="#contact" data-contact-modal-open class="group relative inline-flex items-center justify-center isolation-auto border-2 border-[var(--color-text)] bg-transparent px-10 py-5 text-xl font-bold text-[var(--color-text)] overflow-hidden rounded-full hover:text-white hover:border-transparent transition-colors duration-500">
-        <span class="absolute inset-0 w-full h-full -z-10 bg-[var(--color-accent)] rounded-full -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"></span>
+      <Button href="#contact" contactModal size="lg">
         {t.cta.button}
-      </a>
+      </Button>
     </div>
   </div>
 </section>

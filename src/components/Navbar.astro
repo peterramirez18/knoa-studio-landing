@@ -1,48 +1,249 @@
 ---
 import type { Dictionary, Locale } from "../i18n";
+import Button from "./Button.astro";
 
 interface Props {
   locale?: Locale;
   t: Dictionary;
 }
 
+type MegaLink = {
+  label: string;
+  href: string;
+  kicker?: string;
+  description?: string;
+};
+
+type MegaGroup = {
+  title: string;
+  links: MegaLink[];
+};
+
 const { locale = "en", t } = Astro.props;
-const homeHref = locale === "es" ? "/es/" : "/";
+const isEs = locale === "es";
+const homeHref = isEs ? "/es/" : "/";
+
+const labels = {
+  projects: isEs ? "Proyectos" : "Projects",
+  services: t.nav.services,
+  technology: isEs ? "Tecnolog\u00eda" : "Technology",
+  company: "Company",
+  industry: isEs ? "Industria" : "Industries",
+  cta: t.nav.cta,
+  viewAll: isEs ? "Ver todo" : "View all",
+};
+
+const projectLinks: MegaLink[] = [
+  { label: "Minqik", href: "#case-studies", kicker: isEs ? "Producto" : "Product", description: isEs ? "Experiencia mobile y marca digital." : "Mobile experience and digital brand." },
+  { label: "Parqueame App", href: "#case-studies", kicker: "Mobile", description: isEs ? "App para movilidad y parqueos." : "Mobility and parking app." },
+  { label: "Reinas del Caribe", href: "#case-studies", kicker: "Motion", description: isEs ? "Motion graphics para campa\u00f1a deportiva." : "Motion graphics for a sports campaign." },
+  { label: "Coopcibao", href: "#case-studies", kicker: isEs ? "Finanzas" : "Finance", description: isEs ? "Contenido digital para cooperativa." : "Digital content for a cooperative brand." },
+  { label: "BCI", href: "#case-studies", kicker: "Brand", description: isEs ? "Sistema visual para producto financiero." : "Visual system for a financial product." },
+  { label: "Knoa Billing", href: "#case-studies", kicker: "SaaS", description: isEs ? "Producto propio de billing." : "Our own billing product." },
+];
+
+const megaGroups: Record<string, MegaGroup[]> = {
+  services: [
+    {
+      title: "Development",
+      links: [
+        { label: "Web platforms", href: "#services" },
+        { label: "Mobile apps", href: "#services" },
+        { label: "Landing pages", href: "#services" },
+        { label: "SaaS products", href: "#services" },
+      ],
+    },
+    {
+      title: "Creative",
+      links: [
+        { label: "Brand systems", href: "#services" },
+        { label: "Motion graphics", href: "#services" },
+        { label: "Launch videos", href: "#services" },
+        { label: "Marketing assets", href: "#services" },
+      ],
+    },
+    {
+      title: "Growth",
+      links: [
+        { label: "Campaign kits", href: "#use-cases" },
+        { label: "Product storytelling", href: "#use-cases" },
+        { label: "Launch strategy", href: "#process" },
+      ],
+    },
+  ],
+  technology: [
+    {
+      title: "Frontend",
+      links: [
+        { label: "Astro", href: "#services" },
+        { label: "React", href: "#services" },
+        { label: "Next.js", href: "#services" },
+        { label: "Tailwind CSS", href: "#services" },
+      ],
+    },
+    {
+      title: "Mobile",
+      links: [
+        { label: "React Native", href: "#services" },
+        { label: "Flutter", href: "#services" },
+        { label: "iOS", href: "#services" },
+        { label: "Android", href: "#services" },
+      ],
+    },
+    {
+      title: "Backend",
+      links: [
+        { label: "Node.js", href: "#services" },
+        { label: "Supabase", href: "#services" },
+        { label: "Stripe", href: "#services" },
+        { label: "Web3Forms", href: "#services" },
+      ],
+    },
+  ],
+  company: [
+    {
+      title: "Knoa Studio",
+      links: [
+        { label: isEs ? "Nosotros" : "About", href: "#about" },
+        { label: isEs ? "Proceso" : "Process", href: "#process" },
+        { label: isEs ? "Proyectos" : "Work", href: "#case-studies" },
+        { label: isEs ? "Contacto" : "Contact", href: "#contact" },
+      ],
+    },
+    {
+      title: isEs ? "Modelos" : "Models",
+      links: [
+        { label: isEs ? "Equipos por proyecto" : "Project teams", href: "#process" },
+        { label: isEs ? "Retainers creativos" : "Creative retainers", href: "#process" },
+        { label: isEs ? "Sprint de lanzamiento" : "Launch sprint", href: "#process" },
+      ],
+    },
+  ],
+  industry: [
+    {
+      title: isEs ? "Industrias" : "Industries",
+      links: [
+        { label: isEs ? "Finanzas" : "Finance", href: "#use-cases" },
+        { label: isEs ? "Deportes" : "Sports", href: "#use-cases" },
+        { label: isEs ? "Movilidad" : "Mobility", href: "#use-cases" },
+        { label: "Real estate", href: "#use-cases" },
+        { label: isEs ? "Educaci\u00f3n" : "Education", href: "#use-cases" },
+        { label: "E-commerce", href: "#use-cases" },
+      ],
+    },
+    {
+      title: isEs ? "Casos" : "Use cases",
+      links: [
+        { label: isEs ? "Lanzamientos" : "Launches", href: "#use-cases" },
+        { label: isEs ? "Productos digitales" : "Digital products", href: "#use-cases" },
+        { label: isEs ? "Contenido de marca" : "Brand content", href: "#use-cases" },
+      ],
+    },
+  ],
+};
+
+const topNav = [
+  { key: "projects", label: labels.projects },
+  { key: "services", label: labels.services },
+  { key: "technology", label: labels.technology },
+  { key: "company", label: labels.company },
+  { key: "industry", label: labels.industry },
+];
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-4 text-[var(--color-text)]">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="flex items-center justify-between h-14">
-      <a href={homeHref} class="flex items-center gap-2 group z-50 relative">
-        <div class="w-8 h-8 rounded-lg bg-[var(--color-text)] flex items-center justify-center transition-colors duration-300 logo-icon">
-          <span class="text-white font-display font-bold text-sm logo-letter">K</span>
-        </div>
-        <span class="font-display font-semibold text-lg tracking-tight transition-colors duration-300 logo-text">Knoa Studio</span>
+<nav id="navbar" class="fixed left-0 right-0 top-0 z-50 bg-transparent py-4 text-[var(--color-text)] transition-all duration-500">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-14 items-center justify-between gap-4">
+      <a href={homeHref} class="relative z-50 flex shrink-0 items-center transition-opacity duration-300 hover:opacity-75" aria-label="Knoa Studio">
+        <img src="/logo-knoa-dark.svg" alt="Knoa Studio" class="h-5 w-auto sm:h-6" />
       </a>
 
-      <div class="hidden md:flex items-center gap-8 z-50 relative">
-        <a href="#about" class="text-sm font-medium hover:opacity-70 transition-opacity duration-200">{t.nav.about}</a>
-        <a href="#case-studies" class="text-sm font-medium hover:opacity-70 transition-opacity duration-200">{t.nav.work}</a>
-        <a href="#services" class="text-sm font-medium hover:opacity-70 transition-opacity duration-200">{t.nav.services}</a>
-        <a href="#process" class="text-sm font-medium hover:opacity-70 transition-opacity duration-200">{t.nav.process}</a>
-        <a href="#cta" class="inline-flex items-center justify-center h-10 px-6 text-sm font-bold text-white bg-[var(--color-text)] rounded-full hover:scale-105 transition-transform duration-300 nav-cta">{t.nav.cta}</a>
+      <div class="relative z-50 hidden items-center gap-1 rounded-full border border-black/10 bg-white/75 p-1 shadow-sm backdrop-blur-xl lg:flex">
+        {topNav.map((item) => (
+          <div class="group relative">
+            <button class="inline-flex h-10 items-center gap-1 rounded-full px-4 text-sm font-semibold text-[var(--color-text)] transition-colors duration-200 hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white focus-visible:outline-none">
+              {item.label}
+              <span class="text-[10px] leading-none opacity-70">v</span>
+            </button>
+
+            <div class="invisible absolute left-1/2 top-full z-50 mt-4 w-[min(820px,calc(100vw-3rem))] -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              <div class="overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-2xl shadow-black/15">
+                {item.key === "projects" ? (
+                  <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+                    <div class="grid gap-3 p-5 sm:grid-cols-2">
+                      {projectLinks.map((project) => (
+                        <a href={project.href} class="group/card rounded-2xl border border-black/10 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white">
+                          <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-accent)] group-hover/card:text-white/70">{project.kicker}</span>
+                          <span class="mt-2 block text-base font-bold leading-tight">{project.label}</span>
+                          <span class="mt-1 block text-sm leading-snug text-black/60 group-hover/card:text-white/70">{project.description}</span>
+                        </a>
+                      ))}
+                    </div>
+                    <div class="flex min-h-64 flex-col justify-between bg-black p-6 text-white">
+                      <div>
+                        <span class="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Portfolio</span>
+                        <p class="mt-4 max-w-xs text-2xl font-bold leading-tight">{isEs ? "Proyectos digitales, mobile y motion para marcas que se mueven." : "Digital, mobile and motion projects for brands in motion."}</p>
+                      </div>
+                      <Button href="#case-studies" variant="white" size="sm" class="w-fit">{labels.viewAll}</Button>
+                    </div>
+                  </div>
+                ) : (
+                  <div class="grid gap-6 p-6 lg:grid-cols-[1fr_280px]">
+                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                      {megaGroups[item.key].map((group) => (
+                        <div>
+                          <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-black/40">{group.title}</h3>
+                          <div class="mt-4 grid gap-1">
+                            {group.links.map((link) => (
+                              <a href={link.href} class="rounded-xl px-3 py-2 text-sm font-semibold text-black/72 transition-colors duration-200 hover:bg-black hover:text-white">{link.label}</a>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div class="flex flex-col justify-between rounded-3xl bg-[var(--color-text)] p-5 text-white">
+                      <div>
+                        <span class="text-xs font-bold uppercase tracking-[0.16em] text-white/45">Knoa Studio</span>
+                        <p class="mt-4 text-xl font-bold leading-tight">{isEs ? "Estrategia, dise\u00f1o y desarrollo para lanzar mejor." : "Strategy, design and development for sharper launches."}</p>
+                      </div>
+                      <Button href="#contact" contactModal variant="light" size="sm" class="mt-8 w-fit">{labels.cta}</Button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
-      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50 relative group" aria-label={t.nav.menuLabel}>
-        <span class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center" id="menu-line-1"></span>
-        <span class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center" id="menu-line-2"></span>
+      <div class="relative z-50 hidden items-center gap-3 lg:flex">
+        <div class="flex h-10 items-center gap-1 rounded-full border border-black/10 bg-white/75 px-2 text-xs font-bold shadow-sm backdrop-blur-xl">
+          <a href="/" class:list={["rounded-full px-2.5 py-1.5 transition-colors", !isEs ? "bg-black text-white" : "text-black/55 hover:text-black"]} aria-current={!isEs ? "page" : undefined}>EN</a>
+          <a href="/es/" class:list={["rounded-full px-2.5 py-1.5 transition-colors", isEs ? "bg-black text-white" : "text-black/55 hover:text-black"]} aria-current={isEs ? "page" : undefined}>ES</a>
+        </div>
+        <Button href="#contact" contactModal size="sm" class="nav-cta">{labels.cta}</Button>
+      </div>
+
+      <button id="mobile-menu-btn" class="relative z-50 flex flex-col gap-1.5 p-2 text-current lg:hidden" aria-label={t.nav.menuLabel} aria-expanded="false">
+        <span class="block h-0.5 w-6 origin-center bg-current transition-all duration-300" id="menu-line-1"></span>
+        <span class="block h-0.5 w-6 origin-center bg-current transition-all duration-300" id="menu-line-2"></span>
       </button>
     </div>
   </div>
 
-  <div id="mobile-menu-overlay" class="fixed inset-0 bg-[var(--color-bg)] z-40 -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] flex flex-col">
-    <div class="flex-1 flex flex-col items-center justify-center gap-8 px-6 pt-20">
-      <a href="#about" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-100">{t.nav.about}</a>
-      <a href="#case-studies" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-150">{t.nav.work}</a>
-      <a href="#services" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-200">{t.nav.services}</a>
-      <a href="#process" class="mobile-link text-4xl font-display font-bold text-[var(--color-text)] opacity-0 translate-y-8 transition-all duration-500 delay-250">{t.nav.process}</a>
-      <div class="separator h-px w-16 bg-[var(--color-border)] my-4 opacity-0 scale-x-0 transition-all duration-500 delay-300"></div>
-      <a href="#cta" class="mobile-link text-xl font-medium text-[var(--color-accent)] opacity-0 translate-y-8 transition-all duration-500 delay-300">{t.nav.cta}</a>
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-40 flex -translate-y-full flex-col bg-[var(--color-bg)] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] lg:hidden">
+    <div class="flex flex-1 flex-col justify-center gap-5 px-6 pt-24">
+      {topNav.map((item, index) => (
+        <a href={item.key === "projects" ? "#case-studies" : item.key === "company" ? "#about" : item.key === "technology" || item.key === "services" ? "#services" : "#use-cases"} class="mobile-link translate-y-8 text-4xl font-bold text-[var(--color-text)] opacity-0 transition-all duration-500" style={`transition-delay: ${100 + index * 50}ms`}>
+          {item.label}
+        </a>
+      ))}
+      <div class="separator my-4 h-px w-16 scale-x-0 bg-[var(--color-border)] opacity-0 transition-all delay-300 duration-500"></div>
+      <div class="mobile-link flex translate-y-8 items-center gap-3 opacity-0 transition-all delay-300 duration-500">
+        <a href="/" class:list={["rounded-full border border-black/10 px-4 py-2 text-sm font-bold", !isEs ? "bg-black text-white" : "text-black"]}>EN</a>
+        <a href="/es/" class:list={["rounded-full border border-black/10 px-4 py-2 text-sm font-bold", isEs ? "bg-black text-white" : "text-black"]}>ES</a>
+      </div>
+      <Button href="#contact" contactModal size="md" class="mobile-link mt-2 w-fit translate-y-8 opacity-0 delay-300">{labels.cta}</Button>
     </div>
   </div>
 </nav>
@@ -75,6 +276,7 @@ const homeHref = locale === "es" ? "/es/" : "/";
   function setMenuState(open: boolean) {
     isOpen = open;
     body.classList.toggle("overflow-hidden", open);
+    mobileMenuBtn?.setAttribute("aria-expanded", String(open));
     overlay?.classList.toggle("translate-y-0", open);
     overlay?.classList.toggle("-translate-y-full", !open);
     line1?.classList.toggle("translate-y-1", open);
