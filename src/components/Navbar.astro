@@ -151,19 +151,21 @@ const topNav = [
 ];
 ---
 
-<nav id="navbar" class="fixed left-0 right-0 top-0 z-50 bg-transparent py-4 text-[var(--color-text)] transition-all duration-500">
+<nav id="navbar" class="fixed left-0 right-0 top-0 z-50 bg-transparent py-4 text-white transition-all duration-500">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-14 items-center justify-between gap-4">
+    <div class="flex min-h-14 items-center justify-between gap-4 rounded-full border border-white/15 bg-black/25 px-4 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.22)] ring-1 ring-white/10 backdrop-blur-2xl sm:px-5">
       <a href={homeHref} class="relative z-50 flex shrink-0 items-center transition-opacity duration-300 hover:opacity-75" aria-label="Knoa Studio">
         <img src="/logo-knoa-dark.svg" alt="Knoa Studio" class="h-5 w-auto sm:h-6" />
       </a>
 
-      <div class="relative z-50 hidden items-center gap-1 rounded-full border border-black/10 bg-white/75 p-1 shadow-sm backdrop-blur-xl lg:flex">
+      <div class="relative z-50 hidden items-center gap-1 lg:flex">
         {topNav.map((item) => (
           <div class="group relative">
-            <button class="inline-flex h-10 items-center gap-1 rounded-full px-4 text-sm font-semibold text-[var(--color-text)] transition-colors duration-200 hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white focus-visible:outline-none">
+            <button class="inline-flex h-10 items-center gap-1 rounded-full px-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-black focus-visible:bg-white focus-visible:text-black focus-visible:outline-none">
               {item.label}
-              <span class="text-[10px] leading-none opacity-70">v</span>
+              <svg class="size-3.5 opacity-70 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
             </button>
 
             <div class="invisible absolute left-1/2 top-full z-50 mt-4 w-[min(820px,calc(100vw-3rem))] -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
@@ -217,11 +219,11 @@ const topNav = [
       </div>
 
       <div class="relative z-50 hidden items-center gap-3 lg:flex">
-        <div class="flex h-10 items-center gap-1 rounded-full border border-black/10 bg-white/75 px-2 text-xs font-bold shadow-sm backdrop-blur-xl">
-          <a href="/" class:list={["rounded-full px-2.5 py-1.5 transition-colors", !isEs ? "bg-black text-white" : "text-black/55 hover:text-black"]} aria-current={!isEs ? "page" : undefined}>EN</a>
-          <a href="/es/" class:list={["rounded-full px-2.5 py-1.5 transition-colors", isEs ? "bg-black text-white" : "text-black/55 hover:text-black"]} aria-current={isEs ? "page" : undefined}>ES</a>
+        <div class="flex h-10 items-center gap-1 rounded-full border border-white/15 bg-white/10 px-2 text-xs font-bold text-white">
+          <a href="/" class:list={["rounded-full px-2.5 py-1.5 transition-colors", !isEs ? "bg-white text-black" : "text-white/65 hover:text-white"]} aria-current={!isEs ? "page" : undefined}>EN</a>
+          <a href="/es/" class:list={["rounded-full px-2.5 py-1.5 transition-colors", isEs ? "bg-white text-black" : "text-white/65 hover:text-white"]} aria-current={isEs ? "page" : undefined}>ES</a>
         </div>
-        <Button href="#contact" contactModal size="sm" class="nav-cta">{labels.cta}</Button>
+        <Button href="#contact" contactModal variant="light" size="sm" class="nav-cta">{labels.cta}</Button>
       </div>
 
       <button id="mobile-menu-btn" class="relative z-50 flex flex-col gap-1.5 p-2 text-current lg:hidden" aria-label={t.nav.menuLabel} aria-expanded="false">
@@ -255,11 +257,11 @@ const topNav = [
     window.addEventListener("scroll", () => {
       const currentScroll = window.scrollY;
       if (currentScroll > 50) {
-        navbar.classList.add("bg-white/90", "backdrop-blur-md", "shadow-sm", "border-b", "border-[var(--color-border)]", "py-2");
-        navbar.classList.remove("bg-transparent", "py-4");
+        navbar.classList.add("py-2");
+        navbar.classList.remove("py-4");
       } else {
-        navbar.classList.remove("bg-white/90", "backdrop-blur-md", "shadow-sm", "border-b", "border-[var(--color-border)]", "py-2");
-        navbar.classList.add("bg-transparent", "py-4");
+        navbar.classList.remove("py-2");
+        navbar.classList.add("py-4");
       }
     });
   }
