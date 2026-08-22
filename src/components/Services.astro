@@ -1,6 +1,8 @@
 ---
 import type { Dictionary } from "../i18n";
 import SectionHeading from "./SectionHeading.astro";
+import bciImage from "../assets/projects/bci.png";
+import parqueameImage from "../assets/projects/parqueameapp.png";
 
 interface Props {
   t: Dictionary;
@@ -19,10 +21,16 @@ const highlightWord = (value: string, words: string[]) => {
   };
 };
 const servicesHeading = highlightWord(t.services.title, ["Power", "poder"]);
+const serviceVisuals = [
+  { className: "bg-black", image: null, alt: "" },
+  { className: "bg-white", image: bciImage, alt: "BCI" },
+  { className: "bg-[#eeeee9]", image: parqueameImage, alt: "Parqueame App" },
+];
+
 const services = t.services.items.map((service, index) => ({
   ...service,
   id: ["services-video", "services-landing", "services-web"][index],
-  visual: "bg-black",
+  visual: serviceVisuals[index],
 }));
 ---
 
@@ -58,7 +66,19 @@ const services = t.services.items.map((service, index) => ({
         {services.map((service, index) => (
           <div id={service.id} class="service-panel opacity-0 translate-y-24 transition-all duration-700 w-full" data-index={index}>
             <h3 class="lg:hidden font-display font-bold text-3xl mb-6 text-[var(--color-text)]">{service.title}</h3>
-            <div class={`w-full aspect-square md:aspect-[4/3] rounded-2xl ${service.visual} border border-[var(--color-border)] shadow-xl shadow-black/5 mb-8 flex items-center justify-center overflow-hidden relative group`}></div>
+            <div class={`w-full aspect-square md:aspect-[4/3] rounded-2xl ${service.visual.className} border border-[var(--color-border)] shadow-xl shadow-black/5 mb-8 flex items-center justify-center overflow-hidden relative group`}>
+              {service.visual.image && (
+                <img
+                  src={service.visual.image.src}
+                  width={service.visual.image.width}
+                  height={service.visual.image.height}
+                  alt={service.visual.alt}
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover"
+                />
+              )}
+            </div>
             <p class="text-lg lg:text-xl text-[var(--color-text-secondary)] font-medium leading-relaxed">{service.description}</p>
           </div>
         ))}

@@ -16,6 +16,7 @@ const { t } = Astro.props;
   <video
     src="/knoa-studio-demo-reel-2026.mp4"
     class="absolute inset-0 w-full h-full object-cover z-0"
+    id="hero-video"
     autoplay
     loop
     muted
@@ -32,9 +33,12 @@ const { t } = Astro.props;
       </p>
     </div>
 
-    <div class="mt-12 hero-cta opacity-0 translate-y-8">
+    <div class="mt-12 hero-cta flex flex-col items-center gap-3 opacity-0 translate-y-8 sm:flex-row">
       <Button href="#case-studies" variant="light" size="lg">
         {t.hero.cta}
+      </Button>
+      <Button videoModalSrc="/knoa-studio-demo-reel-2026.mp4" videoModalTitle="Knoa Studio Demoreel" variant="white" size="lg">
+        {t.hero.demoreel}
       </Button>
     </div>
   </div>
@@ -42,6 +46,12 @@ const { t } = Astro.props;
 
 <script>
   import gsap from "gsap";
+
+  const heroVideo = document.getElementById("hero-video") as HTMLVideoElement | null;
+  if (heroVideo && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    heroVideo.pause();
+    heroVideo.removeAttribute("autoplay");
+  }
 
   requestAnimationFrame(() => {
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });

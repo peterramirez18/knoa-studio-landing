@@ -27,7 +27,11 @@ const footerLinks = [
   { label: t.nav.process, href: "#process" },
 ];
 const serviceTags = [t.footer.launchVideos, t.footer.landingPages, t.footer.webDevelopment];
-const socialLinks = ["LinkedIn", "Instagram", "Behance"];
+const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/knoastudio" },
+  { label: "Instagram", href: "https://www.instagram.com/knoastudio/" },
+  { label: "Behance", href: "https://www.behance.net/knoastudio?tracking_source=search_projects%7Cknoastudio" },
+];
 ---
 
 <footer id="footer" class="bg-[#101010] text-white">
@@ -69,9 +73,9 @@ const socialLinks = ["LinkedIn", "Instagram", "Behance"];
           <div>
             <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white/35">{t.footer.socialLabel}</p>
             <div class="grid gap-2">
-              {socialLinks.map((label) => (
-                <a href="#" class="text-sm font-semibold text-white/60 transition-colors duration-300 hover:text-white">
-                  {label}
+              {socialLinks.map((link) => (
+                <a href={link.href} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white/60 transition-colors duration-300 hover:text-white">
+                  {link.label}
                 </a>
               ))}
             </div>

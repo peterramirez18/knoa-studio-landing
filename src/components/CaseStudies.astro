@@ -1,5 +1,6 @@
 ---
 import type { Dictionary } from "../i18n";
+import { Image } from "astro:assets";
 import SectionHeading from "./SectionHeading.astro";
 import minqikImage from "../assets/projects/minqik.png";
 import parqueameImage from "../assets/projects/parqueameapp.png";
@@ -31,6 +32,7 @@ const splitLastWord = (value: string) => {
 };
 const workHeading = splitLastWord(t.work.title);
 const billing = t.work.billing;
+const coopcibaoVideo = "/video-placeholder.mp4";
 const projectNumberClass =
   "font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-9 max-[900px]:mb-6";
 const projectTitleClass =
@@ -46,6 +48,14 @@ const imageClass =
   "h-full w-full object-cover rounded-md shadow-[0_1.5rem_4rem_rgba(28,50,80,0.16)]";
 const videoClass =
   "h-full w-full object-cover rounded-md shadow-[0_1.5rem_4rem_rgba(28,50,80,0.16)]";
+const viewProjectLabel = t.nav.cta === "Hablemos" ? "Ver proyecto" : "View project";
+const viewVideoLabel = t.nav.cta === "Hablemos" ? "Ver video" : "Watch video";
+const actionOverlayClass =
+  "pointer-events-none absolute inset-0 flex items-end justify-end bg-black/0 p-5 opacity-0 transition-all duration-300 group-hover:bg-black/25 group-hover:opacity-100 group-focus-visible:bg-black/25 group-focus-visible:opacity-100";
+const actionButtonClass =
+  "relative isolate inline-flex h-11 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-white px-6 text-sm font-bold text-black shadow-lg transition-colors duration-500 group-hover:border-transparent group-hover:text-white group-focus-visible:border-transparent group-focus-visible:text-white";
+const actionButtonFillClass =
+  "absolute inset-0 z-0 h-full w-full -translate-y-full rounded-full bg-[var(--color-accent)] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0 group-focus-visible:translate-y-0";
 ---
 
 <section
@@ -66,7 +76,8 @@ const videoClass =
 
     <div>
       <article
-        class="cs-reveal grid grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.8fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
+        id="project-minqik"
+        class="cs-reveal scroll-mt-28 grid grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.8fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
       >
         <div class={projectCopyClass}>
           <span class={projectNumberClass}>{projectNumbers.minqik}</span>
@@ -76,37 +87,54 @@ const videoClass =
           </p>
           <p class={projectDescriptionClass}>{projects.minqik.description}</p>
         </div>
-        <div
-          class={`${visualClass} bg-[#dcd6ff] flex items-center justify-center max-[600px]:p-3`}
+        <a
+          href="https://www.minqik.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`${visualClass} group cursor-pointer bg-[#dcd6ff] flex items-center justify-center max-[600px]:p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4`}
+          aria-label={`${viewProjectLabel}: ${projects.minqik.title}`}
         >
-          <img
-            src={minqikImage.src}
-            width={minqikImage.width}
-            height={minqikImage.height}
+          <Image
+            src={minqikImage}
             alt={projects.minqik.title}
             loading="lazy"
             decoding="async"
             class={imageClass}
           />
-        </div>
+          <span class={actionOverlayClass}>
+            <span class={actionButtonClass}>
+              <span class={actionButtonFillClass}></span>
+              <span class="relative z-10">{viewProjectLabel}</span>
+            </span>
+          </span>
+        </a>
       </article>
 
       <article
-        class="cs-reveal grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
+        id="project-papp"
+        class="cs-reveal scroll-mt-28 grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
       >
-        <div
-          class={`${visualClass} bg-[#eeeee9] flex items-center justify-center max-[900px]:order-2 max-[600px]:p-3`}
+        <a
+          href="https://www.parqueameapp.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`${visualClass} group cursor-pointer bg-[#eeeee9] flex items-center justify-center max-[900px]:order-2 max-[600px]:p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4`}
+          aria-label={`${viewProjectLabel}: ${projects.papp.title}`}
         >
-          <img
-            src={parqueameImage.src}
-            width={parqueameImage.width}
-            height={parqueameImage.height}
+          <Image
+            src={parqueameImage}
             alt={projects.papp.title}
             loading="lazy"
             decoding="async"
             class={imageClass}
           />
-        </div>
+          <span class={actionOverlayClass}>
+            <span class={actionButtonClass}>
+              <span class={actionButtonFillClass}></span>
+              <span class="relative z-10">{viewProjectLabel}</span>
+            </span>
+          </span>
+        </a>
         <div class={`${projectCopyClass} max-[900px]:order-1`}>
           <span class={projectNumberClass}>{projectNumbers.papp}</span>
           <h3 class={projectTitleClass}>{projects.papp.title}</h3>
@@ -118,7 +146,8 @@ const videoClass =
       </article>
 
       <article
-        class="cs-reveal my-5 min-h-[31rem] grid grid-cols-[minmax(16rem,0.62fr)_1.5fr] bg-[#101010] text-white rounded-lg overflow-hidden max-[900px]:grid-cols-1 max-[600px]:-mx-4 max-[600px]:rounded-none"
+        id="project-reinas"
+        class="cs-reveal my-5 scroll-mt-28 min-h-[31rem] grid grid-cols-[minmax(16rem,0.62fr)_1.5fr] bg-[#101010] text-white rounded-lg overflow-hidden max-[900px]:grid-cols-1 max-[600px]:-mx-4 max-[600px]:rounded-none"
       >
         <div
           class="p-12 flex flex-col items-start max-[600px]:px-6 max-[600px]:py-10"
@@ -132,23 +161,34 @@ const videoClass =
             {projects.reinas.description}
           </p>
         </div>
-        <div
-          class="relative overflow-hidden max-[900px]:min-h-[25rem] max-[900px]:border-[#444]"
+        <button
+          type="button"
+          class="group relative h-full w-full cursor-pointer overflow-hidden text-left max-[900px]:min-h-[25rem] max-[900px]:border-[#444] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-inset"
+          data-video-modal-open
+          data-video-src={reinasVideo}
+          data-video-title={projects.reinas.title}
+          aria-label={`${viewVideoLabel}: ${projects.reinas.title}`}
         >
           <video
-            src={reinasVideo}
+            data-lazy-src={reinasVideo}
             class="h-full w-full object-cover"
-            autoplay
             loop
             muted
             playsinline
-            preload="metadata"></video>
-        </div>
+            preload="none"></video>
+          <span class={actionOverlayClass}>
+            <span class={actionButtonClass}>
+              <span class={actionButtonFillClass}></span>
+              <span class="relative z-10">{viewVideoLabel}</span>
+            </span>
+          </span>
+        </button>
       </article>
 
       <div class="grid grid-cols-2 max-[900px]:grid-cols-1 gap-10">
         <article
-          class="cs-reveal pb-12 max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-[#dcdcd7] max-[600px]:px-0"
+          id="project-coopcibao"
+          class="cs-reveal scroll-mt-28 pb-12 max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-[#dcdcd7] max-[600px]:px-0"
         >
           <div class="flex flex-col items-start">
             <span
@@ -164,36 +204,34 @@ const videoClass =
               {projects.coopcibao.category} / {projects.coopcibao.discipline}
             </p>
           </div>
-          <div
-            class="h-80 my-8 relative overflow-hidden rounded-md bg-[#101010]"
-            aria-hidden="true"
+          <button
+            type="button"
+            class="group h-80 my-8 relative w-full cursor-pointer overflow-hidden rounded-md bg-[#101010] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4"
+            data-video-modal-open
+            data-video-src={coopcibaoVideo}
+            data-video-title={projects.coopcibao.title}
+            aria-label={`${viewVideoLabel}: ${projects.coopcibao.title}`}
           >
-            <div
-              class="absolute size-[16rem] rounded-full left-[18%] top-[12%]"
-            >
-            </div>
-            <div
-              class="absolute size-28 rounded-full bg-[#f0eadb] left-[8%] bottom-[9%] border-[0.65rem] border-double border-[#111]"
-            >
-            </div>
-            <div class="absolute size-20 bg-[#f4eee4] left-[14%] top-[10%]">
-            </div>
-            <div
-              class="absolute w-44 h-28 right-8 bottom-8 bg-[repeating-linear-gradient(90deg,#e8e3d1_0_2px,transparent_2px_7px)] [clip-path:polygon(0_0,100%_40%,100%_100%,0_70%)]"
-            >
-            </div>
-            <div
-              class="absolute right-[13%] top-[10%] font-display text-8xl font-bold text-[#2f9b69] mix-blend-screen"
-            >
-              C
-            </div>
-          </div>
+            <video
+              data-lazy-src={coopcibaoVideo}
+              class={videoClass}
+              loop
+              muted
+              playsinline
+              preload="none"></video>
+            <span class={actionOverlayClass}>
+              <span class={actionButtonClass}>
+                <span class={actionButtonFillClass}></span>
+                <span class="relative z-10">{viewVideoLabel}</span>
+              </span>
+            </span>
+          </button>
           <p class="max-w-[28rem] text-[#666] leading-[1.55]">
             {projects.coopcibao.description}
           </p>
         </article>
 
-        <article class="cs-reveal pb-12 max-[600px]:px-0">
+        <article id="project-lda" class="cs-reveal scroll-mt-28 pb-12 max-[600px]:px-0">
           <div class="flex flex-col items-start">
             <span
               class="font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-6"
@@ -208,18 +246,28 @@ const videoClass =
               {projects.lda.category} / {projects.lda.discipline}
             </p>
           </div>
-          <div
-            class="h-80 my-8 relative overflow-hidden rounded-md bg-[#101010]"
+          <button
+            type="button"
+            class="group h-80 my-8 relative w-full cursor-pointer overflow-hidden rounded-md bg-[#101010] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4"
+            data-video-modal-open
+            data-video-src={ldaVideo}
+            data-video-title={projects.lda.title}
+            aria-label={`${viewVideoLabel}: ${projects.lda.title}`}
           >
             <video
-              src={ldaVideo}
+              data-lazy-src={ldaVideo}
               class={videoClass}
-              autoplay
               loop
               muted
               playsinline
-              preload="metadata"></video>
-          </div>
+              preload="none"></video>
+            <span class={actionOverlayClass}>
+              <span class={actionButtonClass}>
+                <span class={actionButtonFillClass}></span>
+                <span class="relative z-10">{viewVideoLabel}</span>
+              </span>
+            </span>
+          </button>
           <p class="max-w-[28rem] text-[#666] leading-[1.55]">
             {projects.lda.description}
           </p>
@@ -227,21 +275,30 @@ const videoClass =
       </div>
 
       <article
-        class="cs-reveal grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
+        id="project-bci"
+        class="cs-reveal scroll-mt-28 grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
       >
-        <div
-          class={`${visualClass} bg-white flex items-center justify-center max-[900px]:order-2`}
+        <a
+          href="https://bci.com.do"
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`${visualClass} group cursor-pointer bg-white flex items-center justify-center max-[900px]:order-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4`}
+          aria-label={`${viewProjectLabel}: ${projects.bci.title}`}
         >
-          <img
-            src={bciImage.src}
-            width={bciImage.width}
-            height={bciImage.height}
+          <Image
+            src={bciImage}
             alt={projects.bci.title}
             loading="lazy"
             decoding="async"
             class={imageClass}
           />
-        </div>
+          <span class={actionOverlayClass}>
+            <span class={actionButtonClass}>
+              <span class={actionButtonFillClass}></span>
+              <span class="relative z-10">{viewProjectLabel}</span>
+            </span>
+          </span>
+        </a>
         <div class={`${projectCopyClass} max-[900px]:order-1`}>
           <span class={projectNumberClass}>{projectNumbers.bci}</span>
           <h3 class={projectTitleClass}>{projects.bci.title}</h3>
@@ -254,7 +311,8 @@ const videoClass =
     </div>
 
     <article
-      class="cs-reveal mt-24 min-h-[34rem] grid grid-cols-[0.72fr_1.45fr] overflow-hidden rounded-[0.6rem] bg-[#101010] text-white max-[900px]:grid-cols-1 max-[600px]:-mx-4 max-[600px]:rounded-none"
+      id="project-knoa-billing"
+      class="cs-reveal scroll-mt-28 mt-24 min-h-[34rem] grid grid-cols-[0.72fr_1.45fr] overflow-hidden rounded-[0.6rem] bg-[#101010] text-white max-[900px]:grid-cols-1 max-[600px]:-mx-4 max-[600px]:rounded-none"
     >
       <div
         class="p-16 flex flex-col items-start max-[600px]:px-6 max-[600px]:py-12"
@@ -282,10 +340,8 @@ const videoClass =
       <div
         class="mt-10 flex items-center overflow-hidden rounded-tl-2xl bg-[#181818] max-[900px]:mx-6 max-[900px]:mt-0 max-[900px]:min-h-[25rem] max-[900px]:rounded-t-2xl max-[600px]:mx-3"
       >
-        <img
-          src={billingImage.src}
-          width={billingImage.width}
-          height={billingImage.height}
+        <Image
+          src={billingImage}
           alt={billing.title}
           loading="lazy"
           decoding="async"
@@ -312,4 +368,25 @@ const videoClass =
       });
     });
   });
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const lazyVideos = document.querySelectorAll<HTMLVideoElement>("video[data-lazy-src]");
+  const videoObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const video = entry.target as HTMLVideoElement;
+        const src = video.dataset.lazySrc;
+        if (src) {
+          video.src = src;
+          video.load();
+          if (!reducedMotion) video.play().catch(() => undefined);
+        }
+        observer.unobserve(video);
+      });
+    },
+    { rootMargin: "300px" },
+  );
+  lazyVideos.forEach((video) => videoObserver.observe(video));
 </script>

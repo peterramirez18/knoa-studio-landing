@@ -85,3 +85,24 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Scroll/entrance reveal elements are hidden via opacity-0 in markup and
+   revealed by GSAP. Respect reduced-motion by showing them immediately
+   instead of animating in. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-subtitle,
+  .hero-cta,
+  .about-left,
+  .about-right,
+  .process-title,
+  .cta-element,
+  .services-title,
+  .service-panel,
+  .uc-fade,
+  .cs-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

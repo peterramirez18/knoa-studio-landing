@@ -19,7 +19,8 @@
   "hero": {
     "title": "Creamos experiencias de lanzamiento que convierten atención en resultados.",
     "subtitle": "Videos de lanzamiento, landing pages de alto impacto y desarrollo web.",
-    "cta": "Explora nuestro trabajo"
+    "cta": "Explora nuestro trabajo",
+    "demoreel": "Ver demoreel"
   },
   "about": {
     "titleBefore": "Somos",
@@ -152,10 +153,6 @@
     "title": "Creado para lanzamientos, crecimiento y presencia digital",
     "items": [
       {
-        "title": "Campañas de lanzamiento",
-        "description": "Creamos recursos que ayudan a introducir productos o servicios al mercado con claridad, energía y una presencia visual premium."
-      },
-      {
         "title": "Landing pages que convierten",
         "description": "Diseñamos y desarrollamos landing pages enfocadas en presentar tu oferta, generar confianza y convertir tráfico en leads o ventas."
       },
@@ -182,10 +179,10 @@
     "button": "Hablemos"
   },
   "footer": {
-    "headline": "Construyamos un lanzamiento que se recuerde.",
-    "subheadline": "Motion, landing pages y experiencias web diseñadas para que tu próximo lanzamiento sea imposible de ignorar.",
+    "headline": "Demos forma a la presencia digital que tu marca necesita.",
+    "subheadline": "Creamos motion, sitios y productos digitales con estrategia, detalle visual y ejecución lista para crecer.",
     "emailLabel": "Iniciar proyecto",
-    "studioLabel": "Estudio creativo de lanzamientos",
+    "studioLabel": "Estudio creativo y digital",
     "navLabel": "Explorar",
     "socialLabel": "Social",
     "top": "Volver arriba",

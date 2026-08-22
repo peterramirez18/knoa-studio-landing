@@ -10,6 +10,7 @@ import UseCases from "./UseCases.astro";
 import CtaSection from "./CtaSection.astro";
 import Footer from "./Footer.astro";
 import ContactModal from "./ContactModal.astro";
+import VideoModal from "./VideoModal.astro";
 import { getDictionary, normalizeLocale } from "../i18n";
 import "../styles/global.css";
 
@@ -31,4 +32,5 @@ const canonicalPath = locale === "es" ? "/es/" : "/";
   </main>
   <Footer t={t} />
   <ContactModal t={t} />
+  <VideoModal />
 </Layout>

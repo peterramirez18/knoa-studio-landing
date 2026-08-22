@@ -19,7 +19,8 @@
   "hero": {
     "title": "We build launch experiences that turn attention into revenue.",
     "subtitle": "Product launch videos, high-impact landing pages, and web development.",
-    "cta": "Explore Our Work"
+    "cta": "Explore Our Work",
+    "demoreel": "Watch demoreel"
   },
   "about": {
     "titleBefore": "We",
@@ -152,10 +153,6 @@
     "title": "Built for Launches, Growth, and Digital Presence",
     "items": [
       {
-        "title": "Product Launch Campaigns",
-        "description": "We create launch assets that help new products or services enter the market with clarity, energy, and a premium visual presence."
-      },
-      {
         "title": "Landing Pages That Convert",
         "description": "We design and build high-impact landing pages focused on presenting your offer clearly, building trust fast, and turning traffic into leads or sales."
       },
@@ -182,10 +179,10 @@
     "button": "Let's Talk!"
   },
   "footer": {
-    "headline": "Let's build the launch people remember.",
-    "subheadline": "Motion, landing pages, and web experiences shaped to make your next release feel impossible to ignore.",
+    "headline": "Let us shape the digital presence your brand needs.",
+    "subheadline": "We craft motion, websites, and digital products with strategy, visual precision, and growth-ready execution.",
     "emailLabel": "Start a project",
-    "studioLabel": "Creative launch studio",
+    "studioLabel": "Creative digital studio",
     "navLabel": "Explore",
     "socialLabel": "Social",
     "top": "Back to top",

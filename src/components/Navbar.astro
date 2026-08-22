@@ -12,6 +12,7 @@ type MegaLink = {
   href: string;
   kicker?: string;
   description?: string;
+  target?: "_blank";
 };
 
 type MegaGroup = {
@@ -28,18 +29,17 @@ const labels = {
   services: t.nav.services,
   technology: isEs ? "Tecnolog\u00eda" : "Technology",
   company: "Company",
-  industry: isEs ? "Industria" : "Industries",
   cta: t.nav.cta,
   viewAll: isEs ? "Ver todo" : "View all",
 };
 
 const projectLinks: MegaLink[] = [
-  { label: "Minqik", href: "#case-studies", kicker: isEs ? "Producto" : "Product", description: isEs ? "Experiencia mobile y marca digital." : "Mobile experience and digital brand." },
-  { label: "Parqueame App", href: "#case-studies", kicker: "Mobile", description: isEs ? "App para movilidad y parqueos." : "Mobility and parking app." },
-  { label: "Reinas del Caribe", href: "#case-studies", kicker: "Motion", description: isEs ? "Motion graphics para campa\u00f1a deportiva." : "Motion graphics for a sports campaign." },
-  { label: "Coopcibao", href: "#case-studies", kicker: isEs ? "Finanzas" : "Finance", description: isEs ? "Contenido digital para cooperativa." : "Digital content for a cooperative brand." },
-  { label: "BCI", href: "#case-studies", kicker: "Brand", description: isEs ? "Sistema visual para producto financiero." : "Visual system for a financial product." },
-  { label: "Knoa Billing", href: "#case-studies", kicker: "SaaS", description: isEs ? "Producto propio de billing." : "Our own billing product." },
+  { label: "Minqik", href: "https://www.minqik.com", target: "_blank", kicker: isEs ? "Producto" : "Product", description: isEs ? "Experiencia mobile y marca digital." : "Mobile experience and digital brand." },
+  { label: "Parqueame App", href: "https://www.parqueameapp.com", target: "_blank", kicker: "Mobile", description: isEs ? "App para movilidad y parqueos." : "Mobility and parking app." },
+  { label: "Reinas del Caribe", href: "#project-reinas", kicker: "Motion", description: isEs ? "Motion graphics para campa\u00f1a deportiva." : "Motion graphics for a sports campaign." },
+  { label: "Coopcibao", href: "#project-coopcibao", kicker: isEs ? "Finanzas" : "Finance", description: isEs ? "Contenido digital para cooperativa." : "Digital content for a cooperative brand." },
+  { label: "BCI", href: "https://bci.com.do", target: "_blank", kicker: "Brand", description: isEs ? "Sistema visual para producto financiero." : "Visual system for a financial product." },
+  { label: "Knoa Billing", href: "#project-knoa-billing", kicker: "SaaS", description: isEs ? "Producto propio de billing." : "Our own billing product." },
 ];
 
 const megaGroups: Record<string, MegaGroup[]> = {
@@ -56,18 +56,9 @@ const megaGroups: Record<string, MegaGroup[]> = {
     {
       title: "Creative",
       links: [
-        { label: "Brand systems", href: "#services" },
         { label: "Motion graphics", href: "#services" },
         { label: "Launch videos", href: "#services" },
         { label: "Marketing assets", href: "#services" },
-      ],
-    },
-    {
-      title: "Growth",
-      links: [
-        { label: "Campaign kits", href: "#use-cases" },
-        { label: "Product storytelling", href: "#use-cases" },
-        { label: "Launch strategy", href: "#process" },
       ],
     },
   ],
@@ -110,35 +101,6 @@ const megaGroups: Record<string, MegaGroup[]> = {
         { label: isEs ? "Contacto" : "Contact", href: "#contact" },
       ],
     },
-    {
-      title: isEs ? "Modelos" : "Models",
-      links: [
-        { label: isEs ? "Equipos por proyecto" : "Project teams", href: "#process" },
-        { label: isEs ? "Retainers creativos" : "Creative retainers", href: "#process" },
-        { label: isEs ? "Sprint de lanzamiento" : "Launch sprint", href: "#process" },
-      ],
-    },
-  ],
-  industry: [
-    {
-      title: isEs ? "Industrias" : "Industries",
-      links: [
-        { label: isEs ? "Finanzas" : "Finance", href: "#use-cases" },
-        { label: isEs ? "Deportes" : "Sports", href: "#use-cases" },
-        { label: isEs ? "Movilidad" : "Mobility", href: "#use-cases" },
-        { label: "Real estate", href: "#use-cases" },
-        { label: isEs ? "Educaci\u00f3n" : "Education", href: "#use-cases" },
-        { label: "E-commerce", href: "#use-cases" },
-      ],
-    },
-    {
-      title: isEs ? "Casos" : "Use cases",
-      links: [
-        { label: isEs ? "Lanzamientos" : "Launches", href: "#use-cases" },
-        { label: isEs ? "Productos digitales" : "Digital products", href: "#use-cases" },
-        { label: isEs ? "Contenido de marca" : "Brand content", href: "#use-cases" },
-      ],
-    },
   ],
 };
 
@@ -147,7 +109,6 @@ const topNav = [
   { key: "services", label: labels.services },
   { key: "technology", label: labels.technology },
   { key: "company", label: labels.company },
-  { key: "industry", label: labels.industry },
 ];
 ---
 
@@ -174,7 +135,7 @@ const topNav = [
                   <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
                     <div class="grid gap-3 p-5 sm:grid-cols-2">
                       {projectLinks.map((project) => (
-                        <a href={project.href} class="group/card rounded-2xl border border-black/10 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white">
+                        <a href={project.href} target={project.target} rel={project.target === "_blank" ? "noopener noreferrer" : undefined} class="group/card rounded-2xl border border-black/10 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white">
                           <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-accent)] group-hover/card:text-white/70">{project.kicker}</span>
                           <span class="mt-2 block text-base font-bold leading-tight">{project.label}</span>
                           <span class="mt-1 block text-sm leading-snug text-black/60 group-hover/card:text-white/70">{project.description}</span>
