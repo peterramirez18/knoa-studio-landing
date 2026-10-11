@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Knoa Studio - Experiencias de lanzamiento que generan resultados",
-    "description": "Knoa Studio combina motion, diseño y desarrollo para crear experiencias de lanzamiento que convierten atención en resultados."
+    "title": "Knoa Studio - Tecnología, producto digital y desarrollo web",
+    "description": "Knoa Studio diseña y desarrolla plataformas web, apps y productos digitales para marcas que necesitan operar, vender y escalar mejor."
   },
   "language": {
     "label": "Idioma",
@@ -17,22 +17,22 @@
     "menuLabel": "Abrir menu"
   },
   "hero": {
-    "title": "Creamos experiencias de lanzamiento que convierten atención en resultados.",
-    "subtitle": "Videos de lanzamiento, landing pages de alto impacto y desarrollo web.",
-    "cta": "Explora nuestro trabajo",
+    "title": "Diseñamos y desarrollamos productos digitales para marcas que quieren avanzar.",
+    "subtitle": "Plataformas web, apps, herramientas internas y experiencias digitales construidas con estrategia, diseño y tecnología.",
+    "cta": "Ver productos digitales",
     "demoreel": "Ver demoreel"
   },
   "about": {
     "titleBefore": "Somos",
     "titleAccent": "Knoa",
     "titleAfter": "Studio",
-    "subtitle": "Tu aliado en movimiento y crecimiento",
-    "paragraph1": "Somos un estudio creativo que construye experiencias de lanzamiento de alto nivel para marcas y productos ambiciosos. Combinamos motion, diseño y desarrollo para crear activos digitales que destacan y generan resultados medibles.",
-    "paragraph2": "Ya sea un video promocional impactante, una landing page enfocada en conversión o un ecosistema digital completo, cada proyecto se diseña para comunicar tu valor y rendir al máximo. Si buscas un aliado para elevar tu próximo lanzamiento, estamos listos para construirlo contigo."
+    "subtitle": "Tu equipo para producto, diseño y tecnología",
+    "paragraph1": "Somos un estudio de tecnología y diseño que crea productos digitales para negocios que necesitan una presencia más útil, clara y escalable. Convertimos ideas, procesos y marcas en plataformas, sitios y apps que la gente puede usar de verdad.",
+    "paragraph2": "Nuestra ventaja está en unir estrategia, interfaz, desarrollo y comunicación visual en un mismo proceso. Motion sigue siendo parte de nuestro lenguaje, pero el centro es construir herramientas digitales que funcionen, se sientan bien y ayuden al negocio a crecer."
   },
   "work": {
     "title": "Trabajo seleccionado",
-    "subtitle": "Productos digitales, motion y experiencias web creadas para marcas reales.",
+    "subtitle": "Productos, plataformas y experiencias digitales creadas para marcas reales.",
     "projects": {
       "minqik": {
         "title": "Minqik",
@@ -48,26 +48,26 @@
       },
       "coopcibao": {
         "title": "Coopcibao",
-        "category": "Motion graphics",
-        "discipline": "Comunicación de marca",
-        "description": "Comunicación visual en movimiento creada para una cooperativa de la República Dominicana."
+        "category": "Contenido digital",
+        "discipline": "Comunicación financiera",
+        "description": "Piezas audiovisuales creadas para comunicar productos financieros con claridad y presencia de marca."
       },
       "reinas": {
         "title": "Reinas del Caribe",
-        "category": "Motion graphics",
+        "category": "Contenido de marca",
         "discipline": "Campaña deportiva",
-        "description": "Motion graphics creados para la selección femenina de voleibol de la República Dominicana, celebrando la energía y el orgullo del juego."
+        "description": "Piezas en movimiento para una campaña deportiva con alto reconocimiento visual y energía de marca."
       },
       "lda": {
         "title": "LDA",
-        "category": "Video promocional",
-        "discipline": "Motion graphics",
-        "description": "Un video promocional para la Liga Dominicana de Futbol, construido alrededor de la energía del juego."
+        "category": "Contenido promocional",
+        "discipline": "Video y motion",
+        "description": "Una pieza promocional para la Liga Dominicana de Futbol, construida alrededor de la energía del juego."
       },
       "bci": {
         "title": "BCI",
         "category": "Sitio web",
-        "discipline": "Desarrollo",
+        "discipline": "Desarrollo web",
         "description": "Una presencia digital para BCI, distribuidores de vehículos Changan en la República Dominicana."
       }
     },
@@ -86,115 +86,115 @@
     }
   },
   "services": {
-    "title": "El poder de nuestro enfoque",
+    "title": "Tecnología con intención",
     "items": [
       {
-        "title": "Videos de lanzamiento de productos y servicios",
-        "description": "Videos cinematográficos que cuentan historias, capturan el valor de tu producto en segundos y generan una conexión real."
+        "title": "Productos digitales y SaaS",
+        "description": "Diseñamos y desarrollamos plataformas, dashboards y herramientas de negocio pensadas para operar mejor, vender más claro y escalar con orden."
       },
       {
-        "title": "Landing pages de alto impacto",
-        "description": "Páginas enfocadas en conversión, con estructura estratégica, diseño premium y animaciones que guían a la acción."
+        "title": "Websites y landing pages",
+        "description": "Construimos sitios rápidos, claros y enfocados en conversión, con una estructura que comunica valor y guía a la acción."
       },
       {
-        "title": "Desarrollo",
-        "description": "Experiencias web y mobile rápidas, accesibles y cuidadosamente desarrolladas con tecnologías modernas y buenas prácticas."
+        "title": "Apps y experiencias mobile",
+        "description": "Creamos experiencias web y mobile accesibles, fluidas y cuidadosamente desarrolladas con tecnologías modernas y buenas prácticas."
       }
     ]
   },
   "process": {
-    "title": "Cómo construimos\nexperiencias listas para lanzar",
-    "intro": "Desde la estrategia y dirección creativa hasta la ejecución y el lanzamiento, creamos experiencias digitales que capturan atención y motivan a actuar.",
+    "title": "Cómo construimos\nproductos digitales",
+    "intro": "Desde la estrategia y la arquitectura de experiencia hasta el diseño, desarrollo y lanzamiento, trabajamos para que cada producto sea claro, usable y listo para crecer.",
     "phase": "Fase",
     "steps": [
       {
-        "title": "Alineación y objetivos",
+        "title": "Descubrimiento y objetivos",
         "items": [
-          "Definimos qué vas a lanzar, para quién y cómo se ve el éxito",
-          "Identificamos el mensaje principal, los problemas de la audiencia y la meta de conversión",
-          "Diseñamos el proyecto alrededor del impacto en el negocio, no solo de lo visual"
+          "Entendemos el negocio, los usuarios y el problema que necesita resolver el producto",
+          "Definimos objetivos, prioridades, alcance y criterios de éxito",
+          "Diseñamos el proyecto alrededor de impacto operativo y valor real para el usuario"
         ]
       },
       {
-        "title": "Posicionamiento y dirección creativa",
+        "title": "Estrategia de producto",
         "items": [
-          "Convertimos tu oferta en un concepto claro y atractivo",
-          "Definimos el tono, lenguaje visual y dirección general",
-          "Construimos la base creativa para el motion y la experiencia digital"
+          "Organizamos funcionalidades, mensajes y recorridos principales",
+          "Definimos la propuesta de valor y la arquitectura de contenido",
+          "Convertimos necesidades de negocio en decisiones claras de producto"
         ]
       },
       {
-        "title": "Estructura y diseño de experiencia",
+        "title": "UX/UI y sistema visual",
         "items": [
-          "Organizamos el contenido para aportar claridad, atención y acción",
-          "Diseñamos el recorrido, las secciones y la lógica de interfaz",
-          "Aseguramos que cada pantalla y escena apoye el objetivo final"
+          "Diseñamos flujos, pantallas y estados pensados para uso real",
+          "Construimos una interfaz consistente, usable y alineada a la marca",
+          "Validamos que cada sección, componente y acción tenga una razón"
         ]
       },
       {
         "title": "Producción y desarrollo",
         "items": [
-          "Producimos visuales, motion y recursos con gran atención al detalle",
-          "Desarrollamos la landing page o experiencia digital pensando en rendimiento",
-          "Refinamos interacciones, adaptación responsive y ejecución técnica"
+          "Desarrollamos la experiencia con rendimiento, accesibilidad y escalabilidad",
+          "Integramos contenido, formularios, analítica y herramientas necesarias",
+          "Refinamos interacciones, responsive y comportamiento técnico"
         ]
       },
       {
-        "title": "Refinamiento y lanzamiento",
+        "title": "QA, lanzamiento e iteración",
         "items": [
-          "Revisamos, pulimos y probamos todo antes de publicar",
-          "Optimizamos los entregables para web, campañas y dispositivos",
-          "Te ayudamos a lanzar con confianza y una presentación premium"
+          "Probamos navegación, formularios, rendimiento y experiencia responsive",
+          "Preparamos el lanzamiento con métricas y detalles técnicos claros",
+          "Dejamos una base lista para medir, aprender e iterar"
         ]
       }
     ]
   },
   "useCases": {
-    "title": "Creado para lanzamientos, crecimiento y presencia digital",
+    "title": "Creado para operaciones, ventas y crecimiento digital",
     "items": [
       {
-        "title": "Landing pages que convierten",
-        "description": "Diseñamos y desarrollamos landing pages enfocadas en presentar tu oferta, generar confianza y convertir tráfico en leads o ventas."
+        "title": "Plataformas para operar mejor",
+        "description": "Diseñamos sistemas digitales que centralizan procesos, datos y acciones importantes para que el negocio trabaje con más claridad."
       },
       {
-        "title": "Videos para productos digitales",
-        "description": "Transformamos software, plataformas y servicios en historias visuales que comunican su valor de forma inmediata."
+        "title": "Sitios que convierten",
+        "description": "Creamos websites y landing pages que presentan la oferta con estructura, confianza y una ruta clara hacia leads o ventas."
       },
       {
-        "title": "Experiencias web con motion",
-        "description": "Combinamos desarrollo y movimiento para crear experiencias con mejor narrativa, fluidez e impacto memorable."
+        "title": "Apps y productos mobile",
+        "description": "Construimos experiencias mobile pensadas para flujos concretos, interacción simple y uso continuo."
       },
       {
-        "title": "Sistemas de presentación de marca",
-        "description": "Ayudamos a las marcas a presentarse con consistencia en sus visuales, mensajes y movimiento."
+        "title": "Sistemas de marca digital",
+        "description": "Ayudamos a las marcas a verse y sentirse consistentes dentro de sitios, apps, dashboards y canales digitales."
       },
       {
-        "title": "Recursos de marketing para crecer",
-        "description": "Producimos visuales y contenido promocional para lanzamientos, anuncios y comunicación continua de marca."
+        "title": "Contenido para activar productos",
+        "description": "Producimos piezas visuales y motion cuando el producto necesita explicarse, lanzarse o comunicarse con más fuerza."
       }
     ]
   },
   "cta": {
-    "title": "¿Listo para elevar tu próximo lanzamiento?",
+    "title": "¿Listo para construir tu próximo producto digital?",
     "button": "Hablemos"
   },
   "footer": {
-    "headline": "Demos forma a la presencia digital que tu marca necesita.",
-    "subheadline": "Creamos motion, sitios y productos digitales con estrategia, detalle visual y ejecución lista para crecer.",
+    "headline": "Construyamos la tecnología que tu marca necesita.",
+    "subheadline": "Creamos plataformas, sitios, apps y productos digitales con estrategia, diseño cuidado y desarrollo listo para crecer.",
     "emailLabel": "Iniciar proyecto",
-    "studioLabel": "Estudio creativo y digital",
+    "studioLabel": "Estudio de tecnología y diseño",
     "navLabel": "Explorar",
     "socialLabel": "Social",
     "top": "Volver arriba",
-    "launchVideos": "Videos de lanzamiento",
-    "landingPages": "Landing pages",
-    "webDevelopment": "Desarrollo",
+    "launchVideos": "Productos digitales",
+    "landingPages": "Websites y landing pages",
+    "webDevelopment": "Apps y plataformas",
     "copyright": "© 2026 Knoa Studio. Todos los derechos reservados."
   },
   "contact": {
-    "eyebrow": "Cu?ntanos del lanzamiento",
+    "eyebrow": "Cuéntanos del producto",
     "title": "Iniciar proyecto",
-    "description": "Comparte un poco de contexto y te responderemos con el pr?ximo paso.",
+    "description": "Comparte un poco de contexto y te responderemos con el próximo paso.",
     "name": "Nombre",
     "email": "Email",
     "message": "Mensaje",

@@ -20,16 +20,16 @@ const highlightWord = (value: string, words: string[]) => {
     after: title.slice(index + word.length).trimStart(),
   };
 };
-const servicesHeading = highlightWord(t.services.title, ["Power", "poder"]);
+const servicesHeading = highlightWord(t.services.title, ["Intention", "intención"]);
 const serviceVisuals = [
-  { className: "bg-black", image: null, alt: "" },
-  { className: "bg-white", image: bciImage, alt: "BCI" },
   { className: "bg-[#eeeee9]", image: parqueameImage, alt: "Parqueame App" },
+  { className: "bg-white", image: bciImage, alt: "BCI" },
+  { className: "bg-[#dcd6ff]", image: parqueameImage, alt: "Mobile product interface" },
 ];
 
 const services = t.services.items.map((service, index) => ({
   ...service,
-  id: ["services-video", "services-landing", "services-web"][index],
+  id: ["services-product", "services-web", "services-mobile"][index],
   visual: serviceVisuals[index],
 }));
 ---

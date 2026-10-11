@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Knoa Studio - Launch Experiences That Drive Revenue",
-    "description": "Knoa Studio combines motion, design, and development to build launch experiences that turn attention into revenue."
+    "title": "Knoa Studio - Technology, Digital Product, and Web Development",
+    "description": "Knoa Studio designs and develops web platforms, apps, and digital products for brands that need to operate, sell, and scale better."
   },
   "language": {
     "label": "Language",
@@ -17,22 +17,22 @@
     "menuLabel": "Toggle menu"
   },
   "hero": {
-    "title": "We build launch experiences that turn attention into revenue.",
-    "subtitle": "Product launch videos, high-impact landing pages, and web development.",
-    "cta": "Explore Our Work",
+    "title": "We design and develop digital products for brands ready to move forward.",
+    "subtitle": "Web platforms, apps, internal tools, and digital experiences built with strategy, design, and technology.",
+    "cta": "View Digital Products",
     "demoreel": "Watch demoreel"
   },
   "about": {
     "titleBefore": "We",
     "titleAccent": "are",
     "titleAfter": "Knoa Studio",
-    "subtitle": "Your partner in motion & growth",
-    "paragraph1": "We're a creative studio building high-end launch experiences for ambitious brands and products. By combining motion, design, and development, we create digital assets that cut through the noise and drive measurable revenue.",
-    "paragraph2": "Whether it's a breathtaking promotional video, a high-converting landing page, or a complete digital product ecosystem, every project is tailored to communicate your unique value and engineered for performance. If you're looking for a partner to elevate your next big launch, we're ready to build it with you."
+    "subtitle": "Your team for product, design, and technology",
+    "paragraph1": "We're a technology and design studio creating digital products for businesses that need a more useful, clear, and scalable presence. We turn ideas, processes, and brands into platforms, websites, and apps people can actually use.",
+    "paragraph2": "Our edge is bringing strategy, interface design, development, and visual communication into one process. Motion is still part of our language, but the center is building digital tools that work, feel good, and help the business grow."
   },
   "work": {
     "title": "Selected Work",
-    "subtitle": "Digital products, motion, and web experiences built for real brands.",
+    "subtitle": "Products, platforms, and digital experiences built for real brands.",
     "projects": {
       "minqik": {
         "title": "Minqik",
@@ -48,26 +48,26 @@
       },
       "coopcibao": {
         "title": "Coopcibao",
-        "category": "Motion Graphics",
-        "discipline": "Brand Communication",
-        "description": "Motion-led visual communication created for one of the Dominican Republic's cooperatives."
+        "category": "Digital Content",
+        "discipline": "Financial Communication",
+        "description": "Audiovisual pieces created to communicate financial products with clarity and brand presence."
       },
       "reinas": {
         "title": "Reinas del Caribe",
-        "category": "Motion Graphics",
+        "category": "Brand Content",
         "discipline": "Sports Campaign",
-        "description": "Motion graphics created for the Dominican Republic women's national volleyball team, celebrating the energy and pride of the game."
+        "description": "Motion-led pieces for a sports campaign with high visual recognition and brand energy."
       },
       "lda": {
         "title": "LDA",
-        "category": "Promotional Video",
-        "discipline": "Motion Graphics",
-        "description": "A promotional video for Liga Dominicana de Futbol, built around the energy of the game."
+        "category": "Promotional Content",
+        "discipline": "Video and Motion",
+        "description": "A promotional piece for Liga Dominicana de Futbol, built around the energy of the game."
       },
       "bci": {
         "title": "BCI",
         "category": "Website",
-        "discipline": "Development",
+        "discipline": "Web Development",
         "description": "A digital presence for BCI, Changan vehicle distributors in the Dominican Republic."
       }
     },
@@ -86,113 +86,113 @@
     }
   },
   "services": {
-    "title": "The Power of Our Approach",
+    "title": "Technology With Intention",
     "items": [
       {
-        "title": "Product & Service Launch Videos",
-        "description": "Cinematic, story-driven videos that capture your product's value in seconds and make audiences feel something."
+        "title": "Digital Products and SaaS",
+        "description": "We design and develop platforms, dashboards, and business tools built to improve operations, clarify sales, and scale with order."
       },
       {
-        "title": "High-Impact Landing Pages",
-        "description": "Conversion-focused pages with strategic structure, premium design, and animations that guide visitors to action."
+        "title": "Websites and Landing Pages",
+        "description": "We build fast, clear, conversion-focused websites with structure that communicates value and guides people to action."
       },
       {
-        "title": "Development",
-        "description": "Performant, accessible, and beautifully engineered web and mobile experiences built with modern technologies and best practices."
+        "title": "Apps and Mobile Experiences",
+        "description": "We create accessible, fluid, carefully developed web and mobile experiences with modern technologies and best practices."
       }
     ]
   },
   "process": {
-    "title": "How We Build\nLaunch-Ready Experiences",
-    "intro": "From strategy and creative direction to execution and launch, we craft digital experiences designed to capture attention and move people to act.",
+    "title": "How We Build\nDigital Products",
+    "intro": "From strategy and experience architecture to design, development, and launch, we work so every product is clear, usable, and ready to grow.",
     "phase": "Phase",
     "steps": [
       {
-        "title": "Alignment & Goals",
+        "title": "Discovery & Goals",
         "items": [
-          "We define what you are launching, who it is for, and what success looks like",
-          "We identify the main message, audience pain points, and conversion goal",
-          "We shape the project around business impact, not just visuals"
+          "We understand the business, the users, and the problem the product needs to solve",
+          "We define objectives, priorities, scope, and success criteria",
+          "We shape the project around operational impact and real user value"
         ]
       },
       {
-        "title": "Positioning & Creative Direction",
+        "title": "Product Strategy",
         "items": [
-          "We turn your offer into a clear and compelling concept",
-          "We define the tone, visual language, and overall direction",
-          "We build the creative foundation for both motion and digital experience"
+          "We organize features, messaging, and primary user journeys",
+          "We define the value proposition and content architecture",
+          "We turn business needs into clear product decisions"
         ]
       },
       {
-        "title": "Structure & Experience Design",
+        "title": "UX/UI and Visual System",
         "items": [
-          "We organize the content flow for clarity, attention, and action",
-          "We design the user journey, sections, and interface logic",
-          "We make sure every screen and scene supports the final objective"
+          "We design flows, screens, and states for real usage",
+          "We build a consistent, usable interface aligned with the brand",
+          "We validate that every section, component, and action has a reason"
         ]
       },
       {
         "title": "Production & Development",
         "items": [
-          "We produce the visuals, motion, and assets with high attention to detail",
-          "We develop the landing page or digital experience with performance in mind",
-          "We refine interactions, responsiveness, and technical execution"
+          "We develop the experience with performance, accessibility, and scalability in mind",
+          "We integrate content, forms, analytics, and the tools the product needs",
+          "We refine interactions, responsiveness, and technical behavior"
         ]
       },
       {
-        "title": "Refinement & Launch",
+        "title": "QA, Launch, and Iteration",
         "items": [
-          "We review, polish, and test everything before release",
-          "We optimize the final deliverables for web, campaigns, and devices",
-          "We help you launch with confidence and a presentation that feels premium"
+          "We test navigation, forms, performance, and responsive experience",
+          "We prepare the launch with clear metrics and technical details",
+          "We leave a base that is ready to measure, learn, and iterate"
         ]
       }
     ]
   },
   "useCases": {
-    "title": "Built for Launches, Growth, and Digital Presence",
+    "title": "Built for Operations, Sales, and Digital Growth",
     "items": [
       {
-        "title": "Landing Pages That Convert",
-        "description": "We design and build high-impact landing pages focused on presenting your offer clearly, building trust fast, and turning traffic into leads or sales."
+        "title": "Platforms That Improve Operations",
+        "description": "We design digital systems that centralize processes, data, and important actions so the business can work with more clarity."
       },
       {
-        "title": "Launch Videos for Digital Products",
-        "description": "We turn software, platforms, and online services into compelling visual stories that make the value feel immediate and easy to understand."
+        "title": "Websites That Convert",
+        "description": "We create websites and landing pages that present the offer with structure, trust, and a clear path toward leads or sales."
       },
       {
-        "title": "Web Experiences with Motion",
-        "description": "We combine development and motion to create modern web experiences with stronger storytelling, better flow, and more memorable interactions."
+        "title": "Apps and Mobile Products",
+        "description": "We build mobile experiences designed around concrete flows, simple interaction, and repeated use."
       },
       {
-        "title": "Brand Presentation Systems",
-        "description": "We help brands present themselves with consistency across visuals, messaging, and motion, creating a more polished and credible perception."
+        "title": "Digital Brand Systems",
+        "description": "We help brands look and feel consistent across websites, apps, dashboards, and digital channels."
       },
       {
-        "title": "Marketing Assets for Growth",
-        "description": "From campaign visuals to promotional content, we produce digital assets that support launches, ads, and ongoing brand communication."
+        "title": "Content to Activate Products",
+        "description": "We produce visuals and motion when a product needs to be explained, launched, or communicated with more strength."
       }
     ]
   },
   "cta": {
-    "title": "Ready to elevate your next launch?",
+    "title": "Ready to build your next digital product?",
     "button": "Let's Talk!"
   },
   "footer": {
-    "headline": "Let us shape the digital presence your brand needs.",
-    "subheadline": "We craft motion, websites, and digital products with strategy, visual precision, and growth-ready execution.",
+    "headline": "Let's build the technology your brand needs.",
+    "subheadline": "We create platforms, websites, apps, and digital products with strategy, careful design, and development ready to grow.",
     "emailLabel": "Start a project",
-    "studioLabel": "Creative digital studio",
+    "studioLabel": "Technology and design studio",
     "navLabel": "Explore",
     "socialLabel": "Social",
     "top": "Back to top",
-    "launchVideos": "Launch Videos",
-    "landingPages": "Landing Pages",
-    "webDevelopment": "Development",
+    "launchVideos": "Digital Products",
+    "landingPages": "Websites and Landing Pages",
+    "webDevelopment": "Apps and Platforms",
     "copyright": "© 2026 Knoa Studio. All rights reserved."
   },
   "contact": {
-    "eyebrow": "Tell us about the launch",
+    "eyebrow": "Tell us about the product",
     "title": "Start a project",
     "description": "Share a little context and we will get back to you with the next step.",
     "name": "Name",

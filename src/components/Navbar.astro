@@ -34,12 +34,12 @@ const labels = {
 };
 
 const projectLinks: MegaLink[] = [
-  { label: "Minqik", href: "https://www.minqik.com", target: "_blank", kicker: isEs ? "Producto" : "Product", description: isEs ? "Experiencia mobile y marca digital." : "Mobile experience and digital brand." },
-  { label: "Parqueame App", href: "https://www.parqueameapp.com", target: "_blank", kicker: "Mobile", description: isEs ? "App para movilidad y parqueos." : "Mobility and parking app." },
-  { label: "Reinas del Caribe", href: "#project-reinas", kicker: "Motion", description: isEs ? "Motion graphics para campa\u00f1a deportiva." : "Motion graphics for a sports campaign." },
-  { label: "Coopcibao", href: "#project-coopcibao", kicker: isEs ? "Finanzas" : "Finance", description: isEs ? "Contenido digital para cooperativa." : "Digital content for a cooperative brand." },
-  { label: "BCI", href: "https://bci.com.do", target: "_blank", kicker: "Brand", description: isEs ? "Sistema visual para producto financiero." : "Visual system for a financial product." },
   { label: "Knoa One", href: "https://one.knoastudio.com/", target: "_blank", kicker: "SaaS", description: isEs ? "Producto propio para gestión de negocio." : "Our own business management product." },
+  { label: "Parqueame App", href: "https://www.parqueameapp.com", target: "_blank", kicker: "Mobile", description: isEs ? "App para movilidad y parqueos." : "Mobility and parking app." },
+  { label: "Minqik", href: "https://www.minqik.com", target: "_blank", kicker: isEs ? "Producto" : "Product", description: isEs ? "Experiencia mobile y marca digital." : "Mobile experience and digital brand." },
+  { label: "BCI", href: "https://bci.com.do", target: "_blank", kicker: "Brand", description: isEs ? "Sistema visual para producto financiero." : "Visual system for a financial product." },
+  { label: "Coopcibao", href: "#project-coopcibao", kicker: isEs ? "Finanzas" : "Finance", description: isEs ? "Contenido digital para cooperativa." : "Digital content for a cooperative brand." },
+  { label: "Reinas del Caribe", href: "#project-reinas", kicker: "Content", description: isEs ? "Contenido en movimiento para campaña deportiva." : "Motion-led content for a sports campaign." },
 ];
 
 const megaGroups: Record<string, MegaGroup[]> = {
@@ -145,7 +145,7 @@ const topNav = [
                     <div class="flex min-h-64 flex-col justify-between bg-black p-6 text-white">
                       <div>
                         <span class="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Portfolio</span>
-                        <p class="mt-4 max-w-xs text-2xl font-bold leading-tight">{isEs ? "Proyectos digitales, mobile y motion para marcas que se mueven." : "Digital, mobile and motion projects for brands in motion."}</p>
+        <p class="mt-4 max-w-xs text-2xl font-bold leading-tight">{isEs ? "Productos, plataformas y contenido digital para marcas que avanzan." : "Products, platforms, and digital content for brands moving forward."}</p>
                       </div>
                       <Button href="#case-studies" variant="white" size="sm" class="w-fit">{labels.viewAll}</Button>
                     </div>
@@ -167,7 +167,7 @@ const topNav = [
                     <div class="flex flex-col justify-between rounded-3xl bg-[var(--color-text)] p-5 text-white">
                       <div>
                         <span class="text-xs font-bold uppercase tracking-[0.16em] text-white/45">Knoa Studio</span>
-                        <p class="mt-4 text-xl font-bold leading-tight">{isEs ? "Estrategia, dise\u00f1o y desarrollo para lanzar mejor." : "Strategy, design and development for sharper launches."}</p>
+                        <p class="mt-4 text-xl font-bold leading-tight">{isEs ? "Estrategia, diseño y desarrollo para construir mejor." : "Strategy, design and development for sharper digital products."}</p>
                       </div>
                       <Button href="#contact" contactModal variant="light" size="sm" class="mt-8 w-fit">{labels.cta}</Button>
                     </div>
