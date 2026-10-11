@@ -73,9 +73,9 @@
     },
     "billing": {
       "label": "Creado por Knoa",
-      "title": "Knoa Billing",
-      "type": "Producto Knoa - Sistema de facturación",
-      "description": "Nuestro sistema de facturación, creado para simplificar la emisión de comprobantes y la gestión diaria del negocio.",
+      "title": "Knoa One",
+      "type": "Producto Knoa - Gestión de negocio",
+      "description": "Nuestra plataforma para centralizar operaciones, facturación y gestión diaria del negocio desde un solo lugar.",
       "overview": "Resumen",
       "invoices": "Facturas",
       "customers": "Clientes",

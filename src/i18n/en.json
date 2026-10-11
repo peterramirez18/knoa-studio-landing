@@ -73,9 +73,9 @@
     },
     "billing": {
       "label": "Built by Knoa",
-      "title": "Knoa Billing",
-      "type": "Knoa Product - Billing Platform",
-      "description": "Our billing system built to make invoicing and day-to-day business management simpler.",
+      "title": "Knoa One",
+      "type": "Knoa Product - Business Management Platform",
+      "description": "Our platform for centralizing operations, invoicing, and day-to-day business management in one place.",
       "overview": "Overview",
       "invoices": "Invoices",
       "customers": "Customers",
