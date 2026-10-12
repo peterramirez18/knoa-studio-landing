@@ -74,8 +74,8 @@
     "billing": {
       "label": "Creado por Knoa",
       "title": "Knoa One",
-      "type": "Producto Knoa - Gestión de negocio",
-      "description": "Nuestra plataforma para centralizar operaciones, facturación y gestión diaria del negocio desde un solo lugar.",
+      "type": "Facturación electrónica e-CF para negocios",
+      "description": "Knoa One conecta facturas, clientes, cuentas por cobrar e inventario en una plataforma. Emite comprobantes electrónicos y sigue su aceptación por la DGII.",
       "overview": "Resumen",
       "invoices": "Facturas",
       "customers": "Clientes",

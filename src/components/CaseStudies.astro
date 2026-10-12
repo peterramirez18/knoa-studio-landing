@@ -16,10 +16,10 @@ const { t } = Astro.props;
 const projectNumbers = {
   minqik: "01",
   papp: "02",
-  reinas: "03",
-  coopcibao: "04",
-  lda: "05",
-  bci: "06",
+  bci: "03",
+  reinas: "04",
+  coopcibao: "05",
+  lda: "06",
 };
 const projects = t.work.projects;
 const splitLastWord = (value: string) => {
@@ -33,40 +33,40 @@ const workHeading = splitLastWord(t.work.title);
 const billing = t.work.billing;
 const coopcibaoVideo = "/video-placeholder.mp4";
 const projectNumberClass =
-  "font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-9 max-[900px]:mb-6";
+  "font-display text-sm leading-normal tracking-normal text-[var(--color-accent)] font-medium mb-5";
 const projectTitleClass =
-  "font-display text-[clamp(2.2rem,4vw,4rem)] leading-[0.95] tracking-[-0.04em] font-semibold mb-4";
+  "font-display text-3xl lg:text-4xl leading-[1.15] tracking-normal font-medium mb-3";
 const projectTypeClass = "text-[#555] text-base leading-[1.3]";
 const projectDescriptionClass =
-  "max-w-[28rem] text-[#666] leading-[1.55] mt-auto pt-8 max-[900px]:mt-0";
+  "max-w-[28rem] text-[#666] text-sm leading-relaxed mt-auto pt-6 max-[900px]:mt-0";
 const projectCopyClass =
-  "px-1 pt-6 pb-6 flex flex-col items-start max-[900px]:px-2 max-[900px]:py-10";
+  "py-6 flex flex-col items-start max-[900px]:pb-0";
 const visualClass =
-  "min-h-[31rem] relative overflow-hidden rounded-lg max-[600px]:min-h-96";
+  "aspect-[16/10] min-w-0 relative overflow-hidden rounded-lg";
 const imageClass =
-  "h-full w-full object-cover rounded-md shadow-[0_1.5rem_4rem_rgba(28,50,80,0.16)]";
+  "h-full w-full object-cover";
 const videoClass =
-  "h-full w-full object-cover rounded-md shadow-[0_1.5rem_4rem_rgba(28,50,80,0.16)]";
+  "h-full w-full object-cover";
 const viewProjectLabel = t.nav.cta === "Hablemos" ? "Ver proyecto" : "View project";
 const viewVideoLabel = t.nav.cta === "Hablemos" ? "Ver video" : "Watch video";
 const actionOverlayClass =
   "pointer-events-none absolute inset-0 flex items-end justify-end bg-black/0 p-5 opacity-0 transition-all duration-300 group-hover:bg-black/25 group-hover:opacity-100 group-focus-visible:bg-black/25 group-focus-visible:opacity-100";
 const actionButtonClass =
-  "relative isolate inline-flex h-11 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-white px-6 text-sm font-bold text-black shadow-lg transition-colors duration-500 group-hover:border-transparent group-hover:text-white group-focus-visible:border-transparent group-focus-visible:text-white";
+  "relative isolate inline-flex min-h-11 items-center justify-center overflow-hidden rounded-full border border-white bg-white px-5 py-2 text-sm font-medium text-black transition-colors duration-500 group-hover:border-transparent group-hover:text-white group-focus-visible:border-transparent group-focus-visible:text-white";
 const actionButtonFillClass =
   "absolute inset-0 z-0 h-full w-full -translate-y-full rounded-full bg-[var(--color-accent)] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0 group-focus-visible:translate-y-0";
 const oneVisual = t.nav.cta === "Hablemos"
-  ? { operations: "Operaciones", invoices: "Facturas", clients: "Clientes", revenue: "Ingresos", status: "Todo al dia", panel: "Panel central", activity: "Actividad", pipeline: "Flujo" }
-  : { operations: "Operations", invoices: "Invoices", clients: "Clients", revenue: "Revenue", status: "All caught up", panel: "Command center", activity: "Activity", pipeline: "Pipeline" };
+  ? { invoices: "Facturas", clients: "Clientes", inventory: "Inventario", month: "Septiembre 2026", issue: "Emitir e-CF", sales: "Ventas del mes", due: "Por cobrar", issued: "e-CF emitidos", customer: "Cliente", amount: "Monto", accepted: "Aceptado", status: "e-CF aceptado por la DGII" }
+  : { invoices: "Invoices", clients: "Customers", inventory: "Inventory", month: "September 2026", issue: "Issue e-CF", sales: "Monthly sales", due: "Receivables", issued: "e-CF issued", customer: "Customer", amount: "Amount", accepted: "Accepted", status: "e-CF accepted by DGII" };
 ---
 
 <section
   id="case-studies"
-  class="bg-[#f5f5f3] px-6 pt-28 pb-36 overflow-hidden max-[600px]:px-4 max-[600px]:pt-20 max-[600px]:pb-24"
+  class="bg-[#f5f5f5] px-6 py-20 lg:py-28 overflow-hidden lg:px-8"
 >
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-6xl mx-auto lg:px-8">
     <header
-      class="cs-reveal grid grid-cols-[minmax(0,1fr)_5rem_minmax(15rem,22rem)] items-center gap-8 mb-24 max-[900px]:grid-cols-1 max-[900px]:gap-6 max-[600px]:mb-16"
+      class="cs-reveal grid grid-cols-[minmax(0,1fr)_3rem_minmax(15rem,22rem)] items-center gap-8 mb-12 max-[900px]:grid-cols-1 max-[900px]:gap-5"
     >
       <SectionHeading before={workHeading.before} accent={workHeading.accent} />
       <span class="h-px bg-[#a9a9a5] max-[900px]:w-20" aria-hidden="true"
@@ -148,6 +148,33 @@ const oneVisual = t.nav.cta === "Hablemos"
       </article>
 
       <article
+        id="project-bci"
+        class="cs-reveal scroll-mt-28 grid grid-cols-[minmax(15rem,0.62fr)_minmax(0,1.8fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
+      >
+        <div class={projectCopyClass}>
+          <span class={projectNumberClass}>{projectNumbers.bci}</span>
+          <h3 class={projectTitleClass}>{projects.bci.title}</h3>
+          <p class={projectTypeClass}>{projects.bci.category}<br />{projects.bci.discipline}</p>
+          <p class={projectDescriptionClass}>{projects.bci.description}</p>
+        </div>
+        <a
+          href="https://bci.com.do"
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`${visualClass} group cursor-pointer bg-white flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4`}
+          aria-label={`${viewProjectLabel}: ${projects.bci.title}`}
+        >
+          <Image src={bciImage} alt={projects.bci.title} loading="lazy" decoding="async" class={imageClass} />
+          <span class={actionOverlayClass}>
+            <span class={actionButtonClass}>
+              <span class={actionButtonFillClass}></span>
+              <span class="relative z-10">{viewProjectLabel}</span>
+            </span>
+          </span>
+        </a>
+      </article>
+
+      <article
         id="project-reinas"
         class="cs-reveal my-5 scroll-mt-28 min-h-[31rem] grid grid-cols-[minmax(16rem,0.62fr)_1.5fr] bg-[#101010] text-white rounded-lg overflow-hidden max-[900px]:grid-cols-1 max-[600px]:-mx-4 max-[600px]:rounded-none"
       >
@@ -194,11 +221,11 @@ const oneVisual = t.nav.cta === "Hablemos"
         >
           <div class="flex flex-col items-start">
             <span
-              class="font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-6"
+              class={projectNumberClass}
               >{projectNumbers.coopcibao}</span
             >
             <h3
-              class="font-display text-[clamp(2.2rem,3.5vw,3.6rem)] leading-[0.95] tracking-[-0.04em] font-semibold mb-4"
+              class={projectTitleClass}
             >
               {projects.coopcibao.title}
             </h3>
@@ -208,7 +235,7 @@ const oneVisual = t.nav.cta === "Hablemos"
           </div>
           <button
             type="button"
-            class="group h-80 my-8 relative w-full cursor-pointer overflow-hidden rounded-md bg-[#101010] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4"
+            class="group aspect-video my-6 relative w-full cursor-pointer overflow-hidden rounded-md bg-[#101010] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4"
             data-video-modal-open
             data-video-src={coopcibaoVideo}
             data-video-title={projects.coopcibao.title}
@@ -236,11 +263,11 @@ const oneVisual = t.nav.cta === "Hablemos"
         <article id="project-lda" class="cs-reveal scroll-mt-28 pb-12 max-[600px]:px-0">
           <div class="flex flex-col items-start">
             <span
-              class="font-display text-[clamp(4.5rem,7vw,7rem)] leading-[0.8] tracking-[-0.06em] text-[var(--color-accent)] font-light mb-6"
+              class={projectNumberClass}
               >{projectNumbers.lda}</span
             >
             <h3
-              class="font-display text-[clamp(2.2rem,3.5vw,3.6rem)] leading-[0.95] tracking-[-0.04em] font-semibold mb-4"
+              class={projectTitleClass}
             >
               {projects.lda.title}
             </h3>
@@ -250,7 +277,7 @@ const oneVisual = t.nav.cta === "Hablemos"
           </div>
           <button
             type="button"
-            class="group h-80 my-8 relative w-full cursor-pointer overflow-hidden rounded-md bg-[#101010] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4"
+            class="group aspect-video my-6 relative w-full cursor-pointer overflow-hidden rounded-md bg-[#101010] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4"
             data-video-modal-open
             data-video-src={ldaVideo}
             data-video-title={projects.lda.title}
@@ -276,65 +303,28 @@ const oneVisual = t.nav.cta === "Hablemos"
         </article>
       </div>
 
-      <article
-        id="project-bci"
-        class="cs-reveal scroll-mt-28 grid grid-cols-[minmax(0,1.8fr)_minmax(15rem,0.62fr)] gap-[clamp(2rem,5vw,6rem)] py-5 items-stretch max-[900px]:grid-cols-1"
-      >
-        <a
-          href="https://bci.com.do"
-          target="_blank"
-          rel="noopener noreferrer"
-          class={`${visualClass} group cursor-pointer bg-white flex items-center justify-center max-[900px]:order-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4`}
-          aria-label={`${viewProjectLabel}: ${projects.bci.title}`}
-        >
-          <Image
-            src={bciImage}
-            alt={projects.bci.title}
-            loading="lazy"
-            decoding="async"
-            class={imageClass}
-          />
-          <span class={actionOverlayClass}>
-            <span class={actionButtonClass}>
-              <span class={actionButtonFillClass}></span>
-              <span class="relative z-10">{viewProjectLabel}</span>
-            </span>
-          </span>
-        </a>
-        <div class={`${projectCopyClass} max-[900px]:order-1`}>
-          <span class={projectNumberClass}>{projectNumbers.bci}</span>
-          <h3 class={projectTitleClass}>{projects.bci.title}</h3>
-          <p class={projectTypeClass}>
-            {projects.bci.category}<br />{projects.bci.discipline}
-          </p>
-          <p class={projectDescriptionClass}>{projects.bci.description}</p>
-        </div>
-      </article>
     </div>
 
     <article
       id="project-knoa-one"
-      class="cs-reveal scroll-mt-28 mt-24 min-h-[34rem] grid grid-cols-[0.72fr_1.45fr] overflow-hidden rounded-[0.6rem] bg-[#101010] text-white max-[900px]:grid-cols-1 max-[600px]:-mx-4 max-[600px]:rounded-none"
+      class="cs-reveal scroll-mt-28 mt-16 grid grid-cols-[0.72fr_1.45fr] overflow-hidden rounded-lg border border-[#e5e7eb] bg-white text-[#0a0a0b] max-[900px]:grid-cols-1"
     >
       <div
-        class="p-16 flex flex-col items-start max-[600px]:px-6 max-[600px]:py-12"
+        class="p-10 flex flex-col items-start max-[600px]:p-6"
       >
-        <span class="mb-10 text-[0.65rem] font-bold uppercase tracking-[0.15em]"
+        <span class="mb-10 text-[0.65rem] font-medium uppercase tracking-[0.15em] text-[#2678c3]"
           ><i
-            class="mr-2 inline-block size-2 rounded-full bg-[var(--color-accent)]"
+            class="mr-2 inline-block size-2 rounded-full bg-[#168ee2]"
           ></i>
           {billing.label}</span
         >
-        <h3
-          class="font-display text-[clamp(3.3rem,5vw,5.5rem)] leading-[0.9] tracking-[-0.055em] mb-5"
-        >
-          {billing.title}
-        </h3>
-        <p class="text-[var(--color-accent)] font-semibold mb-8">
+        <img src="/knoaone.svg" alt="" width="240" height="34" loading="lazy" class="mb-8 h-auto w-48" />
+        <h3 class="sr-only">{billing.title}</h3>
+        <p class="mb-6 text-lg font-medium leading-snug text-[#0a0a0b]">
           {billing.type}
         </p>
         <p
-          class="text-[#aaa] leading-[1.55] max-w-[22rem] mt-auto max-[900px]:mt-4"
+          class="mt-auto max-w-[22rem] leading-relaxed text-[#666] max-[900px]:mt-0"
         >
           {billing.description}
         </p>
@@ -343,62 +333,64 @@ const oneVisual = t.nav.cta === "Hablemos"
         href="https://one.knoastudio.com/"
         target="_blank"
         rel="noopener noreferrer"
-        class="group relative mt-10 flex cursor-pointer items-center overflow-hidden rounded-tl-2xl bg-[#181818] p-6 max-[900px]:mx-6 max-[900px]:mt-0 max-[900px]:min-h-[25rem] max-[900px]:rounded-t-2xl max-[600px]:mx-3 max-[600px]:p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+        class="group relative mt-8 flex min-w-0 cursor-pointer items-center overflow-hidden rounded-tl-lg bg-[#f7f9fb] p-5 max-[900px]:mx-6 max-[900px]:mt-0 max-[900px]:rounded-t-lg max-[600px]:mx-3 max-[600px]:p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4"
         aria-label={`${viewProjectLabel}: ${billing.title}`}
       >
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(248,84,59,0.26),transparent_34%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.12),transparent_28%)]"></div>
-        <div class="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0f1117] shadow-[0_1.5rem_4rem_rgba(0,0,0,0.45)]">
-          <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
-            <div class="flex items-center gap-3">
-              <span class="grid size-9 place-items-center rounded-xl bg-[var(--color-accent)] text-sm font-black text-white">1</span>
-              <div>
-                <p class="text-sm font-bold leading-none text-white">Knoa One</p>
-                <p class="mt-1 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-white/35">{oneVisual.panel}</p>
-              </div>
-            </div>
-            <span class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-emerald-200">{oneVisual.status}</span>
+        <div class="relative w-full min-w-0 overflow-hidden rounded-lg border border-[#e6e8eb] bg-white shadow-[0_14px_35px_rgba(26,42,62,0.08)]">
+          <div class="flex items-center gap-2 border-b border-[#e6e8eb] bg-[#fafafa] px-4 py-2">
+            <span class="size-1.5 rounded-full bg-[#d6d9dd]"></span>
+            <span class="size-1.5 rounded-full bg-[#d6d9dd]"></span>
+            <span class="size-1.5 rounded-full bg-[#d6d9dd]"></span>
+            <span class="mx-auto text-[0.65rem] text-[#9b9fa7]">app.one.knoastudio.com / facturas</span>
           </div>
-
-          <div class="grid gap-4 p-5 lg:grid-cols-[0.85fr_1.15fr]">
-            <div class="grid gap-3">
-              {[oneVisual.operations, oneVisual.invoices, oneVisual.clients].map((item, index) => (
-                <div class:list={["rounded-xl border border-white/8 p-4", index === 0 ? "bg-white text-black" : "bg-white/6 text-white"]}>
-                  <p class:list={["text-[0.68rem] font-bold uppercase tracking-[0.14em]", index === 0 ? "text-black/45" : "text-white/35"]}>{item}</p>
-                  <div class="mt-3 h-2 overflow-hidden rounded-full bg-black/10">
-                    <span class:list={["block h-full rounded-full", index === 0 ? "w-[82%] bg-[var(--color-accent)]" : index === 1 ? "w-[64%] bg-white/55" : "w-[72%] bg-white/55"]}></span>
-                  </div>
-                </div>
-              ))}
+          <div class="flex min-w-0">
+            <div class="hidden w-32 shrink-0 border-r border-[#e6e8eb] p-3 text-[0.7rem] text-[#81858d] sm:block">
+              <p class="mb-4 font-semibold text-[#0a0a0b]">Knoa</p>
+              <p class="mb-2">Dashboard</p>
+              <p class="mb-2 rounded bg-[#eaf4fd] px-2 py-1 font-semibold text-[#1b6eaf]">{oneVisual.invoices}</p>
+              <p class="mb-2">{oneVisual.clients}</p>
+              <p>{oneVisual.inventory}</p>
             </div>
-
-            <div class="grid gap-4">
-              <div class="rounded-2xl border border-white/8 bg-white p-5 text-black">
-                <div class="flex items-start justify-between gap-4">
-                  <div>
-                    <p class="text-xs font-bold uppercase tracking-[0.14em] text-black/40">{oneVisual.revenue}</p>
-                    <p class="mt-2 text-3xl font-black tracking-[-0.04em]">RD$ 1.2M</p>
-                  </div>
-                  <span class="rounded-full bg-[var(--color-accent)] px-3 py-1 text-xs font-black text-white">+18%</span>
+            <div class="min-w-0 flex-1 p-3 sm:p-5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <p class="text-[0.65rem] text-[#9b9fa7]">{oneVisual.month}</p>
+                  <p class="text-sm font-semibold text-[#0a0a0b]">{oneVisual.invoices}</p>
                 </div>
-                <div class="mt-5 flex h-28 items-end gap-2">
-                  {[42, 58, 48, 76, 64, 92, 72, 84].map((height) => (
-                    <span class="flex-1 rounded-t-md bg-[linear-gradient(180deg,var(--color-accent),#ff9a4b)]" style={`height:${height}%`}></span>
-                  ))}
-                </div>
+                <span class="rounded bg-[#0a0a0b] px-2.5 py-1.5 text-[0.65rem] font-medium text-white">+ {oneVisual.issue}</span>
               </div>
-
-              <div class="grid grid-cols-2 gap-4">
-                <div class="rounded-xl border border-white/8 bg-white/6 p-4 text-white">
-                  <p class="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white/35">{oneVisual.activity}</p>
-                  <p class="mt-2 text-xl font-black">248</p>
+              <div class="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {[
+                  { label: oneVisual.sales, value: "RD$ 1.28M", detail: "+12.4%", tone: "text-[#13866d]" },
+                  { label: oneVisual.due, value: "RD$ 342K", detail: "18", tone: "text-[#8b8e95]" },
+                  { label: oneVisual.issued, value: "1,204", detail: "100%", tone: "text-[#13866d]" },
+                ].map((metric, index) => (
+                  <div class:list={["min-w-0 rounded border border-[#e6e8eb] p-2.5", index === 2 && "col-span-2 sm:col-span-1"]}>
+                    <p class="text-[0.6rem] text-[#8b8e95]">{metric.label}</p>
+                    <p class="mt-1 text-base font-semibold text-[#0a0a0b] sm:text-lg">{metric.value}</p>
+                    <p class:list={["text-[0.6rem]", metric.tone]}>{metric.detail}</p>
+                  </div>
+                ))}
+              </div>
+              <div class="mt-4 overflow-hidden rounded border border-[#e6e8eb] text-[0.65rem]">
+                <div class="grid grid-cols-[1fr_auto_auto] gap-2 bg-[#fafafa] px-3 py-2 font-medium uppercase text-[#8b8e95]">
+                  <span>{oneVisual.customer}</span><span>{oneVisual.amount}</span><span>DGII</span>
                 </div>
-                <div class="rounded-xl border border-white/8 bg-white/6 p-4 text-white">
-                  <p class="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white/35">{oneVisual.pipeline}</p>
-                  <p class="mt-2 text-xl font-black">94%</p>
-                </div>
+                {[
+                  { customer: "Ferretería Olivo SRL", amount: "RD$ 48,560" },
+                  { customer: "Consumidor final", amount: "RD$ 3,245" },
+                  { customer: "Grupo Almonte", amount: "RD$ 125,900" },
+                ].map((invoice) => (
+                  <div class="grid grid-cols-[1fr_auto_auto] items-center gap-2 border-t border-[#e6e8eb] px-3 py-2.5">
+                    <span class="min-w-0 truncate text-[#303237]">{invoice.customer}</span>
+                    <span class="whitespace-nowrap text-[#303237]">{invoice.amount}</span>
+                    <span class="size-2 rounded-full bg-[#28b98e]" title={oneVisual.accepted}></span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+          <div class="flex items-center gap-2 border-t border-[#e6e8eb] bg-[#f6fffb] px-4 py-2 text-[0.65rem] font-medium text-[#13866d]"><span class="size-1.5 rounded-full bg-[#28b98e]"></span>{oneVisual.status}</div>
         </div>
         <span class={actionOverlayClass}>
           <span class={actionButtonClass}>

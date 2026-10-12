@@ -25,89 +25,28 @@ const highlightWord = (value: string, words: string[]) => {
 const processHeading = highlightWord(t.process.title, ["Build", "construimos"]);
 ---
 
-<section id="process" class="relative bg-[var(--color-text)] text-white py-24 lg:py-40 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
-    <div class="mb-6 process-title opacity-0 translate-y-12">
-      <SectionHeading before={processHeading.before} accent={processHeading.accent} after={processHeading.after} tone="light" class="max-w-4xl" />
+<section id="process" class="bg-[#111] py-20 text-white lg:py-28">
+  <div class="mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="mb-14 grid gap-5 lg:grid-cols-[1fr_0.7fr] lg:items-end lg:gap-16">
+      <SectionHeading before={processHeading.before} accent={processHeading.accent} after={processHeading.after} tone="light" class="max-w-3xl" />
+      <p class="max-w-xl text-base leading-relaxed text-white/60 lg:text-lg">{t.process.intro}</p>
     </div>
 
-    <p class="text-lg lg:text-xl text-[var(--color-text-muted)] max-w-2xl process-title opacity-0 translate-y-8">
-      {t.process.intro}
-    </p>
-  </div>
-
-  <div class="process-scroll-container w-full h-[600px] relative">
-    <div class="sticky top-1/4 w-full overflow-hidden process-track-viewport">
-      <div class="process-track flex items-start gap-8 lg:gap-16 px-6 lg:px-8 w-[250vw] md:w-[150vw] lg:w-[120vw]">
-        {steps.map((step) => (
-          <div class="process-step-card flex-shrink-0 w-[85vw] md:w-[40vw] lg:w-[30vw] border-t-2 border-[var(--color-text-secondary)] pt-8 relative group opacity-40">
-            <div class="absolute top-[-2px] left-0 h-[2px] bg-white w-0 group-[.is-active]:w-full transition-all duration-700 ease-out process-progress-line"></div>
-            <div class="mb-8">
-              <span class="text-sm font-mono text-[var(--color-text-muted)] mb-4 block">{t.process.phase} {step.phase}</span>
-              <h3 class="font-display font-bold text-2xl lg:text-3xl text-white group-[.is-active]:text-[var(--color-accent-light)] transition-colors duration-500">
-                {step.title}
-              </h3>
-            </div>
-            <ul class="space-y-4">
-              {step.items.map((item) => (
-                <li class="flex items-start gap-3 text-[var(--color-text-muted)] group-[.is-active]:text-gray-200 transition-colors duration-500">
-                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-text-secondary)] group-[.is-active]:bg-[var(--color-accent)] transition-colors duration-500 flex-shrink-0"></span>
-                  <span class="text-base lg:text-lg leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
+    <ol class="border-t border-white/20">
+      {steps.map((step) => (
+        <li class="grid gap-4 border-b border-white/20 py-7 md:grid-cols-[5rem_minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-8 lg:py-9">
+          <span class="text-sm font-medium text-[var(--color-accent)]">{t.process.phase} {step.phase}</span>
+          <h3 class="max-w-xs font-display text-xl font-medium leading-snug lg:text-2xl">{step.title}</h3>
+          <ul class="grid gap-2 text-sm leading-relaxed text-white/65 lg:text-base">
+            {step.items.map((item) => (
+              <li class="flex gap-3">
+                <span class="mt-[0.65em] size-1 shrink-0 rounded-full bg-[var(--color-accent)]" aria-hidden="true"></span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ol>
   </div>
 </section>
-
-<script>
-  import gsap from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
-
-  requestAnimationFrame(() => {
-    gsap.to('.process-title', { scrollTrigger: { trigger: '#process', start: 'top 75%', once: true }, opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: 'power3.out' });
-
-    const container = document.querySelector('.process-scroll-container') as HTMLElement;
-    const track = document.querySelector('.process-track') as HTMLElement;
-    const cards = gsap.utils.toArray('.process-step-card') as HTMLElement[];
-
-    if (!container || !track || cards.length === 0) return;
-
-    const scrollDist = track.scrollWidth - window.innerWidth;
-
-    gsap.to(track, {
-      x: -scrollDist,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: container,
-        pin: true,
-        scrub: 0.5,
-        start: 'center center',
-        end: `+=${scrollDist}`,
-        onUpdate: (self) => {
-          let activeIndex = Math.floor(self.progress * cards.length);
-          if (activeIndex >= cards.length) activeIndex = cards.length - 1;
-
-          cards.forEach((card, idx) => {
-             if(idx === activeIndex) {
-               card.classList.add('is-active', 'opacity-100');
-               card.classList.remove('opacity-40');
-             } else {
-               card.classList.remove('is-active', 'opacity-100');
-               card.classList.add('opacity-40');
-             }
-          });
-        }
-      }
-    });
-
-    if(cards[0]) {
-       cards[0].classList.add('is-active', 'opacity-100');
-       cards[0].classList.remove('opacity-40');
-    }
-  });
-</script>

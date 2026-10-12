@@ -74,8 +74,8 @@
     "billing": {
       "label": "Built by Knoa",
       "title": "Knoa One",
-      "type": "Knoa Product - Business Management Platform",
-      "description": "Our platform for centralizing operations, invoicing, and day-to-day business management in one place.",
+      "type": "Electronic invoicing e-CF for businesses",
+      "description": "Knoa One brings invoices, customers, receivables, and inventory into one platform. Issue electronic tax receipts and track DGII acceptance.",
       "overview": "Overview",
       "invoices": "Invoices",
       "customers": "Customers",
