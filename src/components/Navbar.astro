@@ -10,8 +10,10 @@ interface Props {
 type MegaLink = {
   label: string;
   href: string;
+  icon?: string;
   kicker?: string;
   description?: string;
+  target?: "_blank";
 };
 
 type MegaGroup = {
@@ -28,18 +30,17 @@ const labels = {
   services: t.nav.services,
   technology: isEs ? "Tecnolog\u00eda" : "Technology",
   company: "Company",
-  industry: isEs ? "Industria" : "Industries",
   cta: t.nav.cta,
   viewAll: isEs ? "Ver todo" : "View all",
 };
 
 const projectLinks: MegaLink[] = [
-  { label: "Minqik", href: "#case-studies", kicker: isEs ? "Producto" : "Product", description: isEs ? "Experiencia mobile y marca digital." : "Mobile experience and digital brand." },
-  { label: "Parqueame App", href: "#case-studies", kicker: "Mobile", description: isEs ? "App para movilidad y parqueos." : "Mobility and parking app." },
-  { label: "Reinas del Caribe", href: "#case-studies", kicker: "Motion", description: isEs ? "Motion graphics para campa\u00f1a deportiva." : "Motion graphics for a sports campaign." },
-  { label: "Coopcibao", href: "#case-studies", kicker: isEs ? "Finanzas" : "Finance", description: isEs ? "Contenido digital para cooperativa." : "Digital content for a cooperative brand." },
-  { label: "BCI", href: "#case-studies", kicker: "Brand", description: isEs ? "Sistema visual para producto financiero." : "Visual system for a financial product." },
-  { label: "Knoa Billing", href: "#case-studies", kicker: "SaaS", description: isEs ? "Producto propio de billing." : "Our own billing product." },
+  { label: "Knoa One", href: "https://one.knoastudio.com/", target: "_blank", kicker: "SaaS", description: isEs ? "Producto propio para gestión de negocio." : "Our own business management product." },
+  { label: "Parqueame App", href: "https://www.parqueameapp.com", target: "_blank", kicker: "Mobile", description: isEs ? "App para movilidad y parqueos." : "Mobility and parking app." },
+  { label: "BCI", href: "https://bci.com.do", target: "_blank", kicker: "Web", description: isEs ? "Sitio web para distribuidor automotriz." : "Website for an automotive distributor." },
+  { label: "Minqik", href: "https://www.minqik.com", target: "_blank", kicker: isEs ? "Producto" : "Product", description: isEs ? "Experiencia mobile y marca digital." : "Mobile experience and digital brand." },
+  { label: "Coopcibao", href: "#project-coopcibao", kicker: isEs ? "Finanzas" : "Finance", description: isEs ? "Contenido digital para cooperativa." : "Digital content for a cooperative brand." },
+  { label: "Reinas del Caribe", href: "#project-reinas", kicker: "Content", description: isEs ? "Contenido en movimiento para campaña deportiva." : "Motion-led content for a sports campaign." },
 ];
 
 const megaGroups: Record<string, MegaGroup[]> = {
@@ -56,18 +57,9 @@ const megaGroups: Record<string, MegaGroup[]> = {
     {
       title: "Creative",
       links: [
-        { label: "Brand systems", href: "#services" },
         { label: "Motion graphics", href: "#services" },
         { label: "Launch videos", href: "#services" },
         { label: "Marketing assets", href: "#services" },
-      ],
-    },
-    {
-      title: "Growth",
-      links: [
-        { label: "Campaign kits", href: "#use-cases" },
-        { label: "Product storytelling", href: "#use-cases" },
-        { label: "Launch strategy", href: "#process" },
       ],
     },
   ],
@@ -75,28 +67,28 @@ const megaGroups: Record<string, MegaGroup[]> = {
     {
       title: "Frontend",
       links: [
-        { label: "Astro", href: "#services" },
-        { label: "React", href: "#services" },
-        { label: "Next.js", href: "#services" },
-        { label: "Tailwind CSS", href: "#services" },
+        { label: "Astro", href: "#services", icon: "/tech/astro.svg" },
+        { label: "React", href: "#services", icon: "/tech/react.svg" },
+        { label: "Next.js", href: "#services", icon: "/tech/nextjs.svg" },
+        { label: "Tailwind CSS", href: "#services", icon: "/tech/tailwindcss.svg" },
       ],
     },
     {
       title: "Mobile",
       links: [
-        { label: "React Native", href: "#services" },
-        { label: "Flutter", href: "#services" },
-        { label: "iOS", href: "#services" },
-        { label: "Android", href: "#services" },
+        { label: "React Native", href: "#services", icon: "/tech/reactnative.svg" },
+        { label: "Flutter", href: "#services", icon: "/tech/flutter.svg" },
+        { label: "iOS", href: "#services", icon: "/tech/apple.svg" },
+        { label: "Android", href: "#services", icon: "/tech/android.svg" },
       ],
     },
     {
       title: "Backend",
       links: [
-        { label: "Node.js", href: "#services" },
-        { label: "Supabase", href: "#services" },
-        { label: "Stripe", href: "#services" },
-        { label: "Web3Forms", href: "#services" },
+        { label: "Node.js", href: "#services", icon: "/tech/nodejs.svg" },
+        { label: "Supabase", href: "#services", icon: "/tech/supabase.svg" },
+        { label: "Stripe", href: "#services", icon: "/tech/stripe.svg" },
+        { label: "Web3Forms", href: "#services", icon: "/tech/web3forms.ico" },
       ],
     },
   ],
@@ -110,35 +102,6 @@ const megaGroups: Record<string, MegaGroup[]> = {
         { label: isEs ? "Contacto" : "Contact", href: "#contact" },
       ],
     },
-    {
-      title: isEs ? "Modelos" : "Models",
-      links: [
-        { label: isEs ? "Equipos por proyecto" : "Project teams", href: "#process" },
-        { label: isEs ? "Retainers creativos" : "Creative retainers", href: "#process" },
-        { label: isEs ? "Sprint de lanzamiento" : "Launch sprint", href: "#process" },
-      ],
-    },
-  ],
-  industry: [
-    {
-      title: isEs ? "Industrias" : "Industries",
-      links: [
-        { label: isEs ? "Finanzas" : "Finance", href: "#use-cases" },
-        { label: isEs ? "Deportes" : "Sports", href: "#use-cases" },
-        { label: isEs ? "Movilidad" : "Mobility", href: "#use-cases" },
-        { label: "Real estate", href: "#use-cases" },
-        { label: isEs ? "Educaci\u00f3n" : "Education", href: "#use-cases" },
-        { label: "E-commerce", href: "#use-cases" },
-      ],
-    },
-    {
-      title: isEs ? "Casos" : "Use cases",
-      links: [
-        { label: isEs ? "Lanzamientos" : "Launches", href: "#use-cases" },
-        { label: isEs ? "Productos digitales" : "Digital products", href: "#use-cases" },
-        { label: isEs ? "Contenido de marca" : "Brand content", href: "#use-cases" },
-      ],
-    },
   ],
 };
 
@@ -147,21 +110,20 @@ const topNav = [
   { key: "services", label: labels.services },
   { key: "technology", label: labels.technology },
   { key: "company", label: labels.company },
-  { key: "industry", label: labels.industry },
 ];
 ---
 
 <nav id="navbar" class="fixed left-0 right-0 top-0 z-50 bg-transparent py-4 text-white transition-all duration-500">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex min-h-14 items-center justify-between gap-4 rounded-full border border-white/15 bg-black/25 px-4 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.22)] ring-1 ring-white/10 backdrop-blur-2xl sm:px-5">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="flex min-h-14 items-center justify-between gap-4 rounded-lg border border-white/10 bg-[#101010]/95 px-4 py-2 backdrop-blur-xl sm:px-5">
       <a href={homeHref} class="relative z-50 flex shrink-0 items-center transition-opacity duration-300 hover:opacity-75" aria-label="Knoa Studio">
-        <img src="/logo-knoa-dark.svg" alt="Knoa Studio" class="h-5 w-auto sm:h-6" />
+        <img src="/logo-knoa-dark.svg" alt="Knoa Studio" class="h-5 w-auto" />
       </a>
 
       <div class="relative z-50 hidden items-center gap-1 lg:flex">
         {topNav.map((item) => (
           <div class="group relative">
-            <button class="inline-flex h-10 items-center gap-1 rounded-full px-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-black focus-visible:bg-white focus-visible:text-black focus-visible:outline-none">
+            <button class="inline-flex h-10 items-center gap-1 rounded-full px-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-[var(--color-accent)] focus-visible:bg-[var(--color-accent)] focus-visible:outline-none">
               {item.label}
               <svg class="size-3.5 opacity-70 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -169,12 +131,12 @@ const topNav = [
             </button>
 
             <div class="invisible absolute left-1/2 top-full z-50 mt-4 w-[min(820px,calc(100vw-3rem))] -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-              <div class="overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-2xl shadow-black/15">
+              <div class="overflow-hidden rounded-lg border border-black/10 bg-white text-black shadow-lg shadow-black/10">
                 {item.key === "projects" ? (
                   <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
                     <div class="grid gap-3 p-5 sm:grid-cols-2">
                       {projectLinks.map((project) => (
-                        <a href={project.href} class="group/card rounded-2xl border border-black/10 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white">
+                        <a href={project.href} target={project.target} rel={project.target === "_blank" ? "noopener noreferrer" : undefined} class="group/card border-b border-black/10 p-3 transition-colors duration-200 hover:bg-black hover:text-white">
                           <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-accent)] group-hover/card:text-white/70">{project.kicker}</span>
                           <span class="mt-2 block text-base font-bold leading-tight">{project.label}</span>
                           <span class="mt-1 block text-sm leading-snug text-black/60 group-hover/card:text-white/70">{project.description}</span>
@@ -184,7 +146,7 @@ const topNav = [
                     <div class="flex min-h-64 flex-col justify-between bg-black p-6 text-white">
                       <div>
                         <span class="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Portfolio</span>
-                        <p class="mt-4 max-w-xs text-2xl font-bold leading-tight">{isEs ? "Proyectos digitales, mobile y motion para marcas que se mueven." : "Digital, mobile and motion projects for brands in motion."}</p>
+        <p class="mt-4 max-w-xs text-2xl font-bold leading-tight">{isEs ? "Productos, plataformas y contenido digital para marcas que avanzan." : "Products, platforms, and digital content for brands moving forward."}</p>
                       </div>
                       <Button href="#case-studies" variant="white" size="sm" class="w-fit">{labels.viewAll}</Button>
                     </div>
@@ -197,18 +159,21 @@ const topNav = [
                           <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-black/40">{group.title}</h3>
                           <div class="mt-4 grid gap-1">
                             {group.links.map((link) => (
-                              <a href={link.href} class="rounded-xl px-3 py-2 text-sm font-semibold text-black/72 transition-colors duration-200 hover:bg-black hover:text-white">{link.label}</a>
+                              <a href={link.href} class="flex min-h-10 items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-black/75 transition-colors duration-200 hover:bg-black/5 hover:text-black">
+                                {link.icon && <img src={link.icon} alt="" width="20" height="20" loading="lazy" class="size-5 shrink-0 object-contain" />}
+                                <span>{link.label}</span>
+                              </a>
                             ))}
                           </div>
                         </div>
                       ))}
                     </div>
-                    <div class="flex flex-col justify-between rounded-3xl bg-[var(--color-text)] p-5 text-white">
+                    <div class="flex flex-col justify-between border-l border-black/10 pl-5 text-black">
                       <div>
-                        <span class="text-xs font-bold uppercase tracking-[0.16em] text-white/45">Knoa Studio</span>
-                        <p class="mt-4 text-xl font-bold leading-tight">{isEs ? "Estrategia, dise\u00f1o y desarrollo para lanzar mejor." : "Strategy, design and development for sharper launches."}</p>
+                        <span class="text-xs font-medium text-black/50">Knoa Studio</span>
+                        <p class="mt-4 text-xl font-bold leading-tight">{isEs ? "Estrategia, diseño y desarrollo para construir mejor." : "Strategy, design and development for sharper digital products."}</p>
                       </div>
-                      <Button href="#contact" contactModal variant="light" size="sm" class="mt-8 w-fit">{labels.cta}</Button>
+                      <Button href="#contact" contactModal variant="dark" size="sm" class="mt-8 w-fit">{labels.cta}</Button>
                     </div>
                   </div>
                 )}

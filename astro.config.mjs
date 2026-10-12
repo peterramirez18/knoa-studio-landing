@@ -2,10 +2,13 @@
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import sitemap from "@astrojs/sitemap";
 
 const astroPrerenderEntrypoint = fileURLToPath(import.meta.resolve("astro/entrypoints/prerender"));
 
 export default defineConfig({
+  site: "https://knoastudio.com",
+  integrations: [sitemap()],
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",

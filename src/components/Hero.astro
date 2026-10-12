@@ -1,6 +1,10 @@
 ---
 import type { Dictionary } from "../i18n";
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
+import parqueameImage from "../assets/projects/parqueameapp.png";
+import minqikImage from "../assets/projects/minqik.png";
+import bciImage from "../assets/projects/bci.png";
 
 interface Props {
   t: Dictionary;
@@ -9,33 +13,32 @@ interface Props {
 const { t } = Astro.props;
 ---
 
-<section
-  id="hero"
-  class="relative min-h-screen pt-32 pb-20 px-6 lg:px-8 flex flex-col items-center justify-center overflow-hidden"
->
-  <video
-    src="/knoa-studio-demo-reel-2026.mp4"
-    class="absolute inset-0 w-full h-full object-cover z-0"
-    autoplay
-    loop
-    muted
-    playsinline
-    preload="metadata"></video>
-  <div class="absolute inset-0 z-[1] bg-black/45"></div>
-  <div class="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-center">
-    <div class="text-center w-full mb-12 lg:mb-16">
-      <h1 class="font-display font-bold text-[clamp(3.5rem,8vw,8rem)] leading-[0.9] tracking-tighter text-[var(--color-white)] mb-6 mx-auto max-w-[15ch] hero-title opacity-0 translate-y-12">
+<section id="hero" class="relative overflow-hidden bg-[#101010] px-6 pb-8 pt-28 text-white sm:pb-12 lg:px-8 lg:pt-32">
+  <div class="relative mx-auto w-full max-w-6xl lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mb-5 hidden text-lg font-medium text-white/65 sm:block">KNOA Studio</p>
+      <h1 class="hero-title mb-4 font-display text-[1.75rem] font-medium leading-[1.16] tracking-normal opacity-0 translate-y-6 sm:text-4xl lg:text-5xl">
         {t.hero.title}
       </h1>
-      <p class="text-lg lg:text-2xl text-[var(--color-white)] font-medium max-w-2xl mx-auto hero-subtitle opacity-0 translate-y-8">
+      <p class="hero-subtitle mx-auto max-w-2xl text-sm leading-relaxed text-white/65 opacity-0 translate-y-6 sm:text-base lg:text-lg">
         {t.hero.subtitle}
       </p>
+      <div class="hero-cta mt-6 flex flex-wrap items-center justify-center gap-3 opacity-0 translate-y-6 [&>a]:px-4 [&>button]:px-4 sm:[&>a]:px-6 sm:[&>button]:px-6">
+        <Button href="#case-studies" variant="white" size="md">{t.hero.cta}</Button>
+        <Button videoModalSrc="/knoa-studio-demo-reel-2026.mp4" videoModalTitle="Knoa Studio Demoreel" variant="light" size="md">{t.hero.demoreel}</Button>
+      </div>
     </div>
 
-    <div class="mt-12 hero-cta opacity-0 translate-y-8">
-      <Button href="#case-studies" variant="light" size="lg">
-        {t.hero.cta}
-      </Button>
+    <div class="hero-visual mt-8 grid gap-3 opacity-0 translate-y-6 sm:mt-10 sm:grid-cols-3">
+      {[
+        { image: parqueameImage, title: "Parqueame App", href: "https://www.parqueameapp.com" },
+        { image: minqikImage, title: "Minqik", href: "https://www.minqik.com" },
+        { image: bciImage, title: "BCI", href: "https://bci.com.do" },
+      ].map((project, index) => (
+        <a href={project.href} target="_blank" rel="noopener noreferrer" aria-label={project.title} class:list={["overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]", index > 0 ? "hidden sm:block" : "block"]}>
+          <Image src={project.image} alt={project.title} loading="eager" decoding="async" class="aspect-video w-full object-cover" />
+        </a>
+      ))}
     </div>
   </div>
 </section>
@@ -44,11 +47,12 @@ const { t } = Astro.props;
   import gsap from "gsap";
 
   requestAnimationFrame(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-
-    tl.to(".hero-title", { y: 0, opacity: 1, duration: 1.2, delay: 0.1 })
-      .to(".hero-subtitle", { y: 0, opacity: 1, duration: 1 }, "-=0.9")
-      .to(".hero-visual", { scale: 1, opacity: 1, duration: 1.4, ease: "power3.inOut" }, "-=0.8")
-      .to(".hero-cta", { y: 0, opacity: 1, duration: 0.8 }, "-=0.6");
+    gsap.to(".hero-title, .hero-subtitle, .hero-cta, .hero-visual", {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: "power3.out",
+    });
   });
 </script>
