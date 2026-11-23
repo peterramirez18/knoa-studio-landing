@@ -13,7 +13,7 @@ interface Props {
 const { t } = Astro.props;
 ---
 
-<section id="hero" class="relative overflow-hidden bg-[#101010] px-6 pb-8 pt-28 text-white sm:pb-12 lg:px-8 lg:pt-32">
+<section id="hero" class="relative overflow-hidden bg-[#101010] px-6 pb-4 pt-28 text-white sm:pb-12 lg:px-8 lg:pt-32">
   <div class="relative mx-auto w-full max-w-6xl lg:px-8">
     <div class="mx-auto max-w-4xl text-center">
       <p class="mb-5 hidden text-lg font-medium text-white/65 sm:block">KNOA Studio</p>
@@ -35,24 +35,75 @@ const { t } = Astro.props;
         { image: minqikImage, title: "Minqik", href: "https://www.minqik.com" },
         { image: bciImage, title: "BCI", href: "https://bci.com.do" },
       ].map((project, index) => (
-        <a href={project.href} target="_blank" rel="noopener noreferrer" aria-label={project.title} class:list={["overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]", index > 0 ? "hidden sm:block" : "block"]}>
-          <Image src={project.image} alt={project.title} loading="eager" decoding="async" class="aspect-video w-full object-cover" />
+        <a href={project.href} target="_blank" rel="noopener noreferrer" aria-label={project.title} class:list={["hero-project group relative overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]", index > 0 ? "hidden sm:block" : "block"]}>
+          <Image src={project.image} alt={project.title} loading="eager" decoding="async" class="aspect-video w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] group-focus-visible:scale-[1.04]" />
+          <span class="absolute bottom-3 left-3 bg-[#101010]/85 px-3 py-1 text-xs font-medium text-white sm:bottom-4 sm:left-4">{project.title}</span>
         </a>
       ))}
     </div>
   </div>
 </section>
 
+<style>
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .hero-project {
+      transform: translate3d(var(--drift-x, 0px), calc(var(--drift-y, 0px) + var(--lift, 0px)), 0) rotateY(var(--tilt, 0deg));
+      transition: transform 350ms ease-out;
+      will-change: transform;
+    }
+
+    .hero-project:hover,
+    .hero-project:focus-visible {
+      --lift: -7px;
+    }
+  }
+</style>
+
 <script>
   import gsap from "gsap";
 
-  requestAnimationFrame(() => {
-    gsap.to(".hero-title, .hero-subtitle, .hero-cta, .hero-visual", {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: "power3.out",
+  const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (motionAllowed) {
+    requestAnimationFrame(() => {
+      gsap.to(".hero-title, .hero-subtitle, .hero-cta, .hero-visual", {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power3.out",
+      });
     });
-  });
+  }
+
+  if (window.matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)").matches) {
+    const hero = document.querySelector<HTMLElement>("#hero");
+    const cards = hero?.querySelectorAll<HTMLElement>(".hero-project");
+    let frame = 0;
+
+    hero?.addEventListener("pointermove", (event) => {
+      if (!cards) return;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const bounds = hero.getBoundingClientRect();
+        const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+        const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+        cards.forEach((card, index) => {
+          const depth = [-0.8, 1.2, -1][index];
+          card.style.setProperty("--drift-x", `${(x * 14 * depth).toFixed(1)}px`);
+          card.style.setProperty("--drift-y", `${(y * 10 * depth).toFixed(1)}px`);
+          card.style.setProperty("--tilt", `${(x * 2 * depth).toFixed(1)}deg`);
+        });
+      });
+    });
+
+    hero?.addEventListener("pointerleave", () => {
+      cancelAnimationFrame(frame);
+      cards?.forEach((card) => {
+        card.style.removeProperty("--drift-x");
+        card.style.removeProperty("--drift-y");
+        card.style.removeProperty("--tilt");
+      });
+    });
+  }
 </script>
