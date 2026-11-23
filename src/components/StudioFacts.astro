@@ -1,0 +1,23 @@
+---
+import type { Dictionary } from "../i18n";
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="bg-white pb-20 lg:pb-28" aria-labelledby="studio-facts-title">
+  <div class="mx-auto max-w-6xl px-6 lg:px-8">
+    <h2 id="studio-facts-title" class="mb-5 text-xs font-semibold uppercase text-[var(--color-text-secondary)]">{t.facts.title}</h2>
+    <dl class="grid border-y border-[var(--color-border)] sm:grid-cols-3">
+      {t.facts.items.map((item) => (
+        <div class="flex flex-col border-b border-[var(--color-border)] py-7 last:border-b-0 sm:border-b-0 sm:border-l sm:px-7 sm:first:border-l-0 sm:first:pl-0 lg:py-9">
+          <dt class="order-2 mt-3 max-w-[14rem] text-sm leading-relaxed text-[var(--color-text-secondary)] lg:text-base">{item.label}</dt>
+          <dd class="order-1 font-display text-4xl font-medium leading-none text-[var(--color-text)] lg:text-5xl">{item.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

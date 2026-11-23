@@ -18,7 +18,7 @@
   },
   "hero": {
     "title": "Diseñamos y desarrollamos productos digitales para marcas que quieren avanzar.",
-    "subtitle": "Plataformas web, apps, herramientas internas y experiencias digitales construidas con estrategia, diseño y tecnología.",
+    "subtitle": "Nos cuentas qué necesita tu negocio. Unimos estrategia, diseño y desarrollo para convertirlo en una web, app o herramienta digital que la gente quiera usar.",
     "cta": "Ver productos digitales",
     "demoreel": "Ver demoreel"
   },
@@ -26,9 +26,17 @@
     "titleBefore": "Somos",
     "titleAccent": "Knoa",
     "titleAfter": "Studio",
-    "subtitle": "Tu equipo para producto, diseño y tecnología",
-    "paragraph1": "Somos un estudio de tecnología y diseño que crea productos digitales para negocios que necesitan una presencia más útil, clara y escalable. Convertimos ideas, procesos y marcas en plataformas, sitios y apps que la gente puede usar de verdad.",
-    "paragraph2": "Nuestra ventaja está en unir estrategia, interfaz, desarrollo y comunicación visual en un mismo proceso. Motion sigue siendo parte de nuestro lenguaje, pero el centro es construir herramientas digitales que funcionen, se sientan bien y ayuden al negocio a crecer."
+    "subtitle": "Un equipo cercano para diseñar y construir tecnología útil",
+    "paragraph1": "Trabajamos con personas que tienen una idea, un problema concreto o un producto que ya necesita crecer. Escuchamos cómo funciona su negocio y lo convertimos en webs, apps y herramientas fáciles de usar.",
+    "paragraph2": "Estrategia, diseño y desarrollo viven en el mismo equipo. Puedes hablar directamente con quienes construyen tu proyecto y entender por qué tomamos cada decisión. Nos gustan los detalles visuales, pero nos importa más que todo funcione de verdad."
+  },
+  "facts": {
+    "title": "KNOA en cifras",
+    "items": [
+      { "value": "+10", "label": "años de experiencia" },
+      { "value": "+70", "label": "webs realizadas" },
+      { "value": "100%", "label": "trato directo, sin intermediarios" }
+    ]
   },
   "work": {
     "title": "Trabajo seleccionado",
@@ -103,49 +111,24 @@
     ]
   },
   "process": {
-    "title": "Cómo construimos\nproductos digitales",
-    "intro": "Desde la estrategia y la arquitectura de experiencia hasta el diseño, desarrollo y lanzamiento, trabajamos para que cada producto sea claro, usable y listo para crecer.",
-    "phase": "Fase",
+    "title": "Así construimos\ncontigo",
+    "intro": "Empezamos conversando. Después ponemos orden a la idea, te mostramos avances y tomamos decisiones contigo mientras el producto cobra vida.",
     "steps": [
       {
-        "title": "Descubrimiento y objetivos",
-        "items": [
-          "Entendemos el negocio, los usuarios y el problema que necesita resolver el producto",
-          "Definimos objetivos, prioridades, alcance y criterios de éxito",
-          "Diseñamos el proyecto alrededor de impacto operativo y valor real para el usuario"
-        ]
+        "title": "Primero, te escuchamos",
+        "description": "Nos cuentas qué necesitas y cómo funciona tu negocio. Hacemos preguntas, revisamos lo que ya existe y acordamos qué problema vamos a resolver."
       },
       {
-        "title": "Estrategia de producto",
-        "items": [
-          "Organizamos funcionalidades, mensajes y recorridos principales",
-          "Definimos la propuesta de valor y la arquitectura de contenido",
-          "Convertimos necesidades de negocio en decisiones claras de producto"
-        ]
+        "title": "Le damos forma juntos",
+        "description": "Ordenamos prioridades y trazamos una ruta clara. Te mostramos las decisiones importantes para que el producto también tenga tu mirada."
       },
       {
-        "title": "UX/UI y sistema visual",
-        "items": [
-          "Diseñamos flujos, pantallas y estados pensados para uso real",
-          "Construimos una interfaz consistente, usable y alineada a la marca",
-          "Validamos que cada sección, componente y acción tenga una razón"
-        ]
+        "title": "Lo diseñamos y desarrollamos",
+        "description": "Convertimos la idea en pantallas y código. Compartimos avances, escuchamos tus comentarios y cuidamos tanto la experiencia como lo que ocurre por dentro."
       },
       {
-        "title": "Producción y desarrollo",
-        "items": [
-          "Desarrollamos la experiencia con rendimiento, accesibilidad y escalabilidad",
-          "Integramos contenido, formularios, analítica y herramientas necesarias",
-          "Refinamos interacciones, responsive y comportamiento técnico"
-        ]
-      },
-      {
-        "title": "QA, lanzamiento e iteración",
-        "items": [
-          "Probamos navegación, formularios, rendimiento y experiencia responsive",
-          "Preparamos el lanzamiento con métricas y detalles técnicos claros",
-          "Dejamos una base lista para medir, aprender e iterar"
-        ]
+        "title": "Probamos antes de lanzar",
+        "description": "Revisamos los detalles en distintos dispositivos, afinamos lo que haga falta y dejamos una base lista para seguir mejorando después de publicar."
       }
     ]
   },

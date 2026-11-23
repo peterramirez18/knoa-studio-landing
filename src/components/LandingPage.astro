@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "./Navbar.astro";
 import Hero from "./Hero.astro";
 import About from "./About.astro";
+import StudioFacts from "./StudioFacts.astro";
 import CaseStudies from "./CaseStudies.astro";
 import Services from "./Services.astro";
 import Process from "./Process.astro";
@@ -24,6 +25,7 @@ const canonicalPath = locale === "es" ? "/es/" : "/";
   <main>
     <Hero t={t} />
     <About t={t} />
+    <StudioFacts t={t} />
     <CaseStudies t={t} />
     <Services t={t} />
     <Process t={t} />

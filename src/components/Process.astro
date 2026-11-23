@@ -27,24 +27,17 @@ const processHeading = highlightWord(t.process.title, ["Build", "construimos"]);
 
 <section id="process" class="bg-[#111] py-20 text-white lg:py-28">
   <div class="mx-auto max-w-6xl px-6 lg:px-8">
-    <div class="mb-14 grid gap-5 lg:grid-cols-[1fr_0.7fr] lg:items-end lg:gap-16">
+    <div class="mb-12 grid gap-5 lg:mb-16 lg:grid-cols-[1fr_0.7fr] lg:items-end lg:gap-16">
       <SectionHeading before={processHeading.before} accent={processHeading.accent} after={processHeading.after} tone="light" class="max-w-3xl" />
       <p class="max-w-xl text-base leading-relaxed text-white/60 lg:text-lg">{t.process.intro}</p>
     </div>
 
-    <ol class="border-t border-white/20">
+    <ol class="grid border-t border-white/20 md:grid-cols-2 md:gap-x-12">
       {steps.map((step) => (
-        <li class="grid gap-4 border-b border-white/20 py-7 md:grid-cols-[5rem_minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-8 lg:py-9">
-          <span class="text-sm font-medium text-[var(--color-accent)]">{t.process.phase} {step.phase}</span>
-          <h3 class="max-w-xs font-display text-xl font-medium leading-snug lg:text-2xl">{step.title}</h3>
-          <ul class="grid gap-2 text-sm leading-relaxed text-white/65 lg:text-base">
-            {step.items.map((item) => (
-              <li class="flex gap-3">
-                <span class="mt-[0.65em] size-1 shrink-0 rounded-full bg-[var(--color-accent)]" aria-hidden="true"></span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        <li class="border-b border-white/20 py-8 lg:py-10">
+          <span class="mb-7 block font-display text-3xl font-medium leading-none text-[var(--color-accent)]">{step.phase}</span>
+          <h3 class="mb-3 max-w-md font-display text-xl font-medium leading-snug lg:text-2xl">{step.title}</h3>
+          <p class="max-w-md text-sm leading-relaxed text-white/65 lg:text-base">{step.description}</p>
         </li>
       ))}
     </ol>

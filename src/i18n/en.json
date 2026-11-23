@@ -18,7 +18,7 @@
   },
   "hero": {
     "title": "We design and develop digital products for brands ready to move forward.",
-    "subtitle": "Web platforms, apps, internal tools, and digital experiences built with strategy, design, and technology.",
+    "subtitle": "Tell us what your business needs. We bring strategy, design, and development together to make a website, app, or digital tool people actually want to use.",
     "cta": "View Digital Products",
     "demoreel": "Watch demoreel"
   },
@@ -26,9 +26,17 @@
     "titleBefore": "We",
     "titleAccent": "are",
     "titleAfter": "Knoa Studio",
-    "subtitle": "Your team for product, design, and technology",
-    "paragraph1": "We're a technology and design studio creating digital products for businesses that need a more useful, clear, and scalable presence. We turn ideas, processes, and brands into platforms, websites, and apps people can actually use.",
-    "paragraph2": "Our edge is bringing strategy, interface design, development, and visual communication into one process. Motion is still part of our language, but the center is building digital tools that work, feel good, and help the business grow."
+    "subtitle": "A close-knit team designing and building useful technology",
+    "paragraph1": "We work with people who have an idea, a real problem to solve, or a product ready to grow. We learn how their business works and turn that understanding into websites, apps, and tools that are easy to use.",
+    "paragraph2": "Strategy, design, and development live in the same team. You can speak directly with the people building your project and understand the thinking behind each decision. We care about the visual details, but even more about making things work."
+  },
+  "facts": {
+    "title": "KNOA at a glance",
+    "items": [
+      { "value": "+10", "label": "years of experience" },
+      { "value": "+70", "label": "websites delivered" },
+      { "value": "100%", "label": "direct collaboration, no middlemen" }
+    ]
   },
   "work": {
     "title": "Selected Work",
@@ -103,49 +111,24 @@
     ]
   },
   "process": {
-    "title": "How We Build\nDigital Products",
-    "intro": "From strategy and experience architecture to design, development, and launch, we work so every product is clear, usable, and ready to grow.",
-    "phase": "Phase",
+    "title": "How We Build\nTogether",
+    "intro": "We start with a conversation. Then we bring structure to the idea, share progress, and make decisions with you as the product takes shape.",
     "steps": [
       {
-        "title": "Discovery & Goals",
-        "items": [
-          "We understand the business, the users, and the problem the product needs to solve",
-          "We define objectives, priorities, scope, and success criteria",
-          "We shape the project around operational impact and real user value"
-        ]
+        "title": "First, we listen",
+        "description": "You tell us what you need and how your business works. We ask questions, review what is already there, and agree on the problem we need to solve."
       },
       {
-        "title": "Product Strategy",
-        "items": [
-          "We organize features, messaging, and primary user journeys",
-          "We define the value proposition and content architecture",
-          "We turn business needs into clear product decisions"
-        ]
+        "title": "We shape it together",
+        "description": "We set priorities and map a clear path. We show you the important decisions so the product reflects your perspective too."
       },
       {
-        "title": "UX/UI and Visual System",
-        "items": [
-          "We design flows, screens, and states for real usage",
-          "We build a consistent, usable interface aligned with the brand",
-          "We validate that every section, component, and action has a reason"
-        ]
+        "title": "We design and build it",
+        "description": "We turn the idea into screens and code. We share progress, listen to your feedback, and care about both the experience and what happens behind it."
       },
       {
-        "title": "Production & Development",
-        "items": [
-          "We develop the experience with performance, accessibility, and scalability in mind",
-          "We integrate content, forms, analytics, and the tools the product needs",
-          "We refine interactions, responsiveness, and technical behavior"
-        ]
-      },
-      {
-        "title": "QA, Launch, and Iteration",
-        "items": [
-          "We test navigation, forms, performance, and responsive experience",
-          "We prepare the launch with clear metrics and technical details",
-          "We leave a base that is ready to measure, learn, and iterate"
-        ]
+        "title": "We test before launch",
+        "description": "We review the details across devices, refine what needs work, and leave a foundation ready to keep improving after launch."
       }
     ]
   },
